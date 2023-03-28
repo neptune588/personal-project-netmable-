@@ -346,18 +346,37 @@ html {
     height: 200px;
     background-image: url(../images/bottom_banner_01.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    animation: bottom_banner_ani 8s infinite;
+}
+@keyframes bottom_banner_ani {
+    0% {
+        background-image: url(../images/bottom_banner_01.jpg);
+    }
+    25% {
+        background-image: url(../images/bottom_banner_02.jpg);
+    }
+    50% {
+        background-image: url(../images/bottom_banner_03.jpg);
+    }
+    75% {
+        background-image: url(../images/bottom_banner_04.jpg);
+    }
+    100% {
+        background-image: url(../images/bottom_banner_01.jpg);
+    }
 }
 
 
 /********************** footer_ex  *******************/
 .footer_ex {
     background-color: var(--color-black);
-    padding: var(--padding-10);
 }
 
+
 /********************** footer  *******************/
-.footer {}
+.footer {
+    padding: var(--padding-10);
+}
 .footer h2 {
     color: var(--point-color-white);
     font-family: 'netmarble';
@@ -372,4 +391,7 @@ html {
     font-size: var(--font-size-small-11);
     color: var(--color-gray);
     margin-bottom: var(--gap-small-5);
+}
+.footer p:nth-child(2) {
+    margin-bottom: 0;
 }
