@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'netmarble';
+    src: url('netmarbleB.eot');
+    src: url('netmarbleB.eot?#iefix') format('embedded-opentype'),
+        url('netmarbleB.woff2') format('woff2'),
+        url('netmarbleB.woff') format('woff'),
+        url('netmarbleB.ttf') format('truetype'),
+        url('netmarbleB.svg#netmarbleB') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'netmarble';
+    src: url('netmarbleM.eot');
+    src: url('netmarbleM.eot?#iefix') format('embedded-opentype'),
+        url('netmarbleM.woff2') format('woff2'),
+        url('netmarbleM.woff') format('woff'),
+        url('netmarbleM.ttf') format('truetype'),
+        url('netmarbleM.svg#netmarbleM') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'netmarble';
+    src: url('netmarbleL.eot');
+    src: url('netmarbleL.eot?#iefix') format('embedded-opentype'),
+        url('netmarbleL.woff2') format('woff2'),
+        url('netmarbleL.woff') format('woff'),
+        url('netmarbleL.ttf') format('truetype'),
+        url('netmarbleL.svg#netmarbleL') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

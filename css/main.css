@@ -1,0 +1,375 @@
+
+/********************** settings *******************/
+@import url(./css/reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    height: 100%;
+}
+div>img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+
+/********************** rem size standard *******************/
+html {
+    font-size: 10px;
+}
+
+
+/********************** root *******************/
+:root {
+    /* color */
+    --point-color-white: #fff;
+    --point-color-light-black: #1e2023;
+
+    --color-light-gray: #f8fafc;
+    --color-gray: #ccc;
+    --color-dark-gray: #8f8f8f;
+    --color-black: #171717;
+
+    /* font-family */
+    --font-Noto-Sans: 'Noto Sans KR', sans-serif;   
+    --font-netmable: 'netmarble';
+
+    /* font-size */
+    --font-size-small-11: 1.1rem;
+    --font-size-small-up-12:1.2rem;
+    --font-size-medium-14: 1.4rem;
+    --font-size-medium-up-15: 1.5rem;
+    --font-size-large-18: 1.8rem;
+    --font-size-large-up-20: 2rem;
+    --font-size-x-large-24: 2.4rem;
+    --font-size-x-large-up-28: 2.8rem;
+
+    /* padding */
+    --padding-10: 10px;
+    --padding-20: 20px;
+
+    /* gap */
+    --gap-small-5: 5px;
+    --gap-small-up-10: 10px;
+    --gap-medium-15: 15px;
+    --gap-medium-up-15: 15px;
+    --gap-large-20: 20px;
+    --gap-large-up-25: 25px;
+    --gap-x-large-35: 35px;
+    --gap-x-large-up-45: 45px;
+}
+
+
+/********************** header *******************/
+.header {
+    position: relative;
+    height: 40px;
+}
+.header .menu_btn {
+    position: absolute;
+    top: 12px; left: 10px;
+    font-size: var(--font-size-large-18);
+}
+.header .menu_btn i {
+    display: block;
+}
+.header .title_logo {
+    width: 110px;
+    margin: 0 auto;
+    padding-top: var(--padding-10);
+}
+.header .gnb {
+    position: absolute;
+    top: 12px; right: 10px;
+    font-size: 0;
+}
+.header .gnb i {
+    display: inline-block;
+    font-size: var(--font-size-large-18);
+    margin-left: var(--gap-medium-15);
+}
+
+
+/********************** visual_main *******************/
+.visual_main {
+    
+}
+.visual_main .mobile_visual_img {
+    height: 200px;
+    background-image: url(../images/visual_img_mobile.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+
+/********************** contents_top *******************/
+.contents {
+    padding: 0 var(--padding-10);
+}
+
+
+/********************** hash_tag *******************/
+.contents .hash_tag {
+    font-size: 0;
+    margin-top: var(--gap-small-up-10);
+    margin-bottom: var(--gap-small-up-10);
+}
+.contents .hash_tag p {
+    display: inline-block;
+    margin-right: var(--gap-small-5);
+    color: rgb(65, 135, 175);
+    font-size: var(--font-size-small-up-12);
+    letter-spacing: -0.8px;
+}
+
+
+/********************** hot_game_list *******************/
+.contents .hot_game_list {}
+.contents .hot_game_list .mobile_hot {
+    display: flex;
+    flex-flow: nowrap;
+    overflow-x: scroll;
+}
+.contents .hot_game_list .mobile_hot .box {
+    position: relative;
+    flex: 0 0 auto;
+    width: calc(100% - 50% - 2.5px); 
+    margin-right: var(--gap-small-5);
+}
+.contents .hot_game_list .mobile_hot .box::before {
+    content: "";
+    position: absolute;
+    z-index: 15;
+    width: 30%; height: 30%;
+}
+.contents .hot_game_list .mobile_hot .box1::before {
+    background-image: url(../images/mobile_game_banner_logo01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 10px; left: 0;
+}
+.contents .hot_game_list .mobile_hot .box2::before {
+    background-image: url(../images/mobile_game_banner_logo02.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 5px; left: 5px;
+}
+.contents .hot_game_list .mobile_hot .box3::before {
+    background-image: url(../images/mobile_game_banner_logo03.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 7px; left: 0px;
+}
+.contents .hot_game_list .mobile_hot .box4::before {
+    background-image: url(../images/mobile_game_banner_logo04.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 1px; left: 10px;
+}
+.contents .hot_game_list .mobile_hot .box5::before {
+    background-image: url(../images/mobile_game_banner_logo05.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 3px; left: 5px;
+}
+.contents .hot_game_list .mobile_hot .box6::before {
+    background-image: url(../images/mobile_game_banner_logo06.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 1px; left: 10px;
+}
+.contents .hot_game_list .mobile_hot .box7::before {
+    background-image: url(../images/mobile_game_banner_logo07.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 1px; left: 8px;
+}
+.contents .hot_game_list .mobile_hot .box8::before {
+    background-image: url(../images/mobile_game_banner_logo08.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 1px; left: 10px;
+}
+.contents .hot_game_list .mobile_hot .box::after {
+    content: "";
+    top: 0; left: 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%; height: 100%;
+    background: linear-gradient(360deg, var(--color-black), rgba(255, 255, 255, 0.05) 70%);
+}
+
+
+/********************** tab *******************/
+.contents .tab {
+    overflow: hidden;
+    font-size: 0;
+    margin-top: var(--gap-x-large-35);
+    margin-bottom: var(--gap-large-up-25);
+}
+.contents .tab p {
+    float: left;
+    width: calc(100% - 50% - 2.5px);
+    font-size: var(--font-size-large-18);
+    font-family: var(--font-Noto-Sans);
+    text-align: center; 
+    margin-right: var(--gap-small-5);
+    letter-spacing: -0.8px;
+    padding: var(--gap-small-5) 0;
+}
+.contents .tab p:nth-child(1) {
+    color: var(--point-color-white);
+    background-color: var(--color-black);
+    border-radius: 30px;
+}
+.contents .tab p:nth-child(2) {
+    margin-right: 0;
+}
+
+
+/********************** mobile_game_bar *******************/
+.contents .mobile_game_bar {
+    overflow: hidden;
+    margin-bottom: var(--gap-small-up-10);
+    background-color: #f8fafc;
+    padding: var(--padding-10) 0;
+    border-radius: 10px;
+}
+
+
+/********************** mobile_game_bar left_logo *******************/
+.contents .mobile_game_bar .left_logo {
+    float: left;
+    margin-left: var(--gap-small-up-10);
+    width: 60px; height: 60px;
+}
+.contents .mobile_game_bar .left_logo1 {
+    background-image: url(../images/mobile_game_icon01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.contents .mobile_game_bar .left_logo2 {
+    background-image: url(../images/mobile_game_icon02.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.contents .mobile_game_bar .left_logo3 {
+    background-image: url(../images/mobile_game_icon03.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.contents .mobile_game_bar .left_logo4 {
+    background-image: url(../images/mobile_game_icon04.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.contents .mobile_game_bar .left_logo5 {
+    background-image: url(../images/mobile_game_icon05.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+.contents .mobile_game_bar .left_logo6 {
+    background-image: url(../images/mobile_game_icon06.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+
+/********************** mobile_game_bar right_text *******************/
+.contents .mobile_game_bar .right_text {
+    float: left;
+    position: relative;
+}
+.contents .mobile_game_bar .right_text>p {
+    margin-top: var(--gap-small-5);
+    margin-left: var(--gap-medium-15);
+    font-size: var(--font-size-medium-up-15);
+    font-weight: 700;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -1px;
+    color: #1e2013;
+}
+.contents .mobile_game_bar .right_text>p>span {
+    margin-left: var(--gap-small-up-10);
+    padding: 0 4px;
+    font-size: var(--font-size-small-11);
+    font-family: var(--font-Noto-Sans);
+    transform: translateY(-1px);
+    letter-spacing: 0.2px;
+}
+.contents .mobile_game_bar .right_text>p:nth-child(2) {
+    margin-top: var(--gap-small-5);
+    color: #8f8f8f;
+    font-size: var(--font-size-medium-14);
+}
+.hot {
+    color: rgb(255, 72, 72);
+    background-color: #fff7f7;
+    border: 1px solid rgb(255, 198, 198);
+}
+.new {
+    color: rgb(63 112 202);
+    background-color: #e1f2f8;
+    border: 1px solid rgb(133, 175, 238);
+}
+
+
+/********************** all_view  *******************/
+.all_view {
+    padding: var(--gap-small-5) 0;
+    margin: var(--gap-medium-15) 0;
+    text-align: center;
+    background-color: var(--color-light-gray);
+    border: 1px solid var(--color-gray);
+}
+.all_view p {
+    color: var(--point-color-light-black);
+    font-size: var(--font-size-small-up-12);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+
+/********************** bottom_banner  *******************/
+.bottom_banner {
+    height: 200px;
+    background-image: url(../images/bottom_banner_01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/********************** footer_ex  *******************/
+.footer_ex {
+    background-color: var(--color-black);
+    padding: var(--padding-10);
+}
+
+/********************** footer  *******************/
+.footer {}
+.footer h2 {
+    color: var(--point-color-white);
+    font-family: 'netmarble';
+    font-weight: 700;
+    font-size: var(--font-size-x-large-24);
+    margin-bottom: var(--gap-small-up-10);
+    padding-bottom: var(--padding-10);
+    border-bottom: 1px solid #232323;
+}
+.footer p {
+    text-align: center;
+    font-size: var(--font-size-small-11);
+    color: var(--color-gray);
+    margin-bottom: var(--gap-small-5);
+}
