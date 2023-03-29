@@ -1,6 +1,6 @@
 
 /********************** settings *******************/
-@import url(./css/reset.css);
+@import url(./reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
 * {
@@ -11,7 +11,7 @@
 html,body {
     height: 100%;
 }
-div>img {
+img {
     width: 100%;
     vertical-align: bottom;
 }
@@ -84,13 +84,24 @@ html {
 }
 .header .gnb {
     position: absolute;
-    top: 12px; right: 10px;
+    top: 10px; right: 10px;
     font-size: 0;
 }
-.header .gnb i {
-    display: inline-block;
+.header .gnb a::before {
+    content: "\f52b";
+    position: absolute;
+    top: 0; right: 30px;
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
     font-size: var(--font-size-large-18);
-    margin-left: var(--gap-medium-15);
+}
+.header .gnb a::after {
+    content: "\f007";
+    position: absolute;
+    top:0; right: 0;
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    font-size: var(--font-size-large-18);
 }
 
 
@@ -104,6 +115,7 @@ html {
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
+    cursor: pointer;
 }
 
 
@@ -140,6 +152,7 @@ html {
     flex: 0 0 auto;
     width: calc(100% - 50% - 2.5px); 
     margin-right: var(--gap-small-5);
+    cursor: pointer;
 }
 .contents .hot_game_list .mobile_hot .box::before {
     content: "";
@@ -148,51 +161,43 @@ html {
     width: 30%; height: 30%;
 }
 .contents .hot_game_list .mobile_hot .box1::before {
-    background-image: url(../images/mobile_game_banner_logo01.jpg);
+    background: url(../images/mobile_game_banner_logo01.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 10px; left: 0;
 }
 .contents .hot_game_list .mobile_hot .box2::before {
-    background-image: url(../images/mobile_game_banner_logo02.jpg);
+    background: url(../images/mobile_game_banner_logo02.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 5px; left: 5px;
 }
 .contents .hot_game_list .mobile_hot .box3::before {
-    background-image: url(../images/mobile_game_banner_logo03.jpg);
+    background: url(../images/mobile_game_banner_logo03.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 7px; left: 0px;
 }
 .contents .hot_game_list .mobile_hot .box4::before {
-    background-image: url(../images/mobile_game_banner_logo04.jpg);
+    background: url(../images/mobile_game_banner_logo04.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 1px; left: 10px;
 }
 .contents .hot_game_list .mobile_hot .box5::before {
-    background-image: url(../images/mobile_game_banner_logo05.jpg);
+    background: url(../images/mobile_game_banner_logo05.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 3px; left: 5px;
 }
 .contents .hot_game_list .mobile_hot .box6::before {
-    background-image: url(../images/mobile_game_banner_logo06.jpg);
+    background: url(../images/mobile_game_banner_logo06.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 1px; left: 10px;
 }
 .contents .hot_game_list .mobile_hot .box7::before {
-    background-image: url(../images/mobile_game_banner_logo07.jpg);
+    background: url(../images/mobile_game_banner_logo07.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 1px; left: 8px;
 }
 .contents .hot_game_list .mobile_hot .box8::before {
-    background-image: url(../images/mobile_game_banner_logo08.jpg);
+    background: url(../images/mobile_game_banner_logo08.jpg) no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
     bottom: 1px; left: 10px;
 }
 .contents .hot_game_list .mobile_hot .box::after {
@@ -212,7 +217,7 @@ html {
     margin-top: var(--gap-x-large-35);
     margin-bottom: var(--gap-large-up-25);
 }
-.contents .tab p {
+.contents .tab .tab_menu {
     float: left;
     width: calc(100% - 50% - 2.5px);
     font-size: var(--font-size-large-18);
@@ -221,77 +226,91 @@ html {
     margin-right: var(--gap-small-5);
     letter-spacing: -0.8px;
     padding: var(--gap-small-5) 0;
+    cursor: pointer;
+    transition: all 0.3s;
+
 }
-.contents .tab p:nth-child(1) {
+.contents .tab .mobile_tab {
     color: var(--point-color-white);
     background-color: var(--color-black);
     border-radius: 30px;
 }
-.contents .tab p:nth-child(2) {
+.contents .tab .pc_tab {
     margin-right: 0;
+}
+input {
+    display: none;
+}
+#mobile_tab_on:checked ~ .game_bar_container .pc_game_bar {
+    display: none;
+}
+#pc_tab_on:checked ~ .tab .label_box .mobile_tab {
+    color: var(--color-black);
+    background-color: transparent;
+}
+#pc_tab_on:checked ~ .tab .label_box .pc_tab {
+    color: var(--point-color-white);
+    background-color: var(--color-black);
+    border-radius: 30px;
+}
+#pc_tab_on:checked ~ .game_bar_container .mobile_game_bar {
+    display: none;
+}
+#pc_tab_on:checked ~ .game_bar_container .pc_game_bar {
+    display: block;
 }
 
 
 /********************** mobile_game_bar *******************/
-.contents .mobile_game_bar {
+.contents .game_bar_container .mobile_game_bar {
     overflow: hidden;
     margin-bottom: var(--gap-small-up-10);
-    background-color: #f8fafc;
+    background-color: var(--color-light-gray);
     padding: var(--padding-10) 0;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 
 /********************** mobile_game_bar left_logo *******************/
-.contents .mobile_game_bar .left_logo {
+.contents .game_bar_container .mobile_game_bar .left_logo {
     float: left;
     margin-left: var(--gap-small-up-10);
     width: 60px; height: 60px;
-}
-.contents .mobile_game_bar .left_logo1 {
-    background-image: url(../images/mobile_game_icon01.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 10px;
 }
-.contents .mobile_game_bar .left_logo2 {
-    background-image: url(../images/mobile_game_icon02.jpg);
-    background-repeat: no-repeat;
+.contents .game_bar_container .mobile_game_bar .left_logo1 {
+    background: url(../images/mobile_game_icon01.jpg) no-repeat;
     background-size: cover;
-    border-radius: 10px;
 }
-.contents .mobile_game_bar .left_logo3 {
-    background-image: url(../images/mobile_game_icon03.jpg);
-    background-repeat: no-repeat;
+.contents .game_bar_container .mobile_game_bar .left_logo2 {
+    background: url(../images/mobile_game_icon02.jpg) no-repeat;
     background-size: cover;
-    border-radius: 10px;
 }
-.contents .mobile_game_bar .left_logo4 {
-    background-image: url(../images/mobile_game_icon04.jpg);
-    background-repeat: no-repeat;
+.contents .game_bar_container .mobile_game_bar .left_logo3 {
+    background: url(../images/mobile_game_icon03.jpg) no-repeat;
     background-size: cover;
-    border-radius: 10px;
 }
-.contents .mobile_game_bar .left_logo5 {
-    background-image: url(../images/mobile_game_icon05.jpg);
-    background-repeat: no-repeat;
+.contents .game_bar_container .mobile_game_bar .left_logo4 {
+    background: url(../images/mobile_game_icon04.jpg) no-repeat;
     background-size: cover;
-    border-radius: 10px;
 }
-.contents .mobile_game_bar .left_logo6 {
-    background-image: url(../images/mobile_game_icon06.jpg);
-    background-repeat: no-repeat;
+.contents .game_bar_container .mobile_game_bar .left_logo5 {
+    background: url(../images/mobile_game_icon05.jpg) no-repeat;
     background-size: cover;
-    border-radius: 10px;
+}
+.contents .game_bar_container .mobile_game_bar .left_logo6 {
+    background: url(../images/mobile_game_icon06.jpg) no-repeat;
+    background-size: cover;
 }
 
 
 /********************** mobile_game_bar right_text *******************/
-.contents .mobile_game_bar .right_text {
+.contents .game_bar_container .mobile_game_bar .right_text {
     float: left;
     position: relative;
 }
-.contents .mobile_game_bar .right_text>p {
+.contents .game_bar_container .mobile_game_bar .right_text>p {
     margin-top: var(--gap-small-5);
     margin-left: var(--gap-medium-15);
     font-size: var(--font-size-medium-up-15);
@@ -300,7 +319,7 @@ html {
     letter-spacing: -1px;
     color: #1e2013;
 }
-.contents .mobile_game_bar .right_text>p>span {
+.contents .game_bar_container .mobile_game_bar .right_text>p>span {
     margin-left: var(--gap-small-up-10);
     padding: 0 4px;
     font-size: var(--font-size-small-11);
@@ -308,7 +327,7 @@ html {
     transform: translateY(-1px);
     letter-spacing: 0.2px;
 }
-.contents .mobile_game_bar .right_text>p:nth-child(2) {
+.contents .game_bar_container .mobile_game_bar .right_text>p:nth-child(2) {
     margin-top: var(--gap-small-5);
     color: #8f8f8f;
     font-size: var(--font-size-medium-14);
@@ -325,6 +344,74 @@ html {
 }
 
 
+/********************** pc_game_bar *******************/
+.contents .game_bar_container .pc_game_bar {
+    padding: 5px;
+    overflow: hidden;
+    background-color: var(--color-black);
+    margin-bottom: var(--gap-small-5);
+    cursor: pointer;
+}
+
+
+/********************** pc_game_bar pc_logo *******************/
+.contents .game_bar_container .pc_game_bar .pc_logo {
+    float: left;
+    width: 160px; height: 130px;
+}
+.contents .game_bar_container .pc_game_bar .pc_logo01 {
+    background: url(../images/pc_game_banner01.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.contents .game_bar_container .pc_game_bar .pc_logo02 {
+    background: url(../images/pc_game_banner02.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.contents .game_bar_container .pc_game_bar .pc_logo03 {
+    background: url(../images/pc_game_banner03.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.contents .game_bar_container .pc_game_bar .pc_logo04 {
+    background: url(../images/pc_game_banner04.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/********************** pc_game_bar pc_text *******************/
+.contents .game_bar_container .pc_game_bar .pc_text {
+    float: left;
+    width: calc(100% - 160px - 10px);
+    margin-top: var(--gap-small-up-10);
+    margin-left: var(--gap-small-up-10);
+}
+.contents .game_bar_container .pc_game_bar p {
+    font-family: var(--font-Noto-Sans);
+    margin-bottom: var(--gap-small-5);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.contents .game_bar_container .pc_game_bar p:nth-child(1) {
+    font-size: var(--font-size-medium-up-15);
+    color: var(--point-color-white);
+}
+.contents .game_bar_container .pc_game_bar p:nth-child(2) {
+    font-size: var(--font-size-medium-14);
+    color: var(--color-dark-gray);
+}
+.contents .game_bar_container .pc_game_bar p:nth-child(3) {
+    font-size: var(--font-size-small-up-12);
+    color: var(--color-gray);
+    letter-spacing: 0;
+    font-weight: 500;
+    line-height: 13px;
+}
+
+
+
 /********************** all_view  *******************/
 .all_view {
     padding: var(--gap-small-5) 0;
@@ -333,7 +420,8 @@ html {
     background-color: var(--color-light-gray);
     border: 1px solid var(--color-gray);
 }
-.all_view p {
+.all_view a {
+    display: block;
     color: var(--point-color-light-black);
     font-size: var(--font-size-small-up-12);
     font-weight: 700;
@@ -343,26 +431,43 @@ html {
 
 /********************** bottom_banner  *******************/
 .bottom_banner {
+    position: relative;
     height: 200px;
-    background-image: url(../images/bottom_banner_01.jpg);
-    background-repeat: no-repeat;
     animation: bottom_banner_ani 8s infinite;
+}
+.bottom_banner::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(360deg, var(--color-black), rgba(255, 255, 255, 0.05) 70%);
+    opacity: 0.8;
 }
 @keyframes bottom_banner_ani {
     0% {
-        background-image: url(../images/bottom_banner_01.jpg);
+        background: url(../images/bottom_banner_011.jpg) no-repeat;
+        background-position: 40% 0;
+        background-size: cover;
     }
     25% {
-        background-image: url(../images/bottom_banner_02.jpg);
+        background: url(../images/bottom_banner_022.jpg) no-repeat;
+        background-position: 40% 0;
+        background-size: cover;
     }
     50% {
-        background-image: url(../images/bottom_banner_03.jpg);
+        background: url(../images/bottom_banner_033.jpg) no-repeat;
+        background-position: 40% 0;
+        background-size: cover;
     }
     75% {
-        background-image: url(../images/bottom_banner_04.jpg);
+        background: url(../images/bottom_banner_044.jpg) no-repeat;
+        background-position: 40% 0;
+        background-size: cover;
     }
     100% {
-        background-image: url(../images/bottom_banner_01.jpg);
+        background: url(../images/bottom_banner_011.jpg) no-repeat;
+        background-position: 40% 0;
+        background-size: cover;
     }
 }
 
@@ -395,3 +500,4 @@ html {
 .footer p:nth-child(2) {
     margin-bottom: 0;
 }
+

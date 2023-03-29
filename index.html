@@ -14,11 +14,11 @@
             <i class="fas fa-bars"></i>
         </div><!-- menu_btn -->
         <div class="title_logo">
-            <img src="./images/netmarble-ci.svg" alt="title_logo">
+            <a href="#"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
         </div><!-- logo -->
         <div class="gnb">
-            <i class="fas fa-door-open"></i>
-            <i class="fas fa-user"></i>
+            <a class="sign_in" href="#!"></a>
+            <a class="sign_up" href="#!"></a>
         </div><!-- gnb -->
     </header><!-- header -->
     <div class="visual_main">
@@ -62,7 +62,13 @@
             <div class="tablet_hot"></div>
             <div class="pc_hot"></div>
         </section><!-- hot_game_list -->
+        <input type="radio" name="game_tab_menu" id="mobile_tab_on">
+        <input type="radio" name="game_tab_menu" id="pc_tab_on">
         <section class="tab">
+            <div class="label_box">
+                <label for="mobile_tab_on" class="mobile_tab tab_menu">Mobile Games</label>
+                <label for="pc_tab_on" class="pc_tab tab_menu">PC Games</label>
+            </div>
             <p>Mobile Games</p>
             <p>PC Games</p>
         </section><!-- tab -->
@@ -121,13 +127,60 @@
                     <p>MMORPG</p>
                 </div><!-- right_text -->
             </section><!-- mobile_game_bar -->
+            <section class="pc_game_bar">
+                <div class="pc_logo pc_logo01">
+                </div>
+                <div class="pc_text">
+                    <p>파라곤</p>
+                    <p>FPS</p>
+                    <p>
+                        팀을 기반으로 플레이하는 전략형 액션 게임으로 다양한 영웅들로 구성된 두 개의 팀이 서로의 진영을 파괴하는 게임입니다.
+                    </p>
+                </div>
+            </section>
+            <section class="pc_game_bar">
+                <div class="pc_logo pc_logo02">
+                </div>
+                <div class="pc_text">
+                    <p>마구마구</p>
+                    <p>스포츠/FPS</p>
+                    <p>
+                        세계 최초로 모든 야구 팀의 구단주가 되어볼 수 있는 절호의 찬스! 야구 역사상 최고의전설을 만나다! 
+                    </p>
+                </div>
+            </section>
+            <section class="pc_game_bar">
+                <div class="pc_logo pc_logo03">
+                </div>
+                <div class="pc_text">
+                    <p>모두의마블</p>
+                    <p>보드/캐주얼</p>
+                    <p>
+                        어릴적 가족과 친구가 함께 즐기던 보드게임이 모두의마블로 다시 태어났습니다. 
+                    </p>
+                </div>
+            </section>
+            <section class="pc_game_bar">
+                <div class="pc_logo pc_logo04">
+                </div>
+                <div class="pc_text">
+                    <p>클럽M스타</p>
+                    <p>리듬액션</p>
+                    <p>
+                        '클럽 엠스타'는 실사에 가까운 정교한 그래픽과 생생한 움직임이 특징인 온라인 댄스게임 입니다! 
+                    </p>
+                </div>
+            </section>
         </div><!-- game_bar_container -->
         <div class="all_view">
-            <p>전체 게임보기</p>
+            <a href="#!">전체 게임보기</a>
         </div>
     </div><!-- contents_top -->
     <div class="bottom_banner">
-
+        <div class="b_banner"></div>
+        <div class="b_banner"></div>
+        <div class="b_banner"></div>
+        <div class="b_banner"></div>
     </div><!-- bottom_banner -->
     <div class="footer_ex">
         <footer class="footer">
