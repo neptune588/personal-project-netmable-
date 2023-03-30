@@ -146,6 +146,17 @@ html {
     display: flex;
     flex-flow: nowrap;
     overflow-x: scroll;
+    overflow-y: hidden;
+}
+.contents .hot_game_list .mobile_hot::-webkit-scrollbar {
+    height: 10px;
+}
+.contents .hot_game_list .mobile_hot::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray);
+    border-radius: 15px;
+}
+.contents .hot_game_list .mobile_hot::-webkit-scrollbar-track  {
+    background-color: #f8f8f8;
 }
 .contents .hot_game_list .mobile_hot .box {
     position: relative;
@@ -153,6 +164,10 @@ html {
     width: calc(100% - 50% - 2.5px); 
     margin-right: var(--gap-small-5);
     cursor: pointer;
+    margin-bottom: var(--gap-small-up-10);
+}
+.contents .hot_game_list .mobile_hot .box8 {
+    margin-right: 0;
 }
 .contents .hot_game_list .mobile_hot .box::before {
     content: "";
@@ -241,9 +256,6 @@ html {
 input {
     display: none;
 }
-#mobile_tab_on:checked ~ .game_bar_container .pc_game_bar {
-    display: none;
-}
 #pc_tab_on:checked ~ .tab .label_box .mobile_tab {
     color: var(--color-black);
     background-color: transparent;
@@ -259,7 +271,6 @@ input {
 #pc_tab_on:checked ~ .game_bar_container .pc_game_bar {
     display: block;
 }
-
 
 /********************** mobile_game_bar *******************/
 .contents .game_bar_container .mobile_game_bar {
@@ -351,6 +362,7 @@ input {
     background-color: var(--color-black);
     margin-bottom: var(--gap-small-5);
     cursor: pointer;
+    display: none;
 }
 
 
@@ -360,22 +372,22 @@ input {
     width: 160px; height: 130px;
 }
 .contents .game_bar_container .pc_game_bar .pc_logo01 {
-    background: url(../images/pc_game_banner01.jpg) no-repeat;
+    background: url(../images/pc_game_banner01_mobile.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .contents .game_bar_container .pc_game_bar .pc_logo02 {
-    background: url(../images/pc_game_banner02.jpg) no-repeat;
+    background: url(../images/pc_game_banner02_mobile.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .contents .game_bar_container .pc_game_bar .pc_logo03 {
-    background: url(../images/pc_game_banner03.jpg) no-repeat;
+    background: url(../images/pc_game_banner03_mobile.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .contents .game_bar_container .pc_game_bar .pc_logo04 {
-    background: url(../images/pc_game_banner04.jpg) no-repeat;
+    background: url(../images/pc_game_banner04_mobile.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -434,6 +446,7 @@ input {
     position: relative;
     height: 200px;
     animation: bottom_banner_ani 8s infinite;
+    cursor: pointer;
 }
 .bottom_banner::after {
     content: "";
@@ -445,30 +458,97 @@ input {
 }
 @keyframes bottom_banner_ani {
     0% {
-        background: url(../images/bottom_banner_011.jpg) no-repeat;
-        background-position: 40% 0;
+        background: url(../images/mobile_bottom_banner_01.jpg) no-repeat;
+        background-position: 50% 0;
         background-size: cover;
     }
     25% {
-        background: url(../images/bottom_banner_022.jpg) no-repeat;
-        background-position: 40% 0;
+        background: url(../images/mobile_bottom_banner_02.jpg) no-repeat;
+        background-position: 50% 0;
         background-size: cover;
     }
     50% {
-        background: url(../images/bottom_banner_033.jpg) no-repeat;
-        background-position: 40% 0;
+        background: url(../images/mobile_bottom_banner_03.jpg) no-repeat;
+        background-position: 50% 0;
         background-size: cover;
     }
     75% {
-        background: url(../images/bottom_banner_044.jpg) no-repeat;
-        background-position: 40% 0;
+        background: url(../images/mobile_bottom_banner_04.jpg) no-repeat;
+        background-position: 50% 0;
         background-size: cover;
     }
     100% {
-        background: url(../images/bottom_banner_011.jpg) no-repeat;
-        background-position: 40% 0;
+        background: url(../images/mobile_bottom_banner_01.jpg) no-repeat;
+        background-position: 50% 0;
         background-size: cover;
     }
+}
+
+
+/********************** pc_list  *******************/
+.pc_list {
+}
+.pc_list label {
+    display: block; 
+    padding: var(--gap-small-5) 0;
+    color: var(--point-color-light-black);
+    font-size: var(--font-size-small-up-12);
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--color-light-gray);
+    border: 1px solid var(--color-gray);
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+.pc_list label span:last-child {
+    display: none;
+}
+#pc_list_chk:checked ~ label>span:first-child {
+    display: none;
+}
+#pc_list_chk:checked ~ label>span:last-child {
+    display: block;
+}
+#pc_list_chk:checked ~ .acodian_menu {
+    height: 219px;
+    padding: var(--padding-20) var(--padding-10);
+}
+
+/********************** acodian_menu  *******************/
+.acodian_menu {
+    height: 0;
+    transition: all 0.2s;
+    overflow: hidden;
+    background-color: var(--point-color-light-black);
+}
+.acodian_menu ul {
+    overflow: hidden;
+    margin-bottom: var(--gap-small-5);
+}
+.acodian_menu ul:last-child {
+    margin-bottom: 0;
+}
+.acodian_menu ul li {
+    float: left;
+    width: calc((100% - 5px * 2) / 3);
+    margin-right: var(--gap-small-5);
+}
+.acodian_menu ul li:last-child {
+    margin-right: 0;
+}
+.acodian_menu ul li a {
+    display: block;
+    text-align: center;
+    padding: 2px 12px;
+    color: var(--color-gray);
+    font-size: var(--font-size-small-up-12);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid gray;
+    border-radius: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.2px;
 }
 
 
@@ -482,7 +562,8 @@ input {
 .footer {
     padding: var(--padding-10);
 }
-.footer h2 {
+.footer a {
+    display: block;
     color: var(--point-color-white);
     font-family: 'netmarble';
     font-weight: 700;
@@ -497,7 +578,16 @@ input {
     color: var(--color-gray);
     margin-bottom: var(--gap-small-5);
 }
-.footer p:nth-child(2) {
+.footer p:nth-child(3) {
     margin-bottom: 0;
 }
 
+
+
+
+/********************** media_query  *******************/
+@media all and (min-width: 470px){
+    .contents .hot_game_list .mobile_hot .box::before {
+        width:33%; height: 25%;
+    }
+}
