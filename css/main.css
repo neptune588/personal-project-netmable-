@@ -109,6 +109,15 @@ html {
 .visual_main {
     
 }
+.visual_main .visual_img {
+    display: none;
+    height: 300px;
+    margin-bottom: 30px;
+    background-image: url(../images/visual_img01.jpg);
+    background-repeat: no-repeat;
+    background-position: 55% 0;
+    background-size: cover;
+}
 .visual_main .mobile_visual_img {
     height: 200px;
     background-image: url(../images/visual_img_mobile.png);
@@ -131,6 +140,15 @@ html {
     margin-top: var(--gap-small-up-10);
     margin-bottom: var(--gap-small-up-10);
 }
+.contents .hash_tag h2 {
+    display: none;
+    font-family: var(--font-Noto-Sans);
+    font-size: var(--font-size-large-up-20);
+    font-weight: 700;
+    color: var(--point-color-light-black);
+    margin-bottom: var(--gap-small-up-10);
+    letter-spacing: -1.8px;
+}
 .contents .hash_tag p {
     display: inline-block;
     margin-right: var(--gap-small-5);
@@ -142,6 +160,46 @@ html {
 
 /********************** hot_game_list *******************/
 .contents .hot_game_list {}
+
+
+/********************** hot_game_list hot_game *******************/
+.hot_game {
+    position: relative;
+}
+.hot_game .box {
+    display: none;
+    float: left;
+    width: calc((100% - 5px * 3) / 4);
+    margin-right: var(--gap-small-5);
+}
+.hot_game .box>img {
+    padding: 0 5px;
+    background-color: var(--color-black);
+}
+.hot_game .box p {
+    text-align: center;
+    color: var(--color-gray);
+    background-color: var(--color-black);
+    font-size: var(--font-size-medium-14);
+    font-weight: 700;
+    letter-spacing: -0.8px;
+}
+.hot_game .box .bottom {
+    height: 60px; line-height: 60px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.hot_game .box .top {
+    height: 30px; line-height: 30px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.hot_game .box:last-child {
+    margin-right: 0;
+}
+
+
+/********************** hot_game_list mobile_hot *******************/
 .contents .hot_game_list .mobile_hot {
     display: flex;
     flex-flow: nowrap;
@@ -583,11 +641,84 @@ input {
 }
 
 
-
-
 /********************** media_query  *******************/
 @media all and (min-width: 470px){
     .contents .hot_game_list .mobile_hot .box::before {
         width:33%; height: 25%;
     }
+}
+@media all and (min-width: 600px){
+    .header {
+        height: 60px;
+    }
+    .header .menu_btn {
+        top: 18px; 
+        font-size: var(--font-size-x-large-24);
+    }
+    .header .title_logo {
+        width: 150px;
+        padding-top: 14px;
+    }
+    .header .gnb {
+        top: 18px; right: 10px;
+    }
+    .header .gnb a::before {
+        font-size: var(--font-size-x-large-24);
+        top: 0; right: 40px;
+    }
+    .header .gnb a::after {
+        font-size: var(--font-size-x-large-24);
+    }
+    .visual_main .mobile_visual_img {
+        display: none;
+    }
+    .visual_main .visual_img {
+        display: block;
+    }
+    .hot_game .box {
+        display: block;
+    }
+    .contents .hot_game_list .mobile_hot {
+        display: none;
+    }
+    .contents .hash_tag h2 {
+        display: block;
+    }
+    .contents .hash_tag p {
+        margin-right: var(--gap-small-5);
+        color: rgb(65, 135, 175);
+        font-size: var(--font-size-small-up-12);
+        font-weight: 700;
+        letter-spacing: -0.8px;
+    }
+
+    .slick-arrow {
+        font-size: 0;
+        overflow: hidden;
+    }
+    .slick-arrow::after {
+        position: absolute;
+        font-size: var(--font-size-large-18);
+        padding: 6px 11px;
+        color: var(--point-color-light-black);
+        border: 1px solid var(--color-dark-gray);
+    }
+    .slick-prev::after {
+        top: -40px; right: 50px;
+        content: "\f053";
+        font-family: "Font Awesome 5 free";
+        font-weight: 900;
+    }
+    .slick-next::after {
+        top: -40px; right: 0;
+        content: "\f054";
+        font-family: "Font Awesome 5 free";
+        font-weight: 900;
+    }
+}
+
+
+/********************** slick  *******************/
+.slick-arrow {
+    display: none;
 }

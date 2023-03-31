@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0 user-scalable=no">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     <header class="header">
         <div class="menu_btn">
@@ -23,11 +26,15 @@
     </header><!-- header -->
     <div class="visual_main">
         <div class="mobile_visual_img">
-            
+
         </div><!-- mobile_visual_img -->
+        <div class="visual_img">
+
+        </div>
     </div><!-- visual_main -->
     <div class="contents">
         <section class="hash_tag">
+            <h2>추천게임</h2>
             <p class="first">#추천</p>
             <p>#가장 인기있는</p>
             <p>#모바일 게임</p>
@@ -91,8 +98,48 @@
                     </picture>
                 </div>
             </div><!-- mobile_hot -->
-            <div class="tablet_hot"></div>
-            <div class="pc_hot"></div>
+            <div class="hot_game">
+                <div class="box">
+                    <p class="top">퍼즐</p>
+                    <img src="./images/mobile_game_banner01_pc.jpg" alt="">
+                    <p class="bottom">샬롯의 테이블</p>
+                </div>
+                <div class="box">
+                    <p class="top">MMORPG</p>
+                    <img src="./images/mobile_game_banner02_pc.jpg" alt="">
+                    <p class="bottom">세븐나이츠 레볼루션</p>
+                </div>
+                <div class="box">
+                    <p class="top">캐주얼</p>
+                    <img src="./images/mobile_game_banner03_pc.jpg" alt="">
+                    <p class="bottom">머지 쿵야 아일랜드</p>
+                </div>
+                <div class="box">
+                    <p class="top">MMORPG</p>
+                    <img src="./images/mobile_game_banner04_pc.jpg" alt="">
+                    <p class="bottom">제2의 나라:Cross Worlds</p>
+                </div>
+                <div class="box">
+                    <p class="top">MMORPG</p>
+                    <img src="./images/mobile_game_banner05_pc.jpg" alt="">
+                    <p class="bottom">블레이드＆소울 레볼루션</p>
+                </div>
+                <div class="box">
+                    <p class="top">MMORPG</p>
+                    <img src="./images/mobile_game_banner06_pc.jpg" alt="">
+                    <p class="bottom">리니지2 레볼루션</p>
+                </div>
+                <div class="box">
+                    <p class="top">MMORPG</p>
+                    <img src="./images/mobile_game_banner07_pc.jpg" alt="">
+                    <p class="bottom">A3: 스틸얼라이브</p>
+                </div>
+                <div class="box">
+                    <p class="top">RPG</p>
+                    <img src="./images/mobile_game_banner08_pc.jpg" alt="">
+                    <p class="bottom">일곱 개의 대죄</p>
+                </div>
+            </div>
         </section><!-- hot_game_list -->
         <input type="radio" name="game_tab_menu" id="mobile_tab_on">
         <input type="radio" name="game_tab_menu" id="pc_tab_on">
@@ -104,10 +151,10 @@
             <p>Mobile Games</p>
             <p>PC Games</p>
         </section><!-- tab -->
-        <div class="game_bar_container">    
+        <div class="game_bar_container">
             <section class="mobile_game_bar">
                 <div class="left_logo1 left_logo">
-    
+
                 </div><!-- left_logo -->
                 <div class="right_text">
                     <p>샬롯의 테이블<span class="hot">HOT</span></p>
@@ -116,7 +163,7 @@
             </section><!-- mobile_game_bar -->
             <section class="mobile_game_bar">
                 <div class="left_logo2 left_logo">
-    
+
                 </div><!-- left_logo -->
                 <div class="right_text">
                     <p>세븐나이츠 레볼루션<span class="new">NEW</span></p>
@@ -125,7 +172,7 @@
             </section><!-- mobile_game_bar -->
             <section class="mobile_game_bar">
                 <div class="left_logo3 left_logo">
-    
+
                 </div><!-- left_logo -->
                 <div class="right_text">
                     <p>머지 쿵야 아일랜드<span class="new">NEW</span></p>
@@ -134,7 +181,7 @@
             </section><!-- mobile_game_bar -->
             <section class="mobile_game_bar">
                 <div class="left_logo4 left_logo">
-    
+
                 </div><!-- left_logo -->
                 <div class="right_text">
                     <p>제2의 나라: Cross Worlds<span class="hot">HOT</span></p>
@@ -143,7 +190,7 @@
             </section><!-- mobile_game_bar -->
             <section class="mobile_game_bar">
                 <div class="left_logo5 left_logo">
-    
+
                 </div><!-- left_logo -->
                 <div class="right_text">
                     <p>블레이드＆소울 레볼루션<span class="hot">HOT</span></p>
@@ -152,7 +199,7 @@
             </section><!-- mobile_game_bar -->
             <section class="mobile_game_bar">
                 <div class="left_logo6 left_logo">
-    
+
                 </div><!-- left_logo -->
                 <div class="right_text">
                     <p>리니지2 레볼루션<span class="hot">HOT</span></p>
@@ -177,7 +224,7 @@
                     <p>마구마구</p>
                     <p>스포츠/FPS</p>
                     <p>
-                        세계 최초로 모든 야구 팀의 구단주가 되어볼 수 있는 절호의 찬스! 야구 역사상 최고의전설을 만나다! 
+                        세계 최초로 모든 야구 팀의 구단주가 되어볼 수 있는 절호의 찬스! 야구 역사상 최고의전설을 만나다!
                     </p>
                 </div>
             </section>
@@ -188,7 +235,7 @@
                     <p>모두의마블</p>
                     <p>보드/캐주얼</p>
                     <p>
-                        어릴적 가족과 친구가 함께 즐기던 보드게임이 모두의마블로 다시 태어났습니다. 
+                        어릴적 가족과 친구가 함께 즐기던 보드게임이 모두의마블로 다시 태어났습니다.
                     </p>
                 </div>
             </section>
@@ -199,7 +246,7 @@
                     <p>클럽M스타</p>
                     <p>리듬액션</p>
                     <p>
-                        '클럽 엠스타'는 실사에 가까운 정교한 그래픽과 생생한 움직임이 특징인 온라인 댄스게임 입니다! 
+                        '클럽 엠스타'는 실사에 가까운 정교한 그래픽과 생생한 움직임이 특징인 온라인 댄스게임 입니다!
                     </p>
                 </div>
             </section>
@@ -269,5 +316,24 @@
             <p> 이용약관 | 개인정보처리방침</p>
         </footer><!-- footer -->
     </div><!-- footer_ex -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.hot_game').slick({
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                dradraggable: true,
+                responsive: [{
+                    breakpoint: 320,
+                    settings: {
+                        arrows: false,
+                    }
+                }]
+            });
+        });
+    </script>
 </body>
+
 </html>
