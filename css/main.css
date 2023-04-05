@@ -157,6 +157,10 @@ html {
     clear: both;
 }
 
+/********************** contents_bottom *******************/
+.contents .contents_bottom {
+    position: relative;
+}
 
 /********************** hash_tag *******************/
 .contents .hash_tag {
@@ -485,25 +489,41 @@ input {
     display: block;
 }
 
-/********************** mobile_title *******************/
-.mobile_title {
+/********************** mobile_title ＆ pc_title *******************/
+.mobile_title,
+.pc_title {
     display: none;
 }
 
 /********************** mobile_game_bar *******************/
 .contents .game_bar_container .mobile_game_bar {
-    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: var(--gap-small-5);
     background-color: var(--color-light-gray);
     padding: var(--padding-10) 0;
     border-radius: 10px;
-    cursor: pointer;
 }
 
+.contents .game_bar_container .mobile_game_bar .pc_ver_logo {
+    display: none;
+}
+
+.contents .game_bar_container .mobile_game_bar a {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.contents .game_bar_container .mobile_game_bar:nth-child(8) {
+    margin-bottom: 0;
+}
 
 /********************** mobile_game_bar left_logo *******************/
 .contents .game_bar_container .mobile_game_bar .left_logo {
-    float: left;
     margin-left: var(--gap-small-up-10);
     width: 60px;
     height: 60px;
@@ -540,10 +560,18 @@ input {
     background-size: cover;
 }
 
+.contents .game_bar_container .mobile_game_bar .left_logo7 {
+    background: url(../images/mobile_game_icon07.jpg) no-repeat;
+    background-size: cover;
+}
+
+.contents .game_bar_container .mobile_game_bar .left_logo8 {
+    background: url(../images/mobile_game_icon08.jpg) no-repeat;
+    background-size: cover;
+}
 
 /********************** mobile_game_bar right_text *******************/
 .contents .game_bar_container .mobile_game_bar .right_text {
-    float: left;
     position: relative;
 }
 
@@ -595,6 +623,9 @@ input {
     display: none;
 }
 
+.contents .game_bar_container .pc_game_bar:last-child {
+    margin-bottom: 0;
+}
 
 /********************** pc_game_bar pc_logo *******************/
 .contents .game_bar_container .pc_game_bar .pc_logo {
@@ -811,12 +842,15 @@ input {
     letter-spacing: -0.2px;
 }
 
+/********************** pc_list_ver_pc  *******************/
+.pc_list_ver_pc {
+    display: none;
+}
 
 /********************** footer_ex  *******************/
 .footer_ex {
     background-color: var(--color-black);
 }
-
 
 /********************** footer  *******************/
 .footer {
@@ -860,11 +894,6 @@ input {
 .slick-arrow {
     display: none !important;
     cursor: pointer;
-}
-
-.slick-arrow::after:hover {
-    color: var(--color-dark-gray);
-    transition: all 0.2s;
 }
 
 /********************** media_query  *******************/
@@ -957,12 +986,10 @@ input {
         margin-right: 0;
     }
 
-    .contents .game_bar_container .mobile_game_bar:nth-child(5),
-    .contents .game_bar_container .mobile_game_bar:nth-child(6),
-    .contents .game_bar_container .pc_game_bar:nth-child(9),
-    .contents .game_bar_container .pc_game_bar:nth-child(10) {
+    .contents .game_bar_container .mobile_game_bar:nth-child(7) {
         margin-bottom: 0;
     }
+
 
     /********************** pc_game_bar *******************/
     .contents .game_bar_container .pc_game_bar {
@@ -972,6 +999,10 @@ input {
 
     .contents .game_bar_container .pc_game_bar:nth-child(2n) {
         margin-right: 0;
+    }
+
+    .contents .game_bar_container .pc_game_bar:nth-child(11) {
+        margin-bottom: 0;
     }
 
     .contents .game_bar_container .pc_game_bar .pc_logo {
@@ -1258,10 +1289,6 @@ input {
         margin-right: 10px;
     }
 
-    .hot_game .box:nth-child(3n) {}
-
-    .hot_game .box:nth-child(5) {}
-
     .hot_game .box>img {
         padding: 0 5px;
         background-color: var(--color-black);
@@ -1353,13 +1380,21 @@ input {
         font-size: var(--font-size-small-up-12);
         color: var(--color-dark-gray);
     }
+
+    /********************** hot_game_list hot_game *******************/
+    .hot_game .box>div::before {
+        width: 40%;
+        height: 20%;
+    }
+
     /********************** tab *******************/
     .contents .tab {
         display: none;
     }
 
-    /********************** mobile_title *******************/
-    .mobile_title {
+    /********************** mobile_title ＆ pc_title *******************/
+    .mobile_title,
+    .pc_title {
         display: block;
         margin: var(--gap-x-large-up-45) 0 var(--gap-large-20);
         font-size: var(--font-size-x-large-24);
@@ -1368,94 +1403,279 @@ input {
         letter-spacing: -1.2px;
     }
 
+    .pc_title {
+        position: absolute;
+        bottom: 285px;
+    }
+
     /********************** mobile_game_bar *******************/
     .contents .game_bar_container .mobile_game_bar {
-        display: none;
+        width: 260px;
+        margin-right: var(--gap-small-up-10) !important;
+        margin-bottom: var(--gap-small-up-10);
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo {
+        display: block;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo01 {
+        background: url(../images/mobile_game_banner01_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo02 {
+        background: url(../images/mobile_game_banner02_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo03 {
+        background: url(../images/mobile_game_banner03_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo04 {
+        background: url(../images/mobile_game_banner04_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo05 {
+        background: url(../images/mobile_game_banner05_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo06 {
+        background: url(../images/mobile_game_banner06_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo07 {
+        background: url(../images/mobile_game_banner07_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo08 {
+        background: url(../images/mobile_game_banner08_pc.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .left_logo {
+        margin: var(--gap-small-up-10) 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .right_text p {
+        margin: 0;
+        margin-left: var(--gap-small-up-10);
+    }
+
+    .contents .game_bar_container .mobile_game_bar .right_text p:nth-child(1) {
+        margin-top: var(--gap-medium-15);
+    }
+
+    .contents .game_bar_container .mobile_game_bar:nth-child(4n) {
+        margin-right: 0 !important;
+    }
+
+    .contents .game_bar_container .mobile_game_bar:nth-child(5),
+    .contents .game_bar_container .mobile_game_bar:nth-child(6),
+    .contents .game_bar_container .mobile_game_bar:nth-child(7),
+    .contents .game_bar_container .mobile_game_bar:nth-child(8) {
+        margin-bottom: 0 !important;
     }
 
     /********************** pc_game_bar *******************/
     .contents .game_bar_container .pc_game_bar {
+        display: block;
+        width: 530px;
+        margin-right: var(--gap-small-up-10);
+    }
+
+    .contents .game_bar_container .pc_game_bar:nth-child(9),
+    .contents .game_bar_container .pc_game_bar:nth-child(10) {
+        margin-top: 90px;
+    }
+
+    .contents .game_bar_container .pc_game_bar .pc_logo {
+        float: left;
+        width: 260px;
+    }
+
+    .contents .game_bar_container .pc_game_bar .pc_text {
+        float: left;
+        width: 240px;
+        margin-left: var(--gap-large-20);
+    }
+
+    .contents .game_bar_container .pc_game_bar .pc_text::after {
+        bottom: -80px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+    }
+
+    /********************** all_view  *******************/
+    .all_view {
         display: none;
     }
 
-    /********************** mobile_game_bar_pc_ver *******************/
-    .contents .game_bar_container .mobile_game_bar_pc_ver {
+    /********************** bottom_banner_ex *******************/
+    .bottom_banner_ex {
+        overflow: hidden;
+        width: 1070px;
+        margin: var(--gap-small-up-10) auto;
+    }
+
+    /********************** bottom_banner  *******************/
+    .bottom_banner {
+        float: left;
+        width: 720px;
+        height: 340px;
+        animation: bottom_banner_ani2 8s infinite;
+    }
+
+    @keyframes bottom_banner_ani2 {
+        0% {
+            background: url(../images/bottom_banner_01_ver_pc.jpg) no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
+        }
+
+        25% {
+            background: url(../images/bottom_banner_02_ver_pc.jpg) no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
+        }
+
+        50% {
+            background: url(../images/bottom_banner_03_ver_pc.jpg) no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
+        }
+
+        75% {
+            background: url(../images/bottom_banner_04_ver_pc.jpg) no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
+        }
+
+        100% {
+            background: url(../images/bottom_banner_01_ver_pc.jpg) no-repeat;
+            background-position: 50% 0;
+            background-size: cover;
+        }
+    }
+
+
+    /********************** pc_list  *******************/
+    .pc_list {
+        display: none;
+    }
+
+    /********************** pc_list_ver_pc  *******************/
+    .pc_list_ver_pc {
         display: block;
-        width: 260px;
-        margin-right: var(--gap-small-up-10);
+        float: left;
+        width: 350px;
+        height: 340px;
+        background-color: var(--point-color-light-black);
+    }
+
+    .pc_list_ver_pc h2 {
+        text-align: center;
+        font-size: var(--font-size-x-large-24);
+        color: var(--color-light-gray);
+        font-family: var(--font-Noto-Sans);
+        font-weight: 700;
+        margin: var(--gap-large-up-25) var(--gap-x-large-up-45);
+        letter-spacing: -0.8px;
+    }
+
+    .pc_list_ver_pc ul {
+        overflow: hidden;
         margin-bottom: var(--gap-small-up-10);
     }
 
-    .contents .game_bar_container .mobile_game_bar_pc_ver:nth-child(14),
-    .contents .game_bar_container .mobile_game_bar_pc_ver:nth-child(18) {
+    .pc_list_ver_pc ul:last-child {
+        margin-bottom: 0;
+    }
+
+    .pc_list_ver_pc ul li {
+        float: left;
+        width: calc((350px - 5px * 2) / 3);
+        margin-right: var(--gap-small-5);
+    }
+
+    .pc_list_ver_pc ul li:last-child {
         margin-right: 0;
     }
 
-    .contents .game_bar_container .mobile_game_bar_pc_ver img {
-        border-radius: 10px;
-    }
-
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom {
-        position: relative;
+    .pc_list_ver_pc ul li a {
+        display: block;
+        text-align: center;
+        padding: 2px 12px;
+        color: var(--color-gray);
+        font-size: var(--font-size-small-up-12);
+        white-space: nowrap;
         overflow: hidden;
-        padding: var(--padding-10) 0;
+        text-overflow: ellipsis;
+        font-family: 'Noto Sans KR', sans-serif;
+        letter-spacing: -0.2px;
     }
 
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom a {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+    /********************** footer_ex  *******************/
+    .footer_ex {
+        background-color: var(--color-black);
     }
 
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left {
-        float: left;
-        width: 50px; height: 50px;
-        border-radius: 5px;
+    /********************** footer  *******************/
+    .footer {
+        overflow: hidden;
+        width: 1070px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .footer_top {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #232323;
+    }
+    .footer .footer_logo {
+        font-size: var(--font-size-x-large-up-28);
+        border: none;
+        margin: 0;
+        padding: 0;
     }
 
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left01 {
-        background: url(../images/mobile_game_icon01.jpg) no-repeat;
-        background-size: contain;
+    .footer select {
+        width: 180px;
+        background-color: black;
+        margin-bottom: 10px;
+        color: #8f8f8f;
+        font-size: 14px;
+        letter-spacing: -0.8px;
     }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left02 {
-        background: url(../images/mobile_game_icon02.jpg) no-repeat;
-        background-size: contain;
+
+    .footer p,
+    .footer ul {
+        text-align: center;
+        font-size: var(--font-size-small-11);
+        color: var(--color-gray);
+        margin-bottom: var(--gap-small-5);
+        letter-spacing: -0.5px;
     }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left03 {
-        background: url(../images/mobile_game_icon03.jpg) no-repeat;
-        background-size: contain;
+
+    .footer p:last-child {
+        margin-bottom: 0;
     }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left04 {
-        background: url(../images/mobile_game_icon04.jpg) no-repeat;
-        background-size: contain;
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left05 {
-        background: url(../images/mobile_game_icon05.jpg) no-repeat;
-        background-size: contain;
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left06 {
-        background: url(../images/mobile_game_icon06.jpg) no-repeat;
-        background-size: contain;
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left07 {
-        background: url(../images/mobile_game_icon07.jpg) no-repeat;
-        background-size: contain;
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .left08 {
-        background: url(../images/mobile_game_icon08.jpg) no-repeat;
-        background-size: contain;
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .right {
-        float: left;
-        margin-left: var(--gap-small-up-10);
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .right p {
-        font-size: var(--font-size-medium-14);
-        font-family: var(--font-Noto-Sans);
-        font-weight: 700;
-        letter-spacing: -1px;
-    }
-    .contents .game_bar_container .mobile_game_bar_pc_ver .game_bar_bottom .right p:nth-child(2) {
-        
+
+    .footer .hide {
+        display: none;
     }
 }
