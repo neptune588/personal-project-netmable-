@@ -21,6 +21,7 @@
         </div><!-- logo -->
         <div class="gnb">
             <a class="sign_in" href="#!"></a>
+            <p>로그인</p>
             <a class="sign_up" href="#!"></a>
         </div><!-- gnb -->
     </header><!-- header -->
@@ -434,6 +435,7 @@
             </ul>
         </div><!-- acodian_menu -->
     </div><!-- pc_list -->
+    <p class="bottom_notice"><i class="far fa-bell"></i>[안내]넷마블 개인정보처리방침 개정안내 ('23.03.10')</p>
     <div class="footer_ex">
         <footer class="footer">
             <div class="footer_top">
@@ -446,45 +448,53 @@
                     <option value="Thailand">Thailand</option>
                 </select>
             </div>
-            <p class="hide">넷마블(주) 사업자번호 : 105-87-64746</p>
-            <p class="hide">통신판매업신고번호 : 제 2014-서울구로-1028호</p>
-            <p class="hide">각자 대표집행임원: 권영식, 도기욱 호스팅서비스 사업자 : 넷마블(주)</p>
-            <p class="hide">서울특별시 구로구 디지털로26길 38, G-Tower 넷마블</p>
-            <p class="hide">PC고객센터:1588-5180 / 모바일고객센터:1588-3995</p>
-            <p class="hide">제2의나라 고객센터:1670-0359 / 블레이드&소울 레볼루션 고객센터:1670-1182</p>
-            <p class="hide hide_07">리니지2 레볼루션 고객센터:1670-8212 / Fax:02-6375-1790</p>
+            <div class="footer_row f_row01">
+                <p class="hide">넷마블(주) 사업자번호 : 105-87-64746</p>
+                <p class="hide">통신판매업신고번호 : 제 2014-서울구로-1028호</p>
+                <p class="hide">각자 대표집행임원: 권영식, 도기욱 호스팅서비스 사업자 : 넷마블(주)</p>
+            </div>
+            <div class="footer_row f_row02">
+                <p class="hide">서울특별시 구로구 디지털로26길 38, G-Tower 넷마블</p>
+                <p class="hide">PC고객센터:1588-5180 / 모바일고객센터:1588-3995</p>
+            </div>
+            <div class="footer_row f_row03">
+                <p class="hide">제2의나라 고객센터:1670-0359 / 블레이드&소울 레볼루션 고객센터:1670-1182</p>
+                <p class="hide hide_07">리니지2 레볼루션 고객센터:1670-8212 / Fax:02-6375-1790</p>
+            </div>
             <p class="copy">Copyright © Netmarble Corp. All Rights Reserved.</p>
-            <ul class="hide">
-                <li>
-                    <a href="#!">회사소개 |</a>
-                </li>
-                <li>
-                    <a href="#!">광고/제휴문의 |</a>
-                </li>
-                <li>
-                    <a href="#!">약관보기 |</a>
-                </li>
-                <li>
-                    <a href="#!">위치정보이용약관</a>
-                </li>
-            </ul>
-            <ul class="hide hide_last">
-                <li>
-                    <a href="#!"><span>개인정보처리방침</span> |</a>
-                </li>
-                <li>
-                    <a href="#!">청소년보호정책 |</a>
-                </li>
-                <li>
-                    <a href="#!">전자우편 |</a>
-                </li>
-                <li>
-                    <a href="#!"><span>사업자정보공개사이트</span> |</a>
-                </li>
-                <li>
-                    <a href="#!">사이트맵</a>
-                </li>
-            </ul>
+            <div class="footer_row f_row04">
+                <ul class="hide">
+                    <li>
+                        <a href="#!">회사소개 |</a>
+                    </li>
+                    <li>
+                        <a href="#!">광고/제휴문의 |</a>
+                    </li>
+                    <li>
+                        <a href="#!">약관보기 |</a>
+                    </li>
+                    <li>
+                        <a href="#!">위치정보이용약관 |</a>
+                    </li>
+                </ul>
+                <ul class="hide hide_last">
+                    <li>
+                        <a href="#!"><span>개인정보처리방침</span> |</a>
+                    </li>
+                    <li>
+                        <a href="#!">청소년보호정책 |</a>
+                    </li>
+                    <li>
+                        <a href="#!">전자우편 |</a>
+                    </li>
+                    <li>
+                        <a href="#!"><span>사업자정보공개사이트</span> |</a>
+                    </li>
+                    <li>
+                        <a href="#!">사이트맵</a>
+                    </li>
+                </ul>
+            </div>
             <p>이용약관 | 개인정보처리방침</p>
         </footer><!-- footer -->
     </div><!-- footer_ex -->
@@ -512,6 +522,7 @@
                         settings: {
                             slidesToShow: 4,
                             slidesToScroll: 4,
+                            autoplay: true,
                             dradraggable: true,
                         },
                     },

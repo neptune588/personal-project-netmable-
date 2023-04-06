@@ -637,7 +637,7 @@ input {
 .contents .game_bar_container .pc_game_bar .pc_logo01 {
     background: url(../images/pc_game_banner01_mobile.jpg) no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 101%;
 }
 
 .contents .game_bar_container .pc_game_bar .pc_logo02 {
@@ -1014,7 +1014,7 @@ input {
     .contents .game_bar_container .pc_game_bar .pc_logo01 {
         background: url(../images/pc_game_banner01_tablet.jpg) no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: 101%;
     }
 
     .contents .game_bar_container .pc_game_bar .pc_logo02 {
@@ -1145,7 +1145,7 @@ input {
     }
 
     .footer p.copy {
-        margin: var(--gap-small-up-10) 0;
+        margin: 0 0 var(--gap-large-20);
     }
 
     .footer select {
@@ -1227,7 +1227,7 @@ input {
     .header .gnb a::before {
         font-size: var(--font-size-x-large-24);
         top: 0;
-        right: 40px;
+        right: 50px;
     }
 
     .header .gnb a::after {
@@ -1495,6 +1495,7 @@ input {
         display: block;
         width: 530px;
         margin-right: var(--gap-small-up-10);
+        margin-bottom: var(--gap-small-up-10);
     }
 
     .contents .game_bar_container .pc_game_bar:nth-child(9),
@@ -1529,7 +1530,7 @@ input {
     .bottom_banner_ex {
         overflow: hidden;
         width: 1070px;
-        margin: var(--gap-small-up-10) auto;
+        margin: var(--gap-small-up-10) auto 0;
     }
 
     /********************** bottom_banner  *******************/
@@ -1636,46 +1637,80 @@ input {
 
     /********************** footer  *******************/
     .footer {
-        overflow: hidden;
         width: 1070px;
         margin: 0 auto;
         padding: 0;
     }
+
     .footer_top {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid #232323;
     }
-    .footer .footer_logo {
-        font-size: var(--font-size-x-large-up-28);
-        border: none;
-        margin: 0;
-        padding: 0;
-    }
 
     .footer select {
         width: 180px;
-        background-color: black;
-        margin-bottom: 10px;
-        color: #8f8f8f;
-        font-size: 14px;
+        font-size: var(--font-size-medium-14);
+        background-color: #000;
+        margin: var(--gap-small-up-10) 0;
+        color: var(--color-dark-gray);
         letter-spacing: -0.8px;
+    }
+
+    .footer_row {
+        overflow: hidden;
+    }
+
+    .footer_row .hide {
+        float: left;
+    }
+
+    .f_row01 {
+        margin-top: var(--gap-large-20);
+    }
+
+    .f_row03 .hide {
+        margin-bottom: var(--gap-large-20);
+    }
+
+    .f_row04 .hide {
+        margin-bottom: 0;
+    }
+
+    .f_row01 .hide:first-child,
+    .f_row03 .hide:first-child {
+        margin-right: var(--gap-small-5);
+    }
+
+    .f_row04 {
+        padding-bottom: 40px;
+    }
+
+    .footer p.hide_07 {
+        display: block
     }
 
     .footer p,
     .footer ul {
-        text-align: center;
-        font-size: var(--font-size-small-11);
-        color: var(--color-gray);
-        margin-bottom: var(--gap-small-5);
-        letter-spacing: -0.5px;
+        text-align: left;
+        font-size: var(--font-size-small-up-12);
+        margin-bottom: 6px;
     }
 
-    .footer p:last-child {
+    .footer .footer_logo {
+        font-size: var(--font-size-x-large-up-28);
+        border: none;
+        margin: var(--gap-small-up-10) 0;
         margin-bottom: 0;
     }
-
-    .footer .hide {
-        display: none;
+    .bottom_notice {
+        width: 1070px;
+        margin: var(--gap-large-20) auto var(--gap-x-large-up-45);
+        font-size: var(--font-size-small-up-12);
+        color: var(--color-dark-gray);
+    }
+    .bottom_notice i {
+        margin-right: var(--gap-small-5);
+        font-size: var(--font-size-medium-14);
     }
 }
