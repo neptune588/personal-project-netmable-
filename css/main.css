@@ -79,10 +79,6 @@ html {
     font-size: var(--font-size-large-18);
 }
 
-.header .menu_btn i {
-    display: block;
-}
-
 .header .title_logo {
     width: 110px;
     margin: 0 auto;
@@ -93,29 +89,15 @@ html {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 0;
 }
 
-.header .gnb a::before {
-    content: "\f52b";
-    position: absolute;
-    top: 0;
-    right: 30px;
-    font-family: "Font Awesome 5 free";
-    font-weight: 900;
+.header .gnb a {
     font-size: var(--font-size-large-18);
 }
 
-.header .gnb a::after {
-    content: "\f007";
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-family: "Font Awesome 5 free";
-    font-weight: 900;
-    font-size: var(--font-size-large-18);
+.header .gnb .sign_in {
+    margin-right: 10px;
 }
-
 
 /********************** visual_main *******************/
 .visual_main {
@@ -522,6 +504,10 @@ input {
     margin-bottom: 0;
 }
 
+.contents .game_bar_container .mobile_game_bar .logo_icon {
+    display: none;
+}
+
 /********************** mobile_game_bar left_logo *******************/
 .contents .game_bar_container .mobile_game_bar .left_logo {
     margin-left: var(--gap-small-up-10);
@@ -637,7 +623,7 @@ input {
 .contents .game_bar_container .pc_game_bar .pc_logo01 {
     background: url(../images/pc_game_banner01_mobile.jpg) no-repeat;
     background-position: center;
-    background-size: 101%;
+    background-size: cover;
 }
 
 .contents .game_bar_container .pc_game_bar .pc_logo02 {
@@ -657,7 +643,6 @@ input {
     background-position: center;
     background-size: cover;
 }
-
 
 /********************** pc_game_bar pc_text *******************/
 .contents .game_bar_container .pc_game_bar .pc_text {
@@ -925,18 +910,14 @@ input {
         top: 18px;
         right: 10px;
     }
-
-    .header .gnb a::before {
-        font-size: var(--font-size-x-large-24);
-        top: 0;
-        right: 40px;
+    
+    .header .gnb a {
+        font-size: var(--font-size-large-up-20);
     }
-
-    .header .gnb a::after {
-        font-size: var(--font-size-x-large-24);
+    .header .gnb .sign_in {
+        margin-right: 15px;
     }
-
-
+    
     /********************** visual_main *******************/
     .visual_main .mobile_visual_img {
         display: none;
@@ -1020,19 +1001,19 @@ input {
     .contents .game_bar_container .pc_game_bar .pc_logo02 {
         background: url(../images/pc_game_banner02_tablet.jpg) no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: 100%;
     }
 
     .contents .game_bar_container .pc_game_bar .pc_logo03 {
         background: url(../images/pc_game_banner03_tablet.jpg) no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: 100%;
     }
 
     .contents .game_bar_container .pc_game_bar .pc_logo04 {
         background: url(../images/pc_game_banner04_tablet.jpg) no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: 100%;
     }
 
     .contents .game_bar_container .pc_game_bar .pc_text {
@@ -1056,50 +1037,6 @@ input {
     .contents .game_bar_container .pc_game_bar p:nth-child(3) {
         display: none;
     }
-
-
-    /********************** visual_main indicator_tablet *******************/
-
-    /*     .visual_main .indicator {
-        position: absolute;
-        left: 50%; bottom: 10px;
-        transform: translateX(-50%);
-        overflow: hidden;
-        width: 220px;
-    }
-    .visual_main .indicator>div {
-        float: left;
-        width: 40px; height: 6px;
-        margin-right: var(--gap-small-5);
-        background-color: rgb(207, 207, 207, 0.3);
-    }
-    .visual_main .indicator>div:last-child {
-        margin-right: 0;
-    }
-    .visual_main .indicator>div::after {
-        display: block;
-        content: "";
-        width: 0; height: 6px;
-    }
-    .visual_main .indicator>div:nth-child(1)::after {
-        animation: identifier_ani 8s;
-    }
-    .visual_main .indicator>div:nth-child(2)::after {
-        animation: identifier_ani 8s 8s;
-    }
-    .visual_main .indicator>div:nth-child(3)::after {}
-    .visual_main .indicator>div:nth-child(4)::after {}
-    .visual_main .indicator>div:nth-child(5)::after {}
-    @keyframes identifier_ani {
-        50% {
-            width: 100%;
-            background-color: rgb(236, 236, 236);
-        }
-        100% {
-            width: 100%;
-        }
-    } */
-
 
     /********************** footer *******************/
     .footer .footer_logo {
@@ -1179,6 +1116,7 @@ input {
         padding: 6px 11px;
         color: var(--point-color-light-black);
         border: 1px solid var(--color-dark-gray);
+        transition: all 0.2s;
     }
 
     .slick-prev::after {
@@ -1195,6 +1133,10 @@ input {
         content: "\f054";
         font-family: "Font Awesome 5 free";
         font-weight: 900;
+    }
+
+    .slick-arrow:hover::after {
+        color: var(--color-dark-gray);
     }
 }
 
@@ -1220,20 +1162,14 @@ input {
     }
 
     .header .gnb {
-        top: 28px;
+        top: 20px;
         right: 0px;
     }
 
-    .header .gnb a::before {
-        font-size: var(--font-size-x-large-24);
-        top: 0;
-        right: 50px;
-    }
-
-    .header .gnb a::after {
-        font-size: var(--font-size-x-large-24);
-    }
-
+    .header .sign_in:hover,
+    .header .sign_up:hover  {
+        color: red;
+    }    
 
     /********************** visual_main *******************/
     .visual_main .visual_img {
@@ -1359,10 +1295,23 @@ input {
     .login_area .sign_up_bar {
         background-color: var(--point-color-light-black);
         color: var(--point-color-white);
+        transition: all 0.2s;
+    }
+
+    .login_area .sign_in_bar:hover,
+    .login_area .sign_up_bar:hover {
+        background-color: var(--color-dark-gray);
+
     }
 
     .login_area .service_center_bar {
         border: 1px solid var(--point-color-light-black);
+        transition: all 0.2s;
+    }
+
+    .login_area .service_center_bar:hover {
+        color: var(--color-dark-gray);
+        border: 1px solid var(--color-dark-gray);
     }
 
     .login_area .sign_in_bar a span {
@@ -1379,6 +1328,12 @@ input {
         line-height: 75px;
         font-size: var(--font-size-small-up-12);
         color: var(--color-dark-gray);
+        transition: all 0.1s;
+    }
+
+    .login_area .sign_in:hover,
+    .login_area .sign_up:hover {
+        color: var(--color-black);
     }
 
     /********************** hot_game_list hot_game *******************/
@@ -1418,10 +1373,59 @@ input {
     }
 
     .contents .game_bar_container .mobile_game_bar .pc_ver_logo {
+        position: relative;
         display: block;
         width: 100%;
         height: 300px;
         border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .logo_icon {
+        display: block;
+        position: absolute;
+        top: 25%;
+        left: 20%;
+        transition: all 0.3s;
+        opacity: 0;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .logo_icon p {
+        color: var(--color-light-gray);
+        margin-top: var(--gap-small-5);
+        font-size: var(--font-size-large-up-20);
+        transform: translateX(20px);
+        letter-spacing: -0.8px;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(360deg, black, rgba(255, 255, 255, 0.05) 50%);
+        border-radius: 10px;
+    }
+
+    .contents .game_bar_container .mobile_game_bar:hover .pc_ver_logo,
+    .contents .game_bar_container .mobile_game_bar:hover .logo_icon {
+        opacity: 1;
+        transform: translateY(-7px);
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        border-radius: 10px;
+        transition: all 0.3s;
+        opacity: 0;
+    }
+
+    .contents .game_bar_container .mobile_game_bar:hover .pc_ver_logo::after {
+        opacity: 0.7;
     }
 
     .contents .game_bar_container .mobile_game_bar .pc_ver_logo01 {
@@ -1491,6 +1495,7 @@ input {
     }
 
     /********************** pc_game_bar *******************/
+
     .contents .game_bar_container .pc_game_bar {
         display: block;
         width: 530px;
@@ -1506,6 +1511,7 @@ input {
     .contents .game_bar_container .pc_game_bar .pc_logo {
         float: left;
         width: 260px;
+        transition: all 0.2s;
     }
 
     .contents .game_bar_container .pc_game_bar .pc_text {
@@ -1521,6 +1527,10 @@ input {
         height: 25px;
     }
 
+    /********************** pc_game_bar pc_logo *******************/
+    .contents .game_bar_container .pc_game_bar:hover .pc_logo {
+        background-size: 105%;
+    }
     /********************** all_view  *******************/
     .all_view {
         display: none;
@@ -1628,8 +1638,11 @@ input {
         text-overflow: ellipsis;
         font-family: 'Noto Sans KR', sans-serif;
         letter-spacing: -0.2px;
+        transform: all 0.2s;
     }
-
+    .pc_list_ver_pc ul li a:hover {
+        color: var(--point-color-white);
+    }
     /********************** footer_ex  *******************/
     .footer_ex {
         background-color: var(--color-black);
@@ -1640,6 +1653,7 @@ input {
         width: 1070px;
         margin: 0 auto;
         padding: 0;
+        background-color: var(--color-black);
     }
 
     .footer_top {
@@ -1703,11 +1717,17 @@ input {
         margin: var(--gap-small-up-10) 0;
         margin-bottom: 0;
     }
+
     .bottom_notice {
         width: 1070px;
         margin: var(--gap-large-20) auto var(--gap-x-large-up-45);
         font-size: var(--font-size-small-up-12);
         color: var(--color-dark-gray);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .bottom_notice:hover {
+        color: var(--color-black);
     }
     .bottom_notice i {
         margin-right: var(--gap-small-5);
