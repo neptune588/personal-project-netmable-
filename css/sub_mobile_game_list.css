@@ -1,0 +1,597 @@
+/********************** settings *******************/
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+
+/********************** rem size standard *******************/
+html {
+  font-size: 10px;
+}
+
+
+/********************** root *******************/
+:root {
+  /* color */
+  --point-color-white: #fff;
+  --point-color-light-black: #1e2023;
+
+  --color-light-gray: #f8fafc;
+  --color-gray: #ccc;
+  --color-dark-gray: #8f8f8f;
+  --color-black: #171717;
+
+  /* font-family */
+  --font-Noto-Sans: 'Noto Sans KR', sans-serif;
+  --font-netmable: 'netmarble';
+
+  /* font-size */
+  --font-size-small-11: 1.1rem;
+  --font-size-small-up-12: 1.2rem;
+  --font-size-medium-14: 1.4rem;
+  --font-size-medium-up-15: 1.5rem;
+  --font-size-large-18: 1.8rem;
+  --font-size-large-up-20: 2rem;
+  --font-size-x-large-24: 2.4rem;
+  --font-size-x-large-up-28: 2.8rem;
+
+  /* padding */
+  --padding-10: 10px;
+  --padding-20: 20px;
+
+  /* gap */
+  --gap-small-5: 5px;
+  --gap-small-up-10: 10px;
+  --gap-medium-15: 15px;
+  --gap-medium-up-15: 15px;
+  --gap-large-20: 20px;
+  --gap-large-up-25: 25px;
+  --gap-x-large-35: 35px;
+  --gap-x-large-up-45: 45px;
+}
+
+
+/********************** header *******************/
+.header {
+  position: relative;
+  height: 40px;
+}
+
+.header .menu_btn {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  font-size: var(--font-size-large-18);
+}
+
+.header .title_logo {
+  width: 110px;
+  margin: 0 auto;
+  padding-top: var(--padding-10);
+}
+
+.header .gnb {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.header .gnb>div {
+  float: left;
+}
+
+.header .gnb>div a:nth-child(2) {
+  display: none;
+}
+
+.header .gnb a {
+  font-size: var(--font-size-large-18);
+}
+
+.header .gnb .sign_in {
+  margin-right: var(--gap-medium-15);
+}
+
+
+/********************** contents *******************/
+.contents {
+  position: relative;
+  padding: 0 var(--padding-10);
+}
+
+.contents .search_wrapper {
+  position: relative;
+  width: 50%;
+  margin: var(--gap-large-20) auto 0;
+  border-bottom: 2px solid var(--color-black);
+}
+
+.contents .search_wrapper #search {
+  outline: none;
+  border: none;
+  font-size: var(--font-size-small-up-12);
+  padding: 4px 10px;
+  letter-spacing: -0.8px;
+  background-color: transparent;
+}
+
+.contents .search_wrapper .search_icon {
+  position: absolute;
+  top: 4px;
+  right: 0;
+}
+
+.contents .search_wrapper .search_icon::after {
+  content: "\f002";
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+  font-size: var(--font-size-small-up-12);
+}
+
+/********************** contetns game_container *******************/
+.contents .game_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/********************** contetns gamecontainer box *******************/
+.contents .box {
+  margin-top: var(--gap-small-up-10);
+}
+
+/* .contents .box10,
+.contents .box11,
+.contents .box12,
+.contents .box13,
+.contents .box14,
+.contents .box15,
+.contents .box16,
+.contents .box17,
+.contents .box18,
+.contents .box19,
+.contents .box20,
+.contents .box21,
+.contents .box22,
+.contents .box23,
+.contents .box24,
+.contents .box25,
+.contents .box26 {
+  display: none;
+} */
+
+
+/********************** contents box box_top *******************/
+.contents .box>div:first-child {
+  margin-bottom: var(--gap-small-up-10);
+  border-radius: 10px;
+}
+
+
+.contents .box>div:first-child img {
+  border-radius: 10px;
+}
+
+
+/********************** contents box box_bottom *******************/
+.contents .box .box_bottom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: var(--color-light-gray);
+}
+
+.contents .box .box_bottom::before {
+  content: "";
+  position: absolute;
+  background: url(../images/googleplay_store.png) no-repeat;
+  bottom: 8px;
+  right: 35px;
+  width: 17px;
+  height: 17px;
+  background-size: contain;
+}
+
+.contents .box .box_bottom::after {
+  content: "";
+  position: absolute;
+  background: url(../images/apple_store.png) no-repeat;
+  bottom: 5px;
+  right: 5px;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+}
+
+/********************** contents box box_bottom left_logo*******************/
+.contents .box .box_bottom .left_logo {
+  float: left;
+  margin: var(--gap-small-up-10);
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.contents .box .box_bottom .left_logo01 {
+  background: url(../images/sub_img/mobile_game_icon01.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo02 {
+  background: url(../images/sub_img/mobile_game_icon02.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo03 {
+  background: url(../images/sub_img/mobile_game_icon03.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo04 {
+  background: url(../images/sub_img/mobile_game_icon04.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo05 {
+  background: url(../images/sub_img/mobile_game_icon05.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo06 {
+  background: url(../images/sub_img/mobile_game_icon06.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo07 {
+  background: url(../images/sub_img/mobile_game_icon07.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo08 {
+  background: url(../images/sub_img/mobile_game_icon08.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo09 {
+  background: url(../images/sub_img/mobile_game_icon09.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo10 {
+  background: url(../images/sub_img/mobile_game_icon10.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo11 {
+  background: url(../images/sub_img/mobile_game_icon11.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo12 {
+  background: url(../images/sub_img/mobile_game_icon12.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo13 {
+  background: url(../images/sub_img/mobile_game_icon13.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo14 {
+  background: url(../images/sub_img/mobile_game_icon14.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo15 {
+  background: url(../images/sub_img/mobile_game_icon15.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo16 {
+  background: url(../images/sub_img/mobile_game_icon16.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo17 {
+  background: url(../images/sub_img/mobile_game_icon17.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo18 {
+  background: url(../images/sub_img/mobile_game_icon18.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo19 {
+  background: url(../images/sub_img/mobile_game_icon19.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo20 {
+  background: url(../images/sub_img/mobile_game_icon20.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo21 {
+  background: url(../images/sub_img/mobile_game_icon21.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo22 {
+  background: url(../images/sub_img/mobile_game_icon22.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo23 {
+  background: url(../images/sub_img/mobile_game_icon23.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo24 {
+  background: url(../images/sub_img/mobile_game_icon24.jpg) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo25 {
+  background: url(../images/sub_img/mobile_game_icon25.png) no-repeat;
+  background-size: contain;
+}
+
+.contents .box .box_bottom .left_logo26 {
+  background: url(../images/sub_img/mobile_game_icon26.png) no-repeat;
+  background-size: contain;
+}
+
+
+/********************** contents box box_bottom right_text*******************/
+.contents .box .box_bottom .right_text {
+  float: left;
+  margin-top: var(--gap-medium-15);
+}
+
+.contents .box .box_bottom .right_text p {
+  font-size: var(--font-size-medium-14);
+  color: var(--point-color-light-black);
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -1px;
+}
+
+.contents .box .box_bottom .right_text p:nth-child(1) {
+  margin-bottom: var(--gap-small-5);
+}
+
+.contents .box .box_bottom .right_text p:nth-child(2) {
+  color: var(--color-dark-gray);
+}
+
+.contents .box .box_bottom .right_text>p>span {
+  margin-left: var(--gap-small-5);
+  padding: 0 4px;
+  font-size: var(--font-size-small-11);
+  font-family: var(--font-Noto-Sans);
+  letter-spacing: 0.2px;
+}
+
+.contents .box .box_bottom .right_text>p>.hot {
+  color: rgb(255, 72, 72);
+  background-color: #fff7f7;
+  border: 1px solid rgb(255, 198, 198);
+}
+
+.contents .box .box_bottom .right_text>p>.new {
+  color: rgb(63 112 202);
+  background-color: #e1f2f8;
+  border: 1px solid rgb(133, 175, 238);
+}
+
+
+/********************** more_btn  *******************/
+.contents #more_btn01 {
+  display: none;
+}
+
+.contents .more_btn_design {
+  display: block;
+  text-align: center;
+  padding: 2px 0;
+  margin: var(--gap-small-up-10) var(--gap-small-up-10) 0;
+  background-color: var(--color-light-gray);
+  border: 1px solid var(--color-gray);
+  color: var(--point-color-light-black);
+  font-size: var(--font-size-small-up-12);
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  letter-spacing: -1px;
+  cursor: pointer;
+}
+
+/********************** footer_ex  *******************/
+.footer_ex {
+  margin-top: var(--gap-small-up-10);
+  background-color: var(--color-black);
+}
+
+/********************** footer  *******************/
+.footer {
+  padding: var(--padding-10);
+}
+
+.footer .footer_logo {
+  display: block;
+  color: var(--point-color-white);
+  font-family: 'netmarble';
+  font-weight: 700;
+  font-size: var(--font-size-x-large-24);
+  margin-bottom: var(--gap-small-up-10);
+  padding-bottom: var(--padding-10);
+  border-bottom: 1px solid #232323;
+}
+
+.footer select {
+  display: none;
+}
+
+.footer p,
+.footer ul {
+  text-align: center;
+  font-size: var(--font-size-small-11);
+  color: var(--color-gray);
+  margin-bottom: var(--gap-small-5);
+  letter-spacing: -0.5px;
+}
+
+.footer>p:last-child {
+  margin-bottom: 0;
+}
+
+.footer .hide {
+  display: none;
+}
+
+
+/********************** media_query  *******************/
+@media all and (min-width: 450px) {
+
+  /********************** contetns gamecontainer box *******************/
+  .contents .box {
+    width: calc(100% - 2.5px - 50%);
+    margin-right: var(--gap-small-5);
+  }
+
+  .contents .box:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .header {
+    height: 60px;
+  }
+
+  .header .menu_btn {
+    top: 18px;
+    font-size: var(--font-size-x-large-24);
+  }
+
+  .header .title_logo {
+    width: 150px;
+    padding-top: 14px;
+  }
+
+  .header .gnb {
+    top: 18px;
+    right: 10px;
+  }
+
+  .header .gnb a {
+    font-size: var(--font-size-large-up-20);
+  }
+
+  .header .gnb .sign_in {
+    margin-right: 15px;
+  }
+
+  /********************** contents *******************/
+  .contents .search_wrapper .search_icon {
+    position: absolute;
+    top: 2px;
+  }
+
+  .contents .search_wrapper .search_icon::after {
+    content: "\f002";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    font-size: var(--font-size-medium-14);
+  }
+
+  /********************** contetns gamecontainer box *******************/
+  .contents .box {
+    width: calc((100% - 10px) / 3);
+    margin-right: var(--gap-small-5) !important;
+  }
+  .contents .box:nth-child(3n) {
+    margin-right: 0 !important;
+  }
+
+
+  /********************** footer *******************/
+  .footer .footer_logo {
+    font-size: var(--font-size-x-large-up-28);
+  }
+
+  .footer p,
+  .footer ul {
+    text-align: left;
+    font-size: var(--font-size-small-11);
+    margin-bottom: 6px;
+  }
+
+  .footer .hide {
+    display: block;
+  }
+
+  .footer>p:last-child {
+    display: none;
+  }
+
+  .footer p.hide_07,
+  .footer ul.hide_last {
+    margin-bottom: 0;
+  }
+
+  .footer ul.hide {
+    overflow: hidden;
+  }
+
+  .footer ul.hide>li {
+    float: left;
+    margin-right: var(--gap-small-5);
+  }
+
+  .footer ul.hide>li>a {
+    display: block;
+  }
+
+  .footer ul.hide_last span {
+    color: var(--color-light-gray);
+    font-weight: 900;
+  }
+
+  .footer p.copy {
+    margin: var(--gap-medium-15) 0;
+  }
+
+  .footer select {
+    display: block;
+    padding: 5px 6px;
+    margin-bottom: var(--gap-small-up-10);
+    border: none;
+    outline: none;
+    width: 100%;
+    color: var(--color-dark-gray);
+    font-family: var(--font-Noto-Sans);
+    font-size: var(--font-size-small-up-12);
+    background-color: black;
+    letter-spacing: -0.3px;
+  }
+
+  .footer select option {
+    color: var(--point-color-white);
+    background-color: var(--point-color-light-black);
+  }
+}
