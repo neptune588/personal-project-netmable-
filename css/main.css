@@ -91,13 +91,22 @@ html {
     right: 10px;
 }
 
+.header .gnb>div {
+    float: left;
+}
+
+.header .gnb>div a:nth-child(2) {
+    display: none;
+}
+
 .header .gnb a {
     font-size: var(--font-size-large-18);
 }
 
 .header .gnb .sign_in {
-    margin-right: 10px;
+    margin-right: var(--gap-medium-15);
 }
+
 
 /********************** visual_main *******************/
 .visual_main {
@@ -477,6 +486,11 @@ input {
     display: none;
 }
 
+/********************** mobile_all_list *******************/
+.mobile_all_list {
+    display: none;
+}
+
 /********************** mobile_game_bar *******************/
 .contents .game_bar_container .mobile_game_bar {
     position: relative;
@@ -568,7 +582,7 @@ input {
     font-weight: 700;
     font-family: 'Noto Sans KR', sans-serif;
     letter-spacing: -1px;
-    color: #1e2013;
+    color: var(--point-color-light-black);
 }
 
 .contents .game_bar_container .mobile_game_bar .right_text>p>span {
@@ -832,6 +846,11 @@ input {
     display: none;
 }
 
+/********************** bottom_notice  *******************/
+.bottom_notice {
+    display: none;
+}
+
 /********************** footer_ex  *******************/
 .footer_ex {
     background-color: var(--color-black);
@@ -866,7 +885,7 @@ input {
     letter-spacing: -0.5px;
 }
 
-.footer p:last-child {
+.footer>p:last-child {
     margin-bottom: 0;
 }
 
@@ -910,14 +929,15 @@ input {
         top: 18px;
         right: 10px;
     }
-    
+
     .header .gnb a {
         font-size: var(--font-size-large-up-20);
     }
+
     .header .gnb .sign_in {
         margin-right: 15px;
     }
-    
+
     /********************** visual_main *******************/
     .visual_main .mobile_visual_img {
         display: none;
@@ -1050,12 +1070,12 @@ input {
         margin-bottom: 6px;
     }
 
-    .footer p:last-child {
-        display: none;
-    }
-
     .footer .hide {
         display: block;
+    }
+
+    .footer>p:last-child {
+        display: none;
     }
 
     .footer p.hide_07,
@@ -1082,7 +1102,7 @@ input {
     }
 
     .footer p.copy {
-        margin: 0 0 var(--gap-large-20);
+        margin: var(--gap-medium-15) 0;
     }
 
     .footer select {
@@ -1162,14 +1182,31 @@ input {
     }
 
     .header .gnb {
-        top: 20px;
+        top: 30px;
         right: 0px;
     }
 
-    .header .sign_in:hover,
-    .header .sign_up:hover  {
-        color: red;
-    }    
+    .header .gnb>div {
+        float: left;
+        transition: all 0.2s;
+    }
+
+    .header .gnb>div a {
+        display: block !important;
+    }
+
+    .header .gnb>div a:nth-child(1) {
+        transform: translate(8px, -4px);
+    }
+
+    .header .gnb>div a:nth-child(2) {
+        font-size: var(--font-size-small-up-12);
+        letter-spacing: -0.8px;
+    }
+
+    .header .gnb>div:hover {
+        color: rgb(220, 3, 3);
+    }
 
     /********************** visual_main *******************/
     .visual_main .visual_img {
@@ -1324,7 +1361,7 @@ input {
 
     .login_area .sign_in,
     .login_area .sign_up {
-        margin-right: 10px;
+        margin-right: var(--gap-small-up-10);
         line-height: 75px;
         font-size: var(--font-size-small-up-12);
         color: var(--color-dark-gray);
@@ -1361,6 +1398,27 @@ input {
     .pc_title {
         position: absolute;
         bottom: 285px;
+    }
+
+    /********************** mobile_all_list *******************/
+    .mobile_all_list {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 0;
+        font-size: var(--font-size-medium-14);
+        transition: all 0.2s;
+        letter-spacing: -0.8px;
+    }
+
+    .mobile_all_list:hover {
+        right: 5px;
+        color: rgb(220, 3, 3);
+    }
+
+    .mobile_all_list i {
+        padding-left: 5px;
+        font-size: var(--font-size-medium-14);
     }
 
     /********************** mobile_game_bar *******************/
@@ -1531,6 +1589,7 @@ input {
     .contents .game_bar_container .pc_game_bar:hover .pc_logo {
         background-size: 105%;
     }
+
     /********************** all_view  *******************/
     .all_view {
         display: none;
@@ -1640,9 +1699,31 @@ input {
         letter-spacing: -0.2px;
         transform: all 0.2s;
     }
+
     .pc_list_ver_pc ul li a:hover {
         color: var(--point-color-white);
     }
+
+    /********************** bottom_notice  *******************/
+    .bottom_notice {
+        display: block;
+        width: 1070px;
+        margin: var(--gap-large-20) auto var(--gap-x-large-up-45);
+        font-size: var(--font-size-small-up-12);
+        color: var(--color-dark-gray);
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .bottom_notice:hover {
+        color: var(--color-black);
+    }
+
+    .bottom_notice i {
+        margin-right: var(--gap-small-5);
+        font-size: var(--font-size-medium-14);
+    }
+
     /********************** footer_ex  *******************/
     .footer_ex {
         background-color: var(--color-black);
@@ -1718,19 +1799,106 @@ input {
         margin-bottom: 0;
     }
 
+}
+
+@media all and (min-width: 1071px) {
+
+    /********************** header *******************/
+    .header {
+        width: 1250px;
+    }
+
+    /********************** contents *******************/
+    .contents {
+        width: 1250px;
+    }
+
+    /********************** hot_game_list hot_game *******************/
+    .hot_game {
+        width: 620px;
+    }
+
+    .hot_game .box {
+        width: 200px;
+    }
+
+    .event .e_banner {
+        width: 305px;
+        height: 325px;
+    }
+
+    /********************** login_area *******************/
+    .login_area {
+        width: 305px;
+    }
+
+    .login_area .sign_in,
+    .login_area .sign_up {
+        margin: 0 var(--gap-large-20);
+        line-height: 95px;
+    }
+
+    /********************** mobile_game_bar *******************/
+    .contents .game_bar_container .mobile_game_bar {
+        width: 305px;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .pc_ver_logo {
+        height: 350px;
+    }
+
+    .contents .game_bar_container .mobile_game_bar .logo_icon {
+        top: 30%;
+        left: 25%;
+
+    }
+
+    .contents .game_bar_container .mobile_game_bar .left_logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    /********************** pc_game_bar *******************/
+
+    .contents .game_bar_container .pc_game_bar {
+        width: 620px;
+    }
+
+    .contents .game_bar_container .pc_game_bar .pc_logo {
+        width: 310px;
+    }
+
+    .contents .game_bar_container .pc_game_bar .pc_text {
+        width: 280px;
+    }
+
+    /********************** bottom_banner_ex *******************/
+    .bottom_banner_ex {
+        width: 1250px;
+    }
+
+    /********************** bottom_banner  *******************/
+    .bottom_banner {
+        width: 830px;
+    }
+
+    /********************** pc_list_ver_pc  *******************/
+    .pc_list_ver_pc {
+        width: 420px;
+    }
+
+    .pc_list_ver_pc ul li {
+        width: calc((420px - 5px * 2) / 3);
+    }
+
+    /********************** footer  *******************/
+    .footer {
+        width: 1250px;
+    }
+
+    /********************** bottom_notice  *******************/
     .bottom_notice {
-        width: 1070px;
-        margin: var(--gap-large-20) auto var(--gap-x-large-up-45);
-        font-size: var(--font-size-small-up-12);
-        color: var(--color-dark-gray);
-        cursor: pointer;
-        transition: all 0.2s;
+        width: 1250px;
     }
-    .bottom_notice:hover {
-        color: var(--color-black);
-    }
-    .bottom_notice i {
-        margin-right: var(--gap-small-5);
-        font-size: var(--font-size-medium-14);
-    }
+
 }
