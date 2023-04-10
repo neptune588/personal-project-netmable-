@@ -68,7 +68,6 @@ html {
 
 /********************** header *******************/
 .header {
-  position: relative;
   height: 40px;
 }
 
@@ -107,6 +106,31 @@ html {
   margin-right: var(--gap-medium-15);
 }
 
+#menu_chk {
+  display: none;
+}
+#menu_chk:checked ~ .main_menu_list_ex {
+  width: 100%;
+}
+#menu_chk:checked ~ .main_menu_list_ex .main_menu_list {
+  width: 250px;
+}
+/********************** header main_menu_list *******************/
+.header .main_menu_list_ex {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  
+}
+.header .main_menu_list {
+  width: 0; height: 100vh;
+  transition: all 0.2s;
+  background-color: #fff;
+  box-shadow: -2px -4px 20px 0px;
+}
 
 /********************** contents *******************/
 .contents {
