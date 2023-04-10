@@ -114,14 +114,26 @@ html {
   padding: 0 var(--padding-10);
 }
 
+.contents>input {
+  display: none;
+}
+
+/********************** contents game_list_label *******************/
+.contents .game_list_label {
+  display: none;
+}
+
+/********************** contents search_wrapper *******************/
 .contents .search_wrapper {
   position: relative;
   width: 50%;
-  margin: var(--gap-large-20) auto 0;
+  margin: var(--gap-small-up-10) auto 0;
   border-bottom: 2px solid var(--color-black);
 }
 
 .contents .search_wrapper #search {
+  display: block;
+  width: 90%;
   outline: none;
   border: none;
   font-size: var(--font-size-small-up-12);
@@ -130,10 +142,15 @@ html {
   background-color: transparent;
 }
 
+::-webkit-search-cancel-button {
+  display: none;
+
+}
+
 .contents .search_wrapper .search_icon {
   position: absolute;
-  top: 4px;
-  right: 0;
+  top: 6px;
+  right: 5px;
 }
 
 .contents .search_wrapper .search_icon::after {
@@ -143,7 +160,7 @@ html {
   font-size: var(--font-size-small-up-12);
 }
 
-/********************** contetns game_container *******************/
+/********************** contents game_container *******************/
 .contents .game_container {
   display: flex;
   flex-wrap: wrap;
@@ -178,7 +195,6 @@ html {
 /********************** contents box box_top *******************/
 .contents .box>div:first-child {
   margin-bottom: var(--gap-small-up-10);
-  border-radius: 10px;
 }
 
 
@@ -221,9 +237,9 @@ html {
 .contents .box .box_bottom .left_logo {
   float: left;
   margin: var(--gap-small-up-10);
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
 }
 
 .contents .box .box_bottom .left_logo01 {
@@ -401,10 +417,6 @@ html {
 
 
 /********************** more_btn  *******************/
-.contents #more_btn01 {
-  display: none;
-}
-
 .contents .more_btn_design {
   display: block;
   text-align: center;
@@ -464,8 +476,37 @@ html {
 }
 
 
-/********************** media_query  *******************/
-@media all and (min-width: 450px) {
+/********************** media_query 460 *******************/
+@media all and (min-width: 440px) {
+
+  /********************** contents box box_bottom *******************/
+  .contents .box .box_bottom::before {
+    bottom: 7px;
+    right: 30px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .contents .box .box_bottom::after {
+    width: 21px;
+    height: 21px;
+  }
+
+  /********************** contents box box_bottom left_logo*******************/
+  .contents .box .box_bottom .left_logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  /********************** contents box box_bottom right_text*******************/
+  .contents .box .box_bottom .right_text {
+    margin-top: var(--gap-medium-15);
+  }
+
+  .contents .box .box_bottom .right_text p {
+    font-size: var(--font-size-small-up-12);
+  }
 
   /********************** contetns gamecontainer box *******************/
   .contents .box {
@@ -478,6 +519,8 @@ html {
   }
 }
 
+
+/********************** media_query 600 *******************/
 @media all and (min-width: 600px) {
   .header {
     height: 60px;
@@ -506,9 +549,44 @@ html {
     margin-right: 15px;
   }
 
-  /********************** contents *******************/
+  /********************** contents game_list_label *******************/
+  .contents .game_list_label {
+    display: block;
+    text-align: center;
+    margin: var(--gap-large-20) 0;
+    font-size: 0;
+  }
+
+  .contents .game_list_label label {
+    display: inline-block;
+    /*     color: var(--color-light-gray); */
+    font-size: 1.3rem;
+    font-family: var(--font-Noto-Sans);
+    padding: 5px 20px;
+    margin-right: var(--gap-small-up-10);
+    margin-bottom: var(--gap-small-5);
+    /*     background-color: var(--point-color-light-black); */
+    border-radius: 20px;
+    letter-spacing: -1px;
+  }
+
+  .contents .game_list_label .list_btn_design01 {
+    color: var(--color-light-gray);
+    background-color: var(--point-color-light-black);
+    font-weight: 700;
+  }
+
+  .contents .game_list_label .list_btn_design07 {
+    margin-right: 0;
+  }
+
+
+  /********************** contents search_wrapper *******************/
+  .contents .search_wrapper {
+    margin-top: 0;
+  }
+
   .contents .search_wrapper .search_icon {
-    position: absolute;
     top: 2px;
   }
 
@@ -522,13 +600,125 @@ html {
   /********************** contetns gamecontainer box *******************/
   .contents .box {
     width: calc((100% - 10px) / 3);
-    margin-right: var(--gap-small-5) !important;
+    margin-right: var(--gap-small-5);
   }
+
+  .contents .box:nth-child(2n) {
+    margin-right: var(--gap-small-5);
+  }
+
   .contents .box:nth-child(3n) {
-    margin-right: 0 !important;
+    margin-right: 0;
+  }
+
+  #list_btn02:checked~.game_container .box01,
+  #list_btn02:checked~.game_container .box03,
+  #list_btn02:checked~.game_container .box11,
+  #list_btn02:checked~.game_container .box15,
+  #list_btn02:checked~.game_container .box19,
+  #list_btn02:checked~.game_container .box20,
+  #list_btn02:checked~.game_container .box24,
+  #list_btn02:checked~.game_container .box25,
+  #list_btn02:checked~.game_container .box26 {
+    display: none;
+  }
+
+  #list_btn02:checked~.game_container .box05,
+  #list_btn02:checked~.game_container .box08,
+  #list_btn02:checked~.game_container .box12,
+  #list_btn02:checked~.game_container .box16 {
+    margin-right: 0;
+  }
+
+  #list_btn02:checked~.game_container .box06,
+  #list_btn02:checked~.game_container .box09,
+  #list_btn02:checked~.game_container .box18 {
+    margin-right: var(--gap-small-5);
+  }
+
+  #list_btn02:checked~.game_list_label label,
+  #list_btn03:checked~.game_list_label label,
+  #list_btn04:checked~.game_list_label label,
+  #list_btn05:checked~.game_list_label label,
+  #list_btn06:checked~.game_list_label label,
+  #list_btn07:checked~.game_list_label label {
+    color: #000;
+    background-color: #fff;
+    font-weight: 400;
+  }
+
+  #list_btn02:checked~.game_list_label .list_btn_design02,
+  #list_btn03:checked~.game_list_label .list_btn_design03,
+  #list_btn04:checked~.game_list_label .list_btn_design04,
+  #list_btn05:checked~.game_list_label .list_btn_design05,
+  #list_btn06:checked~.game_list_label .list_btn_design06,
+  #list_btn07:checked~.game_list_label .list_btn_design07 {
+    color: var(--color-light-gray);
+    background-color: var(--point-color-light-black);
+    font-weight: 700;
+    transition: all 0.3s;
   }
 
 
+  #list_btn03:checked~.game_container .box,
+  #list_btn04:checked~.game_container .box,
+  #list_btn05:checked~.game_container .box,
+  #list_btn06:checked~.game_container .box,
+  #list_btn07:checked~.game_container .box {
+    display: none;
+  }
+
+  #list_btn03:checked~.game_container .box18,
+  #list_btn03:checked~.game_container .box24 {
+    display: block;
+  }
+
+  #list_btn03:checked~.game_container .box18 {
+    margin-right: var(--gap-small-5);
+  }
+
+  #list_btn04:checked~.game_container .box02,
+  #list_btn04:checked~.game_container .box08,
+  #list_btn04:checked~.game_container .box21,
+  #list_btn04:checked~.game_container .box23 {
+    display: block;
+  }
+
+  #list_btn05:checked~.game_container .box01,
+  #list_btn05:checked~.game_container .box19 {
+    display: block;
+  }
+
+  #list_btn06:checked~.game_container .box03,
+  #list_btn06:checked~.game_container .box11,
+  #list_btn06:checked~.game_container .box15,
+  #list_btn06:checked~.game_container .box16 {
+    display: block;
+  }
+
+  #list_btn06:checked~.game_container .box03 {
+    margin-right: var(--gap-small-5);
+  }
+
+  #list_btn06:checked~.game_container .box15 {
+    margin-right: 0;
+  }
+
+  #list_btn07:checked~.game_container .box22,
+  #list_btn07:checked~.game_container .box25,
+  #list_btn07:checked~.game_container .box26 {
+    display: block;
+  }
+
+  #list_btn07:checked~.game_container .box26 {
+    margin-right: 0;
+  }
+
+
+  /********************** more_btn  *******************/
+  .contents .mor_chk_list {
+    display: none;
+  }
   /********************** footer *******************/
   .footer .footer_logo {
     font-size: var(--font-size-x-large-up-28);
