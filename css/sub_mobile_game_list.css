@@ -76,6 +76,7 @@ html {
   top: 12px;
   left: 10px;
   font-size: var(--font-size-large-18);
+  cursor: pointer;
 }
 
 .header .title_logo {
@@ -130,22 +131,37 @@ html {
 
 }
 
-.header .main_menu_list {
+.header .main_menu_list_ex .main_menu_list {
   position: fixed;
+  text-align: center;
   top: 0;
-  left: -550px;
-  width: 500px;
+  left: -350px;
+  width: 300px;
   height: 100vh;
   transition: all 0.2s;
-  background-color: #fff;
+  background-color: var(--point-color-white)  ;
   box-shadow: -2px -4px 20px 0px;
 }
 
-.header .main_menu_list .menu_btn_off {
+.header .main_menu_list_ex .main_menu_list .menu_btn_off {
+  display: block;
   position: absolute;
-  top: 20px; left: 60px;
-  font-size: 40px;
+  top: 10px; left: 10px;
+  width: 20px; height: 20px;
+  background: url(../images/xicon.png)no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
+
+.header .main_menu_list_ex .main_menu_list .menu_list_logo {
+  position: relative;
+  display: inline-block;
+  margin-top: var(--gap-x-large-up-45);
+  font-size: var(--font-size-x-large-24);
+  font-family: var(--font-netmable);
+  font-weight: 700;
+}
+
 /********************** contents *******************/
 .contents {
   position: relative;
@@ -206,7 +222,15 @@ html {
 
 /********************** contetns gamecontainer box *******************/
 .contents .box {
+  position: relative;
   margin-top: var(--gap-small-up-10);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.contents .box:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 11px 20px 0px;
+  border-radius: 10px;
 }
 
 /* .contents .box10,
@@ -231,13 +255,9 @@ html {
 
 
 /********************** contents box box_top *******************/
-.contents .box>div:first-child {
-  margin-bottom: var(--gap-small-up-10);
-}
-
-
 .contents .box>div:first-child img {
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 
@@ -245,7 +265,8 @@ html {
 .contents .box .box_bottom {
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: var(--color-light-gray);
 }
 
