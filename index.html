@@ -9,6 +9,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+/*         $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 5,
+            asNavFor: '.slider-for',
+            centerMode: true,
+            focusOnSelect: true
+        }); */
+        $(document).ready(function () {
+            $('.hot_game').slick({
+                responsive: [{
+                        breakpoint: 769,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            autoplay: true,
+                            draggable: true,
+                        },
+                    },
+                    {
+                        breakpoint: 9999,
+                        settings: {
+                            autoplay: true,
+                            variableWidth: true,
+                            settings: "unslick",
+                        },
+                    },
+                ],
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -536,46 +575,6 @@
             <p>이용약관 | 개인정보처리방침</p>
         </footer><!-- footer -->
     </div><!-- footer_ex -->
-
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $('.slider-for').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: '.slider-nav'
-        });
-        $('.slider-nav').slick({
-            slidesToShow: 5,
-            asNavFor: '.slider-for',
-            centerMode: true,
-            focusOnSelect: true
-        });
-        $(document).ready(function () {
-            $('.hot_game').slick({
-                responsive: [{
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 4,
-                            autoplay: true,
-                            dradraggable: true,
-                        },
-                    },
-                    {
-                        breakpoint: 9999,
-                        settings: {
-                            autoplay: true,
-                            variableWidth: true,
-                            settings: "unslick",
-                        },
-                    },
-                ],
-            });
-        });
-    </script>
 </body>
 
 </html>
