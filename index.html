@@ -12,19 +12,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-/*         $('.slider-for').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false,
-            fade: true,
-            asNavFor: '.slider-nav'
-        });
-        $('.slider-nav').slick({
-            slidesToShow: 5,
-            asNavFor: '.slider-for',
-            centerMode: true,
-            focusOnSelect: true
-        }); */
         $(document).ready(function () {
             $('.hot_game').slick({
                 responsive: [{
@@ -45,6 +32,14 @@
                         },
                     },
                 ],
+            });
+            $('.visual_main').slick({
+                dots: true,
+                infinite: true,
+                speed: 1000,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
             });
         });
     </script>
@@ -70,20 +65,25 @@
         </div><!-- gnb -->
     </header><!-- header -->
     <div class="visual_main">
-        <div class="mobile_visual_img">
-
-        </div><!-- mobile_visual_img -->
-        <div class="visual_img">
+        <div class="visual_img visual_img01">
+            
+        </div>
+        <div class="visual_img visual_img02">
 
         </div>
-        <div class="indicator">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="visual_img visual_img03">
+
+        </div>
+        <div class="visual_img visual_img04">
+
+        </div>
+        <div class="visual_img visual_img05">
+
         </div>
     </div><!-- visual_main -->
+    <div class="mobile_visual_img">
+
+    </div><!-- mobile_visual_img -->
     <div class="contents">
         <section class="hash_tag">
             <h2>추천게임</h2>
