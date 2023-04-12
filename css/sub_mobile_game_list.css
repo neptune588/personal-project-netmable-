@@ -115,11 +115,11 @@ html {
   left: 0;
 }
 
-#menu_chk:checked~.main_menu_list_ex .main_menu_list {
+#menu_chk:checked~.main_menu_list_ex .main_menu_list_bar {
   left: 0;
 }
 
-/********************** header main_menu_list *******************/
+/********************** header main_menu_list_ex *******************/
 .header .main_menu_list_ex {
   position: fixed;
   top: 0;
@@ -131,7 +131,8 @@ html {
 
 }
 
-.header .main_menu_list_ex .main_menu_list {
+/********************** header main_menu_list_ex main_menu_list_bar *******************/
+.header .main_menu_list_ex .main_menu_list_bar {
   position: fixed;
   text-align: center;
   top: 0;
@@ -139,28 +140,47 @@ html {
   width: 300px;
   height: 100vh;
   transition: all 0.2s;
-  background-color: var(--point-color-white)  ;
+  background-color: var(--point-color-light-black);
   box-shadow: -2px -4px 20px 0px;
 }
 
-.header .main_menu_list_ex .main_menu_list .menu_btn_off {
+.header .main_menu_list_ex .main_menu_list_bar .menu_btn_off {
   display: block;
   position: absolute;
-  top: 10px; left: 10px;
-  width: 20px; height: 20px;
+  top: 15px; left: 10px;
+  width: 16px; height: 16px;
   background: url(../images/xicon.png)no-repeat;
   background-size: contain;
   cursor: pointer;
 }
 
-.header .main_menu_list_ex .main_menu_list .menu_list_logo {
+.header .main_menu_list_ex .main_menu_list_bar .menu_list_logo {
   position: relative;
   display: inline-block;
   margin-top: var(--gap-x-large-up-45);
-  font-size: var(--font-size-x-large-24);
+  font-size: var(--font-size-x-large-up-28);
   font-family: var(--font-netmable);
   font-weight: 700;
+  color: var(--point-color-white);
 }
+
+/********************** header main_menu_list_ex main_menu_list_bar  main_menu_list*******************/
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list {
+  margin: var(--gap-x-large-up-45) var(--gap-large-20) 0;
+  text-align: left;
+}
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li {
+
+}
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li>a {
+  display: block;
+  padding: var(--padding-10) 0;
+  font-size: var(--font-size-medium-14);
+  font-family: var(--font-Noto-Sans);
+  color: var(--point-color-white);
+  letter-spacing: -0.8px;
+}
+
 
 /********************** contents *******************/
 .contents {
@@ -224,11 +244,10 @@ html {
 .contents .box {
   position: relative;
   margin-top: var(--gap-small-up-10);
-  transition: all 0.3s;
   cursor: pointer;
 }
 .contents .box:hover {
-  transform: translateY(-7px);
+  transform: translateY(-5px);
   box-shadow: 0px 11px 20px 0px;
   border-radius: 10px;
 }
@@ -629,6 +648,8 @@ html {
     /*     background-color: var(--point-color-light-black); */
     border-radius: 20px;
     letter-spacing: -1px;
+    transition: all 0.3s;
+    cursor: pointer;
   }
 
   .contents .game_list_label .list_btn_design01 {
@@ -717,7 +738,6 @@ html {
     color: var(--color-light-gray);
     background-color: var(--point-color-light-black);
     font-weight: 700;
-    transition: all 0.3s;
   }
 
 
