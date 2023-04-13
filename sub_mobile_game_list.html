@@ -21,134 +21,139 @@
           $('.header_ex').removeClass('scroll');
         }
       })
-      $('main_menu_list li').click(function(){
-        $(this).slideToggle(),
+      $('.main_menu_list_bar>ul>li').eq(0).click(function () {
+        $('.main_menu_list_bar>ul>ul').slideToggle(300);
+      })
+      $('.main_menu_list_bar>ul>ul>li').eq(0).click(function () {
+        $('.main_menu_list_bar>ul>ul>ul').eq(0).slideToggle(300);
+      })
+      $('.main_menu_list_bar>ul>ul>li').eq(1).click(function () {
+        $('.main_menu_list_bar>ul>ul>ul').eq(1).slideToggle(300);
+      })
+      $('.main_menu_list_bar>ul>ul>li').eq(2).click(function () {
+        $('.main_menu_list_bar>ul>ul>ul').eq(2).slideToggle(300);
+      })
+      $('.main_menu_list_bar>ul>ul>li').eq(3).click(function () {
+        $('.main_menu_list_bar>ul>ul>ul').eq(3).slideToggle(300);
+      })
+      $('.main_menu_list_bar>ul>ul>li').eq(4).click(function () {
+        $('.main_menu_list_bar>ul>ul>ul').eq(4).slideToggle(300);
+      })
+      $('.main_menu_list_bar>ul>ul>li').eq(5).click(function () {
+        $('.main_menu_list_bar>ul>ul>ul').eq(5).slideToggle(300);
       })
     })
   </script>
 </head>
 
 <body>
-<div class="header_ex">
-  <header class="header">
-    <input type="checkbox" id="menu_chk">
-    <label for="menu_chk" class="menu_btn_on">
-      <i class="fas fa-bars"></i>
-    </label><!-- menu_btn_on -->
-    <div class="main_menu_list_ex">
-      <div class="main_menu_list_bar">
-        <label for="menu_chk" class="menu_btn_off"></label><!-- menu_btn_off -->
-        <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
-        <ul>
-          <input type="checkbox" id="sub_menu_list_btn"><!-- sub_menu_list_btn -->
-          <li>
-            <label for="sub_menu_list_btn" class="sub_menu_list_btn_design"><a href="#!">GAME LIST</a></label>
+  <div class="header_ex">
+    <header class="header">
+      <input type="checkbox" id="menu_chk">
+      <label for="menu_chk" class="menu_btn_on">
+        <i class="fas fa-bars"></i>
+      </label><!-- menu_btn_on -->
+      <div class="main_menu_list_ex">
+        <div class="main_menu_list_bar">
+          <input type="checkbox" id="menu_chk">
+          <label for="menu_chk" class="menu_btn_off"></label>
+          <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
+          <ul>
+            <li>
+              GAME LIST
+            </li>
             <ul>
-              <input type="checkbox" id="sub_menu_in_menu_list_btn">
               <li>
-                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
-                  <a href="#!">RPG</a>
-                </label>
-                <ul>
-                  <li><a href="#!">A3:스틸얼라이브</a></li>
-                  <li><a href="#!">BTS World</a></li>
-                  <li><a href="#!">나이츠크로니클</a></li>
-                  <li><a href="#!">레이븐:ETERNITY</a></li>
-                  <li><a href="#!">리니지2 레볼루션</a></li>
-                  <li><a href="#!">마블 퓨처 레볼루션</a></li>
-                  <li><a href="#!">마블 퓨처 파이트</a></li>
-                  <li><a href="#!">몬스터 길들이기</a></li>
-                  <li><a href="#!">블레이드＆소울 레볼루션</a></li>
-                  <li><a href="#!">세븐나이츠</a></li>
-                  <li><a href="#!">세븐나이츠2</a></li>
-                  <li><a href="#!">세븐나이츠 레볼루션</a></li>
-                  <li><a href="#!">스톤에이지 월드</a></li>
-                  <li><a href="#!">킹 오브 파이터 올스타</a></li>
-                  <li><a href="#!">페이트/그랜드 오더</a></li>
-                </ul>
+                <a href="#!">RPG</a>
               </li>
+              <ul>
+                <li><a href="#!">A3:스틸얼라이브</a></li>
+                <li><a href="#!">BTS World</a></li>
+                <li><a href="#!">나이츠크로니클</a></li>
+                <li><a href="#!">레이븐:ETERNITY</a></li>
+                <li><a href="#!">리니지2 레볼루션</a></li>
+                <li><a href="#!">마블 퓨처 레볼루션</a></li>
+                <li><a href="#!">마블 퓨처 파이트</a></li>
+                <li><a href="#!">몬스터 길들이기</a></li>
+                <li><a href="#!">블레이드＆소울 레볼루션</a></li>
+                <li><a href="#!">세븐나이츠</a></li>
+                <li><a href="#!">세븐나이츠2</a></li>
+                <li><a href="#!">세븐나이츠 레볼루션</a></li>
+                <li><a href="#!">스톤에이지 월드</a></li>
+                <li><a href="#!">킹 오브 파이터 올스타</a></li>
+                <li><a href="#!">페이트/그랜드 오더</a></li>
+              </ul>
               <li>
-                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
-                  <a href="#!">전략</a>
-                </label>
-                <ul>
-                  <li><a href="#!">A3:스틸얼라이브</a></li>
-                  <li><a href="#!">넷마불 바둑</a></li>
-                </ul>
+                <a href="#!">전략</a>
               </li>
+              <ul>
+                <li><a href="#!">A3:스틸얼라이브</a></li>
+                <li><a href="#!">넷마불 바둑</a></li>
+              </ul>
               <li>
-                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
-                  <a href="#!">액션</a>
-                </label>
-                <ul>
-                  <li><a href="#!">마블 퓨처 파이트</a></li>
-                  <li><a href="#!">몬스터 길들이기</a></li>
-                  <li><a href="#!">세븐나이츠 레볼루션</a></li>
-                  <li><a href="#!">킹 오브 파이터 올스타</a></li>
-                </ul>
+                <a href="#!">액션</a>
               </li>
+              <ul>
+                <li><a href="#!">마블 퓨처 파이트</a></li>
+                <li><a href="#!">몬스터 길들이기</a></li>
+                <li><a href="#!">세븐나이츠 레볼루션</a></li>
+                <li><a href="#!">킹 오브 파이터 올스타</a></li>
+              </ul>
               <li>
-                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
-                  <a href="#!">퍼즐</a>
-                </label>
-                <ul>
-                  <li><a href="#!">샬롯의 테이블</a></li>
-                  <li><a href="#!">쿵야 캐치 마인드</a></li>
-                </ul>
+                <a href="#!">퍼즐</a>
               </li>
+              <ul>
+                <li><a href="#!">샬롯의 테이블</a></li>
+                <li><a href="#!">쿵야 캐치 마인드</a></li>
+              </ul>
               <li>
-                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
-                  <a href="#!">캐주얼/스포츠</a>
-                </label>
-                <ul>
-                  <li><a href="#!">BTS Universe</a></li>
-                  <li><a href="#!">BTS World</a></li>
-                  <li><a href="#!">넷마블 프로야구 2023</a></li>
-                  <li><a href="#!">머지 쿵야 아일랜드</a></li>
-                </ul>
+                <a href="#!">캐주얼/스포츠</a>
               </li>
+              <ul>
+                <li><a href="#!">BTS Universe</a></li>
+                <li><a href="#!">BTS World</a></li>
+                <li><a href="#!">넷마블 프로야구 2023</a></li>
+                <li><a href="#!">머지 쿵야 아일랜드</a></li>
+              </ul>
               <li>
-                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
-                  <a href="#!">카드</a>
-                </label>
-                <ul>
-                  <li><a href="#!">모바일 윈조이 포커</a></li>
-                  <li><a href="#!">윈조이 대박맞고</a></li>
-                  <li><a href="#!">페이트/그랜드 오더</a></li>
-                </ul>
+                <a href="#!">카드</a>
               </li>
+              <ul>
+                <li><a href="#!">모바일 윈조이 포커</a></li>
+                <li><a href="#!">윈조이 대박맞고</a></li>
+                <li><a href="#!">페이트/그랜드 오더</a></li>
+              </ul>
             </ul>
-          </li>
-          <li>
-            <a href="#!">고객센터</a>
-          </li>
-          <li>
-            <a href="#!">이벤트</a>
-          </li>
-          <li>
-            <a href="#!">채널 넷마블</a>
-          </li>
-          <li>
-            <a href="#!">넷마블 스토어</a>
-          </li>
-        </ul>
-      </div><!-- main_menu_list_bar -->
-    </div><!-- main_menu_list_ex -->
-    <div class="title_logo">
-      <a href="./sub_mobile_game_list.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
-    </div><!-- logo -->
-    <div class="gnb">
-      <div class="sign_in" href="#!">
-        <a href="#!"><i class="fas fa-door-open"></i></a>
-        <a href="#!">회원가입</a>
-      </div>
-      <div class="sign_up" href="#!">
-        <a href="#!"><i class="fas fa-user"></i></a>
-        <a href="#!">로그인</a>
-      </div>
-    </div><!-- gnb -->
-  </header><!-- header -->
-</div>
+            <li>
+              <a href="#!">고객센터</a>
+            </li>
+            <li>
+              <a href="#!">이벤트</a>
+            </li>
+            <li>
+              <a href="#!">채널 넷마블</a>
+            </li>
+            <li>
+              <a href="#!">넷마블 스토어</a>
+            </li>
+          </ul>
+        </div><!-- main_menu_list_bar -->
+      </div><!-- main_menu_list_ex -->
+      <div class="title_logo">
+        <a href="./sub_mobile_game_list.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
+      </div><!-- logo -->
+      <div class="gnb">
+        <div class="sign_in" href="#!">
+          <a href="#!"><i class="fas fa-door-open"></i></a>
+          <a href="#!">회원가입</a>
+        </div>
+        <div class="sign_up" href="#!">
+          <a href="#!"><i class="fas fa-user"></i></a>
+          <a href="#!">로그인</a>
+        </div>
+      </div><!-- gnb -->
+    </header><!-- header -->
+  </div>
   <div class="contents">
     <input type="radio" name="game_list" id="list_btn01" checked>
     <input type="radio" name="game_list" id="list_btn02">

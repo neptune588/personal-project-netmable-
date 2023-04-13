@@ -1177,7 +1177,7 @@ input {
         display: block !important;
     }
 
-    .slick-arrow::after {
+    .hot_game .slick-arrow::after {
         position: absolute;
         font-size: var(--font-size-large-18);
         padding: 6px 11px;
@@ -1186,7 +1186,7 @@ input {
         transition: all 0.2s;
     }
 
-    .slick-prev::after {
+    .hot_game .slick-prev::after {
         top: -40px;
         right: 50px;
         content: "\f053";

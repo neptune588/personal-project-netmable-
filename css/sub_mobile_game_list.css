@@ -143,6 +143,7 @@ html {
 /********************** header main_menu_list_ex main_menu_list_bar *******************/
 .header .main_menu_list_ex .main_menu_list_bar {
   position: fixed;
+  overflow-x: scroll;
   text-align: center;
   top: 0;
   left: -350px;
@@ -152,7 +153,9 @@ html {
   background-color: var(--point-color-light-black);
   box-shadow: -2px -4px 20px 0px;
 }
-
+.header .main_menu_list_ex .main_menu_list_bar::-webkit-scrollbar {
+  display: none;
+}
 .header .main_menu_list_ex .main_menu_list_bar .menu_btn_off {
   display: block;
   position: absolute;
@@ -182,6 +185,12 @@ html {
 }
 .header .main_menu_list_ex .main_menu_list_bar>ul>li {
   position: relative;
+  line-height: 30px;
+  font-family: var(--font-Noto-Sans);
+  font-size: var(--font-size-medium-14);
+  color: var(--point-color-white);
+  letter-spacing: -0.8px;
+  cursor: pointer;
 }
 .header .main_menu_list_ex .main_menu_list_bar>ul>li::after {
   position: absolute;
@@ -189,47 +198,32 @@ html {
   font-size: var(--font-size-large-18);
   font-family: "Font Awesome 5 free";
   font-weight: 900;
-  top: 0;
+  top: -3px;
   right: 0;
   color: var(--color-light-gray);
 }
 .header .main_menu_list_ex .main_menu_list_bar ul li a {
   display: block;
+  font-family: var(--font-Noto-Sans);
+  color: var(--point-color-white);
+  line-height: 30px;
+  letter-spacing: -0.8px;
 }
 
 /**********************  header main_menu_list_ex main_menu_list_bar main_menu_list sub_menu_list *******************/
-.header .main_menu_list_ex .main_menu_list_bar>ul>li>ul {
-}
-.header .main_menu_list_ex .main_menu_list_bar>ul>li>ul>li {
-  margin-left: var(--gap-small-up-10);
-}
-
-/**********************  main_menu_list label design *******************/
-.header .main_menu_list_ex .main_menu_list_bar>ul>li label {
-  display: block;
-  font-family: var(--font-Noto-Sans);
-  color: var(--point-color-white);
-  letter-spacing: -0.8px;
-  cursor: pointer;
-}
-.header .main_menu_list_ex .main_menu_list_bar .sub_menu_list_btn_design {
-  font-size: var(--font-size-medium-14);
-}
-.header .main_menu_list_ex .main_menu_list_bar .sub_menu_in_menu_list_btn_design {
-  font-size: var(--font-size-small-up-12);  
-  margin-left: var(--gap-medium-15);
-}
-
-.header .main_menu_list_ex .main_menu_list_bar input {
+.header .main_menu_list_ex .main_menu_list_bar>ul>ul,
+.header .main_menu_list_ex .main_menu_list_bar>ul>ul>ul,
+.header .main_menu_list_ex .main_menu_list_bar>ul>li>ul>li>ul {
   display: none;
 }
-
-
-
-/********************** check_event *******************/
-.header #sub_menu_list_btn ~ .main_menu01 .sub_menu_list01 {
-  
+.header .main_menu_list_ex .main_menu_list_bar>ul>ul>li {
+  font-size: 13px;
+  margin-left: var(--gap-small-up-10);
 }
+.header .main_menu_list_ex .main_menu_list_bar>ul>ul>ul>li {
+  margin-left: var(--gap-large-20);
+}
+
 /********************** contents *******************/
 .contents {
   position: relative;
