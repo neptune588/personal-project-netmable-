@@ -19,12 +19,14 @@ img {
 }
 
 .scroll {
-  width: 100%; height: 60px;
+  width: 100%;
+  height: 60px;
   position: fixed;
   top: 0;
   z-index: 10;
   background-color: var(--point-color-white);
 }
+
 /********************** rem size standard *******************/
 html {
   font-size: 10px;
@@ -154,8 +156,10 @@ html {
 .header .main_menu_list_ex .main_menu_list_bar .menu_btn_off {
   display: block;
   position: absolute;
-  top: 15px; left: 10px;
-  width: 16px; height: 16px;
+  top: 15px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
   background: url(../images/xicon.png)no-repeat;
   background-size: contain;
   cursor: pointer;
@@ -171,34 +175,61 @@ html {
   color: var(--point-color-white);
 }
 
-/********************** header main_menu_list_ex main_menu_list_bar  main_menu_list*******************/
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list {
+/********************** header main_menu_list_ex main_menu_list_bar list *******************/
+.header .main_menu_list_ex .main_menu_list_bar>ul {
   margin: var(--gap-x-large-up-45) var(--gap-large-20) 0;
   text-align: left;
 }
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li {
+.header .main_menu_list_ex .main_menu_list_bar>ul>li {
   position: relative;
-
 }
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li::after {
+.header .main_menu_list_ex .main_menu_list_bar>ul>li::after {
   position: absolute;
   content: "\f0da";
   font-size: var(--font-size-large-18);
   font-family: "Font Awesome 5 free";
   font-weight: 900;
-  top: 10px; right: 0;
+  top: 0;
+  right: 0;
   color: var(--color-light-gray);
 }
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li>a {
+.header .main_menu_list_ex .main_menu_list_bar ul li a {
   display: block;
-  padding: var(--padding-10) 0;
-  font-size: var(--font-size-medium-14);
+}
+
+/**********************  header main_menu_list_ex main_menu_list_bar main_menu_list sub_menu_list *******************/
+.header .main_menu_list_ex .main_menu_list_bar>ul>li>ul {
+}
+.header .main_menu_list_ex .main_menu_list_bar>ul>li>ul>li {
+  margin-left: var(--gap-small-up-10);
+}
+
+/**********************  main_menu_list label design *******************/
+.header .main_menu_list_ex .main_menu_list_bar>ul>li label {
+  display: block;
   font-family: var(--font-Noto-Sans);
   color: var(--point-color-white);
   letter-spacing: -0.8px;
+  cursor: pointer;
+}
+.header .main_menu_list_ex .main_menu_list_bar .sub_menu_list_btn_design {
+  font-size: var(--font-size-medium-14);
+}
+.header .main_menu_list_ex .main_menu_list_bar .sub_menu_in_menu_list_btn_design {
+  font-size: var(--font-size-small-up-12);  
+  margin-left: var(--gap-medium-15);
+}
+
+.header .main_menu_list_ex .main_menu_list_bar input {
+  display: none;
 }
 
 
+
+/********************** check_event *******************/
+.header #sub_menu_list_btn ~ .main_menu01 .sub_menu_list01 {
+  
+}
 /********************** contents *******************/
 .contents {
   position: relative;
@@ -263,32 +294,12 @@ html {
   margin-top: var(--gap-small-up-10);
   cursor: pointer;
 }
+
 .contents .box:hover {
   transform: translateY(-5px);
   box-shadow: 0px 11px 20px 0px;
   border-radius: 10px;
 }
-
-/* .contents .box10,
-.contents .box11,
-.contents .box12,
-.contents .box13,
-.contents .box14,
-.contents .box15,
-.contents .box16,
-.contents .box17,
-.contents .box18,
-.contents .box19,
-.contents .box20,
-.contents .box21,
-.contents .box22,
-.contents .box23,
-.contents .box24,
-.contents .box25,
-.contents .box26 {
-  display: none;
-} */
-
 
 /********************** contents box box_top *******************/
 .contents .box>div:first-child img {
@@ -1066,4 +1077,28 @@ html {
     margin-bottom: 0;
   }
 
+}
+
+/********************** media_query 1071 *******************/
+@media all and (min-width: 1071px) {
+
+  /********************** header *******************/
+  .header {
+    width: 1250px;
+  }
+
+  /********************** contents *******************/
+  .contents {
+    width: 1250px;
+  }
+
+  /********************** contetns gamecontainer box *******************/
+  .contents .box {
+    width: 410px;
+  }
+
+  /********************** footer  *******************/
+  .footer {
+    width: 1250px;
+  }
 }

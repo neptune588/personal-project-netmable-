@@ -21,6 +21,9 @@
           $('.header_ex').removeClass('scroll');
         }
       })
+      $('main_menu_list li').click(function(){
+        $(this).slideToggle(),
+      })
     })
   </script>
 </head>
@@ -35,15 +38,101 @@
     <div class="main_menu_list_ex">
       <div class="main_menu_list_bar">
         <label for="menu_chk" class="menu_btn_off"></label><!-- menu_btn_off -->
-        <a href="#" class="menu_list_logo">netmarble</a>
-        <ul class="main_menu_list">
-          <li class="menu01"><a href="#!">GAME LIST</a></li>
-          <li class="menu02"><a href="#!">고객센터</a></li>
-          <li class="menu03"><a href="#!">이벤트</a></li>
-          <li class="menu04"><a href="#!">채널 넷마블</a></li>
-          <li class="menu05"><a href="#!">넷마블 스토어</a></li>
+        <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
+        <ul>
+          <input type="checkbox" id="sub_menu_list_btn"><!-- sub_menu_list_btn -->
+          <li>
+            <label for="sub_menu_list_btn" class="sub_menu_list_btn_design"><a href="#!">GAME LIST</a></label>
+            <ul>
+              <input type="checkbox" id="sub_menu_in_menu_list_btn">
+              <li>
+                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
+                  <a href="#!">RPG</a>
+                </label>
+                <ul>
+                  <li><a href="#!">A3:스틸얼라이브</a></li>
+                  <li><a href="#!">BTS World</a></li>
+                  <li><a href="#!">나이츠크로니클</a></li>
+                  <li><a href="#!">레이븐:ETERNITY</a></li>
+                  <li><a href="#!">리니지2 레볼루션</a></li>
+                  <li><a href="#!">마블 퓨처 레볼루션</a></li>
+                  <li><a href="#!">마블 퓨처 파이트</a></li>
+                  <li><a href="#!">몬스터 길들이기</a></li>
+                  <li><a href="#!">블레이드＆소울 레볼루션</a></li>
+                  <li><a href="#!">세븐나이츠</a></li>
+                  <li><a href="#!">세븐나이츠2</a></li>
+                  <li><a href="#!">세븐나이츠 레볼루션</a></li>
+                  <li><a href="#!">스톤에이지 월드</a></li>
+                  <li><a href="#!">킹 오브 파이터 올스타</a></li>
+                  <li><a href="#!">페이트/그랜드 오더</a></li>
+                </ul>
+              </li>
+              <li>
+                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
+                  <a href="#!">전략</a>
+                </label>
+                <ul>
+                  <li><a href="#!">A3:스틸얼라이브</a></li>
+                  <li><a href="#!">넷마불 바둑</a></li>
+                </ul>
+              </li>
+              <li>
+                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
+                  <a href="#!">액션</a>
+                </label>
+                <ul>
+                  <li><a href="#!">마블 퓨처 파이트</a></li>
+                  <li><a href="#!">몬스터 길들이기</a></li>
+                  <li><a href="#!">세븐나이츠 레볼루션</a></li>
+                  <li><a href="#!">킹 오브 파이터 올스타</a></li>
+                </ul>
+              </li>
+              <li>
+                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
+                  <a href="#!">퍼즐</a>
+                </label>
+                <ul>
+                  <li><a href="#!">샬롯의 테이블</a></li>
+                  <li><a href="#!">쿵야 캐치 마인드</a></li>
+                </ul>
+              </li>
+              <li>
+                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
+                  <a href="#!">캐주얼/스포츠</a>
+                </label>
+                <ul>
+                  <li><a href="#!">BTS Universe</a></li>
+                  <li><a href="#!">BTS World</a></li>
+                  <li><a href="#!">넷마블 프로야구 2023</a></li>
+                  <li><a href="#!">머지 쿵야 아일랜드</a></li>
+                </ul>
+              </li>
+              <li>
+                <label for="sub_menu_in_menu_list_btn" class="sub_menu_in_menu_list_btn_design">
+                  <a href="#!">카드</a>
+                </label>
+                <ul>
+                  <li><a href="#!">모바일 윈조이 포커</a></li>
+                  <li><a href="#!">윈조이 대박맞고</a></li>
+                  <li><a href="#!">페이트/그랜드 오더</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#!">고객센터</a>
+          </li>
+          <li>
+            <a href="#!">이벤트</a>
+          </li>
+          <li>
+            <a href="#!">채널 넷마블</a>
+          </li>
+          <li>
+            <a href="#!">넷마블 스토어</a>
+          </li>
         </ul>
-      </div><!-- main_menu_list -->
+      </div><!-- main_menu_list_bar -->
     </div><!-- main_menu_list_ex -->
     <div class="title_logo">
       <a href="./sub_mobile_game_list.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
