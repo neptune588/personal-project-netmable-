@@ -21,7 +21,16 @@
           $('.header_ex').removeClass('scroll');
         }
       })
+      $(window).scroll(function () {
+        let windowScroll = $(window).scrollTop();
+        if (windowScroll >= 300) {
+          $('.top_btn').fadeIn(500)
+        } else {
+          $('.top_btn').fadeOut(500)
+        }
+      })
       $('.main_menu_list_bar>ul>li').eq(0).click(function () {
+        $(this).toggleClass('active');
         $('.main_menu_list_bar>ul>ul').slideToggle(300);
       })
       $('.main_menu_list_bar>ul>ul>li').eq(0).click(function () {
@@ -124,16 +133,16 @@
                 <li><a href="#!">페이트/그랜드 오더</a></li>
               </ul>
             </ul>
-            <li>
+            <li class="service_center_tab">
               <a href="#!">고객센터</a>
             </li>
-            <li>
+            <li class="event_tab">
               <a href="#!">이벤트</a>
             </li>
-            <li>
+            <li class="ch_netmarble_tab">
               <a href="#!">채널 넷마블</a>
             </li>
-            <li>
+            <li class="netmarble_store_tab">
               <a href="#!">넷마블 스토어</a>
             </li>
           </ul>
@@ -153,7 +162,7 @@
         </div>
       </div><!-- gnb -->
     </header><!-- header -->
-  </div>
+  </div><!-- header_ex -->
   <div class="contents">
     <input type="radio" name="game_list" id="list_btn01" checked>
     <input type="radio" name="game_list" id="list_btn02">
@@ -570,6 +579,9 @@
       <label for="more_btn01" class="more_btn_design m_btn01">더보기</label>
     </div>
   </div><!-- contents -->
+  <div class="top_btn">
+    <a href="#">TOP</a>
+  </div>
   <div class="footer_ex">
     <footer class="footer">
       <div class="footer_top">
