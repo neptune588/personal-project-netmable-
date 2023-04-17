@@ -2,579 +2,711 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0 user-scalable=no">
-    <title>netmarble</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.hot_game').slick({
-                responsive: [{
-                        breakpoint: 769,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 4,
-                            autoplay: true,
-                            draggable: true,
-                        },
-                    },
-                    {
-                        breakpoint: 9999,
-                        settings: {
-                            autoplay: true,
-                            variableWidth: true,
-                            settings: "unslick",
-                        },
-                    },
-                ],
-            });
-            $('.visual_main').slick({
-                dots: true,
-                infinite: true,
-                speed: 1000,
-                fade: true,
-                cssEase: 'linear',
-                autoplay: true,
-            });
-        });
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0 user-scalable=no">
+  <title>netmarble/main</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="shortcut icon" href="./images/pavicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(function () {
+      $('.hot_game').slick({
+        responsive: [{
+            breakpoint: 769,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              autoplay: true,
+              draggable: true,
+            },
+          },
+          {
+            breakpoint: 9999,
+            settings: {
+              autoplay: true,
+              variableWidth: true,
+              settings: "unslick",
+            },
+          },
+        ],
+      });
+      $('.visual_main').slick({
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+      });
+      $(window).scroll(function () {
+        let windowScroll = $(window).scrollTop();
+        if (windowScroll >= 300) {
+          $('.top_btn').fadeIn(500)
+        } else {
+          $('.top_btn').fadeOut(500)
+        }
+      })
+      $('.game_list_click01').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open01').slideToggle(300);
+      })
+      $('.game_list_click02').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open02').slideToggle(300);
+      })
+      $('.game_list_click03').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open03').slideToggle(300);
+      })
+      $('.game_list_click04').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open04').slideToggle(300);
+      })
+      $('.game_list_click05').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open05').slideToggle(300);
+      })
+      $('.game_list_click06').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open06').slideToggle(300);
+      })
+      $('.game_list_click07').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open07').slideToggle(300);
+      })
+    });
+  </script>
 </head>
 
 <body>
+<!--   서브페이지 들어가는법
+  mobile,tablet-> 모바일 게임 전체 보기
+  pc -> 전체보기(붉은색표기) -->
+  <div class="header_ex">
     <header class="header">
-        <div class="menu_btn">
-            <i class="fas fa-bars"></i>
-        </div><!-- menu_btn -->
-        <div class="title_logo">
-            <a href="./index.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
-        </div><!-- logo -->
-        <div class="gnb">
-            <div class="sign_in" href="#!">
-                <a href="#!"><i class="fas fa-door-open"></i></a>
-                <a href="#!">회원가입</a>
-            </div>
-            <div class="sign_up" href="#!">
-                <a href="#!"><i class="fas fa-user"></i></a>
-                <a href="#!">로그인</a>
-            </div>
-        </div><!-- gnb -->
+      <input type="checkbox" id="menu_chk">
+      <label for="menu_chk" class="menu_btn_on">
+        <i class="fas fa-bars"></i>
+      </label><!-- menu_btn_on -->
+      <div class="main_menu_list_ex">
+        <div class="main_menu_list_bar">
+          <input type="checkbox" id="menu_chk">
+          <label for="menu_chk" class="menu_btn_off"></label>
+          <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
+          <ul class="main_menu_list">
+            <li class="game_list_click01">
+              GAME LIST
+            </li>
+            <ul class="game_list_open01 close_menu">
+              <li class="game_list_click02">
+                <a href="#!">RPG</a>
+              </li>
+              <ul class="game_list_open02 close_menu">
+                <li><a href="#!">A3:스틸얼라이브</a></li>
+                <li><a href="#!">BTS World</a></li>
+                <li><a href="#!">나이츠크로니클</a></li>
+                <li><a href="#!">레이븐:ETERNITY</a></li>
+                <li><a href="#!">리니지2 레볼루션</a></li>
+                <li><a href="#!">마블 퓨처 레볼루션</a></li>
+                <li><a href="#!">마블 퓨처 파이트</a></li>
+                <li><a href="#!">몬스터 길들이기</a></li>
+                <li><a href="#!">블레이드＆소울 레볼루션</a></li>
+                <li><a href="#!">세븐나이츠</a></li>
+                <li><a href="#!">세븐나이츠2</a></li>
+                <li><a href="#!">세븐나이츠 레볼루션</a></li>
+                <li><a href="#!">스톤에이지 월드</a></li>
+                <li><a href="#!">킹 오브 파이터 올스타</a></li>
+                <li><a href="#!">페이트/그랜드 오더</a></li>
+              </ul>
+              <li class="game_list_click03">
+                <a href="#!">전략</a>
+              </li>
+              <ul class="game_list_open03 close_menu">
+                <li><a href="#!">A3:스틸얼라이브</a></li>
+                <li><a href="#!">넷마불 바둑</a></li>
+              </ul>
+              <li class="game_list_click04">
+                <a href="#!">액션</a>
+              </li>
+              <ul class="game_list_open04 close_menu">
+                <li><a href="#!">마블 퓨처 파이트</a></li>
+                <li><a href="#!">몬스터 길들이기</a></li>
+                <li><a href="#!">세븐나이츠 레볼루션</a></li>
+                <li><a href="#!">킹 오브 파이터 올스타</a></li>
+              </ul>
+              <li class="game_list_click05">
+                <a href="#!">퍼즐</a>
+              </li>
+              <ul class="game_list_open05 close_menu">
+                <li><a href="#!">샬롯의 테이블</a></li>
+                <li><a href="#!">쿵야 캐치 마인드</a></li>
+              </ul>
+              <li class="game_list_click06">
+                <a href="#!">캐주얼/스포츠</a>
+              </li>
+              <ul class="game_list_open06 close_menu">
+                <li><a href="#!">BTS Universe</a></li>
+                <li><a href="#!">BTS World</a></li>
+                <li><a href="#!">넷마블 프로야구 2023</a></li>
+                <li><a href="#!">머지 쿵야 아일랜드</a></li>
+              </ul>
+              <li class="game_list_click07">
+                <a href="#!">카드</a>
+              </li>
+              <ul class="game_list_open07 close_menu">
+                <li><a href="#!">모바일 윈조이 포커</a></li>
+                <li><a href="#!">윈조이 대박맞고</a></li>
+                <li><a href="#!">페이트/그랜드 오더</a></li>
+              </ul>
+            </ul>
+            <li class="service_center_tab">
+              <a href="#!">고객센터</a>
+            </li>
+            <li class="event_tab">
+              <a href="#!">이벤트</a>
+            </li>
+            <li class="ch_netmarble_tab">
+              <a href="#!">채널 넷마블</a>
+            </li>
+            <li class="netmarble_store_tab">
+              <a href="#!">넷마블 스토어</a>
+            </li>
+          </ul>
+        </div><!-- main_menu_list_bar -->
+      </div><!-- main_menu_list_ex -->
+      <div class="title_logo">
+        <a href="./sub_mobile_game_list.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
+      </div><!-- logo -->
+      <div class="gnb">
+        <div class="sign_in" href="#!">
+          <a href="#!"><i class="fas fa-door-open"></i></a>
+          <a href="#!">회원가입</a>
+        </div>
+        <div class="sign_up" href="#!">
+          <a href="#!"><i class="fas fa-user"></i></a>
+          <a href="#!">로그인</a>
+        </div>
+      </div><!-- gnb -->
     </header><!-- header -->
-    <div class="visual_main">
-        <div class="visual_img visual_img01">
-            
-        </div>
-        <div class="visual_img visual_img02">
+  </div><!-- header_ex -->
+  <div class="visual_main">
+    <div class="visual_img visual_img01">
 
-        </div>
-        <div class="visual_img visual_img03">
-
-        </div>
-        <div class="visual_img visual_img04">
-
-        </div>
-        <div class="visual_img visual_img05">
-
-        </div>
-    </div><!-- visual_main -->
-    <div class="mobile_visual_img">
-
-    </div><!-- mobile_visual_img -->
-    <div class="contents">
-        <section class="hash_tag">
-            <h2>추천게임</h2>
-            <p class="first">#추천</p>
-            <p>#가장 인기있는</p>
-            <p>#모바일 게임</p>
-        </section><!-- hash_tag -->
-        <div class="contents_top">
-            <section class="hot_game_list">
-                <div class="mobile_hot">
-                    <div class="box1 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner01_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner01_mobile_320.jpg">
-                            <img src="./images/hot_game_banner01_mobile_320.jpg" alt="hot_game_img01">
-                        </picture>
-                    </div>
-                    <div class="box2 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner02_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner02_mobile_320.jpg">
-                            <img src="./images/hot_game_banner02_mobile_320.jpg" alt="hot_game_img02">
-                        </picture>
-                    </div>
-                    <div class="box3 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner03_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner03_mobile_320.jpg">
-                            <img src="./images/hot_game_banner03_mobile_320.jpg" alt="hot_game_img03">
-                        </picture>
-                    </div>
-                    <div class="box4 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner04_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner04_mobile_320.jpg">
-                            <img src="./images/hot_game_banner04_mobile_320.jpg" alt="hot_game_img04">
-                        </picture>
-                    </div>
-                    <div class="box5 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner05_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner05_mobile_320.jpg">
-                            <img src="./images/hot_game_banner05_mobile_320.jpg" alt="hot_game_img05">
-                        </picture>
-                    </div>
-                    <div class="box6 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner06_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner06_mobile_320.jpg">
-                            <img src="./images/hot_game_banner06_mobile_320.jpg" alt="hot_game_img06">
-                        </picture>
-                    </div>
-                    <div class="box7 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner07_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner07_mobile_320.jpg">
-                            <img src="./images/hot_game_banner07_mobile_320.jpg" alt="hot_game_img07">
-                        </picture>
-                    </div>
-                    <div class="box8 box">
-                        <picture>
-                            <source media="(min-width: 470px)" srcset="./images/hot_game_banner08_mobile_470.jpg">
-                            <source media="(min-width: 320px)" srcset="./images/hot_game_banner08_mobile_320.jpg">
-                            <img src="./images/hot_game_banner08_mobile_320.jpg" alt="hot_game_img08">
-                        </picture>
-                    </div>
-                </div><!-- mobile_hot -->
-                <div class="hot_game">
-                    <div class="box box01">
-                        <p class="top">퍼즐</p>
-                        <div>
-                            <img src="./images/mobile_game_banner01_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">샬롯의 테이블</p>
-                    </div>
-                    <div class="box box02">
-                        <p class="top">MMORPG</p>
-                        <div>
-                            <img src="./images/mobile_game_banner02_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">세븐나이츠 레볼루션</p>
-                    </div>
-                    <div class="box box03">
-                        <p class="top">캐주얼</p>
-                        <div>
-                            <img src="./images/mobile_game_banner03_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">머지 쿵야 아일랜드</p>
-                    </div>
-                    <div class="box box04">
-                        <p class="top">MMORPG</p>
-                        <div>
-                            <img src="./images/mobile_game_banner04_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">제2의 나라:Cross Worlds</p>
-                    </div>
-                    <div class="box box05">
-                        <p class="top">MMORPG</p>
-                        <div>
-                            <img src="./images/mobile_game_banner05_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">블레이드＆소울 레볼루션</p>
-                    </div>
-                    <div class="box box06">
-                        <p class="top">MMORPG</p>
-                        <div>
-                            <img src="./images/mobile_game_banner06_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">리니지2 레볼루션</p>
-                    </div>
-                    <div class="box box07">
-                        <p class="top">MMORPG</p>
-                        <div>
-                            <img src="./images/mobile_game_banner07_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">A3: 스틸얼라이브</p>
-                    </div>
-                    <div class="box box08">
-                        <p class="top">RPG</p>
-                        <div>
-                            <img src="./images/mobile_game_banner08_pc.jpg" alt="">
-                        </div>
-                        <p class="bottom">일곱 개의 대죄</p>
-                    </div>
-                </div><!-- hot_game -->
-            </section><!-- hot_game_list -->
-            <section class="event">
-                <a class="e_banner" href="#!">
-
-                </a>
-            </section><!-- event_banner -->
-            <section class="login_area">
-                <div class="sign_in_bar">
-                    <a href="#!"><span>netmable</span>ID로그인</a>
-                </div><!-- sign_in_bar -->
-                <div class="sign_up_bar">
-                    <a href="#!">회원가입</a>
-                </div><!-- sign_up_bar -->
-                <div class="service_center_bar">
-                    <a href="#!">고객센터</a>
-                </div><!-- service_center_bar -->
-                <a class="sign_in" href="#!">ID찾기</a><!-- sign_in -->
-                <a class="sign_up" href="#!">비밀번호 찾기</a><!-- sign_up -->
-            </section><!-- login_area -->
-        </div>
-        <div class="contents_bottom">
-            <input type="radio" name="game_tab_menu" id="mobile_tab_on">
-            <input type="radio" name="game_tab_menu" id="pc_tab_on">
-            <section class="tab">
-                <div class="label_box">
-                    <label for="mobile_tab_on" class="mobile_tab tab_menu">Mobile Games</label>
-                    <label for="pc_tab_on" class="pc_tab tab_menu">PC Games</label>
-                </div>
-                <p>Mobile Games</p>
-                <p>PC Games</p>
-            </section><!-- tab -->
-            <h2 class="mobile_title">Mobile Games</h2>
-            <a class="mobile_all_list" href="./sub_mobile_game_list.html">전체보기<i class="fas fa-ellipsis-h"></i></a>
-            <div class="game_bar_container">
-                <section class="mobile_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo01"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo01.jpg" alt="banner_game_logo1">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo1 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>샬롯의 테이블<span class="hot">HOT</span></p>
-                        <p>퍼즐</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo02"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo02.jpg" alt="banner_game_logo2">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo2 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>세븐나이츠 레볼루션<span class="new">NEW</span></p>
-                        <p>RPG</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo03"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo03.jpg" alt="banner_game_logo3">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo3 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>머지 쿵야 아일랜드<span class="new">NEW</span></p>
-                        <p>캐주얼</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo04"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo04.jpg" alt="banner_game_logo4">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo4 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>제2의 나라: Cross Worlds<span class="hot">HOT</span></p>
-                        <p>MMORPG</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo05"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo05.jpg" alt="banner_game_logo5">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo5 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>블레이드＆소울 레볼루션<span class="hot">HOT</span></p>
-                        <p>MMORPG</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo06"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo06.jpg" alt="banner_game_logo6">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo6 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>리니지2 레볼루션<span class="hot">HOT</span></p>
-                        <p>MMORPG</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar mobile_game_bar07">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo07"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo07.jpg" alt="banner_game_logo7">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo7 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>A3: 스틸얼라이브<span class="hot">HOT</span></p>
-                        <p>MMORPG</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="mobile_game_bar mobile_game_bar08">
-                    <a href="#!"></a>
-                    <div class="pc_ver_logo pc_ver_logo08"></div>
-                    <div class="logo_icon">
-                        <img src="./images/mobile_game_banner_logo08.jpg" alt="banner_game_logo8">
-                        <p>Offical Site →</p>
-                    </div>
-                    <div class="left_logo8 left_logo">
-
-                    </div><!-- left_logo -->
-                    <div class="right_text">
-                        <p>일곱 개의 대죄<span class="hot">HOT</span></p>
-                        <p>RPG</p>
-                    </div><!-- right_text -->
-                </section><!-- mobile_game_bar -->
-                <section class="pc_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_logo pc_logo01">
-                    </div>
-                    <div class="pc_text">
-                        <p>파라곤</p>
-                        <p>FPS</p>
-                        <p>
-                            팀을 기반으로 플레이하는 전략형 액션 게임으로 다양한 영웅들로 구성된 두 개의 팀이 서로의 진영을 파괴하는 게임입니다.
-                        </p>
-                    </div>
-                </section><!-- pc_game_bar -->
-                <section class="pc_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_logo pc_logo02">
-                    </div>
-                    <div class="pc_text">
-                        <p>마구마구</p>
-                        <p>스포츠/FPS</p>
-                        <p>
-                            세계 최초로 모든 야구 팀의 구단주가 되어볼 수 있는 절호의 찬스! 야구 역사상 최고의전설을 만나다!
-                        </p>
-                    </div>
-                </section><!-- pc_game_bar -->
-                <section class="pc_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_logo pc_logo03">
-                    </div>
-                    <div class="pc_text">
-                        <p>모두의마블</p>
-                        <p>보드/캐주얼</p>
-                        <p>
-                            어릴적 가족과 친구가 함께 즐기던 보드게임이 모두의마블로 다시 태어났습니다.
-                        </p>
-                    </div>
-                </section><!-- pc_game_bar -->
-                <section class="pc_game_bar">
-                    <a href="#!"></a>
-                    <div class="pc_logo pc_logo04">
-                    </div>
-                    <div class="pc_text">
-                        <p>클럽M스타</p>
-                        <p>리듬액션</p>
-                        <p>
-                            '클럽 엠스타'는 실사에 가까운 정교한 그래픽과 생생한 움직임이 특징인 온라인 댄스게임 입니다!
-                        </p>
-                    </div>
-                </section><!-- pc_game_bar -->
-            </div><!-- game_bar_container -->
-            <h2 class="pc_title">PC Games</h2>
-            <div class="all_view">
-                <a href="#!">전체 모바일 게임보기</a>
-            </div><!-- all_view -->
-        </div>
-    </div><!-- contents -->
-    <div class="bottom_banner_ex">
-        <div class="bottom_banner">
-        </div><!-- bottom_banner -->
-        <div class="pc_list_ver_pc">
-            <h2>전체 PC게임</h2>
-            <ul>
-                <li><a href="#!">파라곤:디 오버 프라임</a></li>
-                <li><a href="#!">마구마구</a></li>
-                <li><a href="#!">모두의마블</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">클럽엠스타</a></li>
-                <li><a href="#!">스페셜포스2</a></li>
-                <li><a href="#!">상하이</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">사천성</a></li>
-                <li><a href="#!">바둑</a></li>
-                <li><a href="#!">캐릭챗</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">대항해시대</a></li>
-                <li><a href="#!">캐치마인드</a></li>
-                <li><a href="#!">배틀가로세로+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">아바타</a></li>
-                <li><a href="#!">파워알까기</a></li>
-                <li><a href="#!">윷놀이+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">리치마블</a></li>
-                <li><a href="#!">야채부락리</a></li>
-                <li><a href="#!">파워쿵쿵따+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">장기</a></li>
-                <li><a href="#!">틀린그림찾기</a></li>
-                <li><a href="#!">어썰트기어+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">오목</a></li>
-                <li><a href="#!">당구/포켓볼</a></li>
-            </ul>
-        </div><!-- pc_list_ver_pc -->
     </div>
-    <div class="pc_list">
-        <input type="checkbox" id="pc_list_chk">
-        <label for="pc_list_chk">
-            <span>PC 게임보기 ▼</span>
-            <span>PC 게임보기 ▲</span>
-        </label><!-- pc_list_chk -->
-        <div class="acodian_menu">
-            <ul>
-                <li><a href="#!">파라곤:디 오버 프라임</a></li>
-                <li><a href="#!">마구마구</a></li>
-                <li><a href="#!">모두의마블</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">클럽엠스타</a></li>
-                <li><a href="#!">스페셜포스2</a></li>
-                <li><a href="#!">상하이</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">사천성</a></li>
-                <li><a href="#!">바둑</a></li>
-                <li><a href="#!">캐릭챗</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">대항해시대</a></li>
-                <li><a href="#!">캐치마인드</a></li>
-                <li><a href="#!">배틀가로세로+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">아바타</a></li>
-                <li><a href="#!">파워알까기</a></li>
-                <li><a href="#!">윷놀이+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">리치마블</a></li>
-                <li><a href="#!">야채부락리</a></li>
-                <li><a href="#!">파워쿵쿵따+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">장기</a></li>
-                <li><a href="#!">틀린그림찾기</a></li>
-                <li><a href="#!">어썰트기어+</a></li>
-            </ul>
-            <ul>
-                <li><a href="#!">오목</a></li>
-                <li><a href="#!">당구/포켓볼</a></li>
-            </ul>
-        </div><!-- acodian_menu -->
-    </div><!-- pc_list -->
-    <p class="bottom_notice"><i class="far fa-bell"></i>[안내]넷마블 개인정보처리방침 개정안내 ('23.03.10')</p>
-    <div class="footer_ex">
-        <footer class="footer">
-            <div class="footer_top">
-                <a href="#!" class="footer_logo">netmable</a>
-                <select name="Family_site_select">
-                    <option value="">Family Site</option>
-                    <option value="America">America</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Turkey">Turkey</option>
-                    <option value="Thailand">Thailand</option>
-                </select>
+    <div class="visual_img visual_img02">
+
+    </div>
+    <div class="visual_img visual_img03">
+
+    </div>
+    <div class="visual_img visual_img04">
+
+    </div>
+    <div class="visual_img visual_img05">
+
+    </div>
+  </div><!-- visual_main -->
+  <div class="mobile_visual_img">
+
+  </div><!-- mobile_visual_img -->
+  <div class="contents">
+    <section class="hash_tag">
+      <h2>추천게임</h2>
+      <p class="first">#추천</p>
+      <p>#가장 인기있는</p>
+      <p>#모바일 게임</p>
+    </section><!-- hash_tag -->
+    <div class="contents_top">
+      <section class="hot_game_list">
+        <div class="mobile_hot">
+          <div class="box1 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner01_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner01_mobile_320.jpg">
+              <img src="./images/hot_game_banner01_mobile_320.jpg" alt="hot_game_img01">
+            </picture>
+          </div>
+          <div class="box2 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner02_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner02_mobile_320.jpg">
+              <img src="./images/hot_game_banner02_mobile_320.jpg" alt="hot_game_img02">
+            </picture>
+          </div>
+          <div class="box3 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner03_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner03_mobile_320.jpg">
+              <img src="./images/hot_game_banner03_mobile_320.jpg" alt="hot_game_img03">
+            </picture>
+          </div>
+          <div class="box4 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner04_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner04_mobile_320.jpg">
+              <img src="./images/hot_game_banner04_mobile_320.jpg" alt="hot_game_img04">
+            </picture>
+          </div>
+          <div class="box5 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner05_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner05_mobile_320.jpg">
+              <img src="./images/hot_game_banner05_mobile_320.jpg" alt="hot_game_img05">
+            </picture>
+          </div>
+          <div class="box6 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner06_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner06_mobile_320.jpg">
+              <img src="./images/hot_game_banner06_mobile_320.jpg" alt="hot_game_img06">
+            </picture>
+          </div>
+          <div class="box7 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner07_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner07_mobile_320.jpg">
+              <img src="./images/hot_game_banner07_mobile_320.jpg" alt="hot_game_img07">
+            </picture>
+          </div>
+          <div class="box8 box">
+            <picture>
+              <source media="(min-width: 470px)" srcset="./images/hot_game_banner08_mobile_470.jpg">
+              <source media="(min-width: 320px)" srcset="./images/hot_game_banner08_mobile_320.jpg">
+              <img src="./images/hot_game_banner08_mobile_320.jpg" alt="hot_game_img08">
+            </picture>
+          </div>
+        </div><!-- mobile_hot -->
+        <div class="hot_game">
+          <div class="box box01">
+            <p class="top">퍼즐</p>
+            <div>
+              <img src="./images/mobile_game_banner01_pc.jpg" alt="">
             </div>
-            <div class="footer_row f_row01">
-                <p class="hide">넷마블(주) 사업자번호 : 105-87-64746</p>
-                <p class="hide">통신판매업신고번호 : 제 2014-서울구로-1028호</p>
-                <p class="hide">각자 대표집행임원: 권영식, 도기욱 호스팅서비스 사업자 : 넷마블(주)</p>
+            <p class="bottom">샬롯의 테이블</p>
+          </div>
+          <div class="box box02">
+            <p class="top">MMORPG</p>
+            <div>
+              <img src="./images/mobile_game_banner02_pc.jpg" alt="">
             </div>
-            <div class="footer_row f_row02">
-                <p class="hide">서울특별시 구로구 디지털로26길 38, G-Tower 넷마블</p>
-                <p class="hide">PC고객센터:1588-5180 / 모바일고객센터:1588-3995</p>
+            <p class="bottom">세븐나이츠 레볼루션</p>
+          </div>
+          <div class="box box03">
+            <p class="top">캐주얼</p>
+            <div>
+              <img src="./images/mobile_game_banner03_pc.jpg" alt="">
             </div>
-            <div class="footer_row f_row03">
-                <p class="hide">제2의나라 고객센터:1670-0359 / 블레이드&소울 레볼루션 고객센터:1670-1182</p>
-                <p class="hide hide_07">리니지2 레볼루션 고객센터:1670-8212 / Fax:02-6375-1790</p>
+            <p class="bottom">머지 쿵야 아일랜드</p>
+          </div>
+          <div class="box box04">
+            <p class="top">MMORPG</p>
+            <div>
+              <img src="./images/mobile_game_banner04_pc.jpg" alt="">
             </div>
-            <p class="copy">Copyright © Netmarble Corp. All Rights Reserved.</p>
-            <div class="footer_row f_row04">
-                <ul class="hide">
-                    <li>
-                        <a href="#!">회사소개 |</a>
-                    </li>
-                    <li>
-                        <a href="#!">광고/제휴문의 |</a>
-                    </li>
-                    <li>
-                        <a href="#!">약관보기 |</a>
-                    </li>
-                    <li>
-                        <a href="#!">위치정보이용약관 |</a>
-                    </li>
-                </ul>
-                <ul class="hide hide_last">
-                    <li>
-                        <a href="#!"><span>개인정보처리방침</span> |</a>
-                    </li>
-                    <li>
-                        <a href="#!">청소년보호정책 |</a>
-                    </li>
-                    <li>
-                        <a href="#!">전자우편 |</a>
-                    </li>
-                    <li>
-                        <a href="#!"><span>사업자정보공개사이트</span> |</a>
-                    </li>
-                    <li>
-                        <a href="#!">사이트맵</a>
-                    </li>
-                </ul>
+            <p class="bottom">제2의 나라:Cross Worlds</p>
+          </div>
+          <div class="box box05">
+            <p class="top">MMORPG</p>
+            <div>
+              <img src="./images/mobile_game_banner05_pc.jpg" alt="">
             </div>
-            <p>이용약관 | 개인정보처리방침</p>
-        </footer><!-- footer -->
-    </div><!-- footer_ex -->
+            <p class="bottom">블레이드＆소울 레볼루션</p>
+          </div>
+          <div class="box box06">
+            <p class="top">MMORPG</p>
+            <div>
+              <img src="./images/mobile_game_banner06_pc.jpg" alt="">
+            </div>
+            <p class="bottom">리니지2 레볼루션</p>
+          </div>
+          <div class="box box07">
+            <p class="top">MMORPG</p>
+            <div>
+              <img src="./images/mobile_game_banner07_pc.jpg" alt="">
+            </div>
+            <p class="bottom">A3: 스틸얼라이브</p>
+          </div>
+          <div class="box box08">
+            <p class="top">RPG</p>
+            <div>
+              <img src="./images/mobile_game_banner08_pc.jpg" alt="">
+            </div>
+            <p class="bottom">일곱 개의 대죄</p>
+          </div>
+        </div><!-- hot_game -->
+      </section><!-- hot_game_list -->
+      <section class="event">
+        <a class="e_banner" href="#!">
+
+        </a>
+      </section><!-- event_banner -->
+      <section class="login_area">
+        <div class="sign_in_bar">
+          <a href="#!"><span>netmable</span>ID로그인</a>
+        </div><!-- sign_in_bar -->
+        <div class="sign_up_bar">
+          <a href="#!">회원가입</a>
+        </div><!-- sign_up_bar -->
+        <div class="service_center_bar">
+          <a href="#!">고객센터</a>
+        </div><!-- service_center_bar -->
+        <a class="sign_in" href="#!">ID찾기</a><!-- sign_in -->
+        <a class="sign_up" href="#!">비밀번호 찾기</a><!-- sign_up -->
+      </section><!-- login_area -->
+    </div>
+    <div class="contents_bottom">
+      <input type="radio" name="game_tab_menu" id="mobile_tab_on">
+      <input type="radio" name="game_tab_menu" id="pc_tab_on">
+      <section class="tab">
+        <div class="label_box">
+          <label for="mobile_tab_on" class="mobile_tab tab_menu">Mobile Games</label>
+          <label for="pc_tab_on" class="pc_tab tab_menu">PC Games</label>
+        </div>
+        <p>Mobile Games</p>
+        <p>PC Games</p>
+      </section><!-- tab -->
+      <h2 class="mobile_title">Mobile Games</h2>
+      <a class="mobile_all_list" href="./sub_mobile_game_list.html">전체보기<i class="fas fa-ellipsis-h"></i></a>
+      <div class="game_bar_container">
+        <section class="mobile_game_bar">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo01"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo01.jpg" alt="banner_game_logo1">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo1 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>샬롯의 테이블<span class="hot">HOT</span></p>
+            <p>퍼즐</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo02"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo02.jpg" alt="banner_game_logo2">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo2 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>세븐나이츠 레볼루션<span class="new">NEW</span></p>
+            <p>RPG</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo03"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo03.jpg" alt="banner_game_logo3">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo3 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>머지 쿵야 아일랜드<span class="new">NEW</span></p>
+            <p>캐주얼</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo04"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo04.jpg" alt="banner_game_logo4">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo4 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>제2의 나라: Cross Worlds<span class="hot">HOT</span></p>
+            <p>MMORPG</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo05"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo05.jpg" alt="banner_game_logo5">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo5 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>블레이드＆소울 레볼루션<span class="hot">HOT</span></p>
+            <p>MMORPG</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo06"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo06.jpg" alt="banner_game_logo6">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo6 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>리니지2 레볼루션<span class="hot">HOT</span></p>
+            <p>MMORPG</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar mobile_game_bar07">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo07"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo07.jpg" alt="banner_game_logo7">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo7 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>A3: 스틸얼라이브<span class="hot">HOT</span></p>
+            <p>MMORPG</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="mobile_game_bar mobile_game_bar08">
+          <a href="#!"></a>
+          <div class="pc_ver_logo pc_ver_logo08"></div>
+          <div class="logo_icon">
+            <img src="./images/mobile_game_banner_logo08.jpg" alt="banner_game_logo8">
+            <p>Offical Site →</p>
+          </div>
+          <div class="left_logo8 left_logo">
+
+          </div><!-- left_logo -->
+          <div class="right_text">
+            <p>일곱 개의 대죄<span class="hot">HOT</span></p>
+            <p>RPG</p>
+          </div><!-- right_text -->
+        </section><!-- mobile_game_bar -->
+        <section class="pc_game_bar">
+          <a href="#!"></a>
+          <div class="pc_logo pc_logo01">
+          </div>
+          <div class="pc_text">
+            <p>파라곤</p>
+            <p>FPS</p>
+            <p>
+              팀을 기반으로 플레이하는 전략형 액션 게임으로 다양한 영웅들로 구성된 두 개의 팀이 서로의 진영을 파괴하는 게임입니다.
+            </p>
+          </div>
+        </section><!-- pc_game_bar -->
+        <section class="pc_game_bar">
+          <a href="#!"></a>
+          <div class="pc_logo pc_logo02">
+          </div>
+          <div class="pc_text">
+            <p>마구마구</p>
+            <p>스포츠/FPS</p>
+            <p>
+              세계 최초로 모든 야구 팀의 구단주가 되어볼 수 있는 절호의 찬스! 야구 역사상 최고의전설을 만나다!
+            </p>
+          </div>
+        </section><!-- pc_game_bar -->
+        <section class="pc_game_bar">
+          <a href="#!"></a>
+          <div class="pc_logo pc_logo03">
+          </div>
+          <div class="pc_text">
+            <p>모두의마블</p>
+            <p>보드/캐주얼</p>
+            <p>
+              어릴적 가족과 친구가 함께 즐기던 보드게임이 모두의마블로 다시 태어났습니다.
+            </p>
+          </div>
+        </section><!-- pc_game_bar -->
+        <section class="pc_game_bar">
+          <a href="#!"></a>
+          <div class="pc_logo pc_logo04">
+          </div>
+          <div class="pc_text">
+            <p>클럽M스타</p>
+            <p>리듬액션</p>
+            <p>
+              '클럽 엠스타'는 실사에 가까운 정교한 그래픽과 생생한 움직임이 특징인 온라인 댄스게임 입니다!
+            </p>
+          </div>
+        </section><!-- pc_game_bar -->
+      </div><!-- game_bar_container -->
+      <h2 class="pc_title">PC Games</h2>
+      <div class="all_view">
+        <a href="./sub_mobile_game_list.html">전체 모바일 게임보기</a>
+      </div><!-- all_view -->
+    </div>
+  </div><!-- contents -->
+  <div class="bottom_banner_ex">
+    <div class="bottom_banner">
+    </div><!-- bottom_banner -->
+    <div class="pc_list_ver_pc">
+      <h2>전체 PC게임</h2>
+      <ul>
+        <li><a href="#!">파라곤:디 오버 프라임</a></li>
+        <li><a href="#!">마구마구</a></li>
+        <li><a href="#!">모두의마블</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">클럽엠스타</a></li>
+        <li><a href="#!">스페셜포스2</a></li>
+        <li><a href="#!">상하이</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">사천성</a></li>
+        <li><a href="#!">바둑</a></li>
+        <li><a href="#!">캐릭챗</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">대항해시대</a></li>
+        <li><a href="#!">캐치마인드</a></li>
+        <li><a href="#!">배틀가로세로+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">아바타</a></li>
+        <li><a href="#!">파워알까기</a></li>
+        <li><a href="#!">윷놀이+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">리치마블</a></li>
+        <li><a href="#!">야채부락리</a></li>
+        <li><a href="#!">파워쿵쿵따+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">장기</a></li>
+        <li><a href="#!">틀린그림찾기</a></li>
+        <li><a href="#!">어썰트기어+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">오목</a></li>
+        <li><a href="#!">당구/포켓볼</a></li>
+      </ul>
+    </div><!-- pc_list_ver_pc -->
+  </div>
+  <div class="pc_list">
+    <input type="checkbox" id="pc_list_chk">
+    <label for="pc_list_chk">
+      <span>PC 게임보기 ▼</span>
+      <span>PC 게임보기 ▲</span>
+    </label><!-- pc_list_chk -->
+    <div class="acodian_menu">
+      <ul>
+        <li><a href="#!">파라곤:디 오버 프라임</a></li>
+        <li><a href="#!">마구마구</a></li>
+        <li><a href="#!">모두의마블</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">클럽엠스타</a></li>
+        <li><a href="#!">스페셜포스2</a></li>
+        <li><a href="#!">상하이</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">사천성</a></li>
+        <li><a href="#!">바둑</a></li>
+        <li><a href="#!">캐릭챗</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">대항해시대</a></li>
+        <li><a href="#!">캐치마인드</a></li>
+        <li><a href="#!">배틀가로세로+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">아바타</a></li>
+        <li><a href="#!">파워알까기</a></li>
+        <li><a href="#!">윷놀이+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">리치마블</a></li>
+        <li><a href="#!">야채부락리</a></li>
+        <li><a href="#!">파워쿵쿵따+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">장기</a></li>
+        <li><a href="#!">틀린그림찾기</a></li>
+        <li><a href="#!">어썰트기어+</a></li>
+      </ul>
+      <ul>
+        <li><a href="#!">오목</a></li>
+        <li><a href="#!">당구/포켓볼</a></li>
+      </ul>
+    </div><!-- acodian_menu -->
+  </div><!-- pc_list -->
+  <p class="bottom_notice"><i class="far fa-bell"></i>[안내]넷마블 개인정보처리방침 개정안내 ('23.03.10')</p>
+  <div class="top_btn">
+    <a href="#">TOP</a>
+  </div>
+  <div class="footer_ex">
+    <footer class="footer">
+      <div class="footer_top">
+        <a href="#!" class="footer_logo">netmable</a>
+        <select name="Family_site_select">
+          <option value="">Family Site</option>
+          <option value="America">America</option>
+          <option value="Japan">Japan</option>
+          <option value="Turkey">Turkey</option>
+          <option value="Thailand">Thailand</option>
+        </select>
+      </div>
+      <div class="footer_row f_row01">
+        <p class="hide">넷마블(주) 사업자번호 : 105-87-64746</p>
+        <p class="hide">통신판매업신고번호 : 제 2014-서울구로-1028호</p>
+        <p class="hide">각자 대표집행임원: 권영식, 도기욱 호스팅서비스 사업자 : 넷마블(주)</p>
+      </div>
+      <div class="footer_row f_row02">
+        <p class="hide">서울특별시 구로구 디지털로26길 38, G-Tower 넷마블</p>
+        <p class="hide">PC고객센터:1588-5180 / 모바일고객센터:1588-3995</p>
+      </div>
+      <div class="footer_row f_row03">
+        <p class="hide">제2의나라 고객센터:1670-0359 / 블레이드&소울 레볼루션 고객센터:1670-1182</p>
+        <p class="hide hide_07">리니지2 레볼루션 고객센터:1670-8212 / Fax:02-6375-1790</p>
+      </div>
+      <p class="copy">Copyright © Netmarble Corp. All Rights Reserved.</p>
+      <div class="footer_row f_row04">
+        <ul class="hide">
+          <li>
+            <a href="#!">회사소개 |</a>
+          </li>
+          <li>
+            <a href="#!">광고/제휴문의 |</a>
+          </li>
+          <li>
+            <a href="#!">약관보기 |</a>
+          </li>
+          <li>
+            <a href="#!">위치정보이용약관 |</a>
+          </li>
+        </ul>
+        <ul class="hide hide_last">
+          <li>
+            <a href="#!"><span>개인정보처리방침</span> |</a>
+          </li>
+          <li>
+            <a href="#!">청소년보호정책 |</a>
+          </li>
+          <li>
+            <a href="#!">전자우편 |</a>
+          </li>
+          <li>
+            <a href="#!"><span>사업자정보공개사이트</span> |</a>
+          </li>
+          <li>
+            <a href="#!">사이트맵</a>
+          </li>
+        </ul>
+      </div>
+      <p>이용약관 | 개인정보처리방침</p>
+    </footer><!-- footer -->
+  </div><!-- footer_ex -->
 </body>
 
 </html>

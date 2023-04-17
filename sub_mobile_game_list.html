@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0 user-scalable=no">
-  <title>netmarble_mobile_list</title>
+  <title>netmarble/mobile_game_list</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+  <link rel="shortcut icon" href="./images/pavicon.jpg" type="image/x-icon">
   <link rel="stylesheet" href="./css/sub_mobile_game_list.css">
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(function () {
-      $(window).scroll(function () {
+/*       $(window).scroll(function () {
         let windowHeight = $(window).height();
         let windowScroll = $(window).scrollTop();
         if (windowScroll > windowHeight) {
@@ -20,7 +21,7 @@
         } else {
           $('.header_ex').removeClass('scroll');
         }
-      })
+      }) */
       $(window).scroll(function () {
         let windowScroll = $(window).scrollTop();
         if (windowScroll >= 300) {
@@ -29,27 +30,33 @@
           $('.top_btn').fadeOut(500)
         }
       })
-      $('.main_menu_list_bar>ul>li').eq(0).click(function () {
-        $(this).toggleClass('active');
-        $('.main_menu_list_bar>ul>ul').slideToggle(300);
+      $('.game_list_click01').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open01').slideToggle(300);
       })
-      $('.main_menu_list_bar>ul>ul>li').eq(0).click(function () {
-        $('.main_menu_list_bar>ul>ul>ul').eq(0).slideToggle(300);
+      $('.game_list_click02').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open02').slideToggle(300);
       })
-      $('.main_menu_list_bar>ul>ul>li').eq(1).click(function () {
-        $('.main_menu_list_bar>ul>ul>ul').eq(1).slideToggle(300);
+      $('.game_list_click03').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open03').slideToggle(300);
       })
-      $('.main_menu_list_bar>ul>ul>li').eq(2).click(function () {
-        $('.main_menu_list_bar>ul>ul>ul').eq(2).slideToggle(300);
+      $('.game_list_click04').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open04').slideToggle(300);
       })
-      $('.main_menu_list_bar>ul>ul>li').eq(3).click(function () {
-        $('.main_menu_list_bar>ul>ul>ul').eq(3).slideToggle(300);
+      $('.game_list_click05').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open05').slideToggle(300);
       })
-      $('.main_menu_list_bar>ul>ul>li').eq(4).click(function () {
-        $('.main_menu_list_bar>ul>ul>ul').eq(4).slideToggle(300);
+      $('.game_list_click06').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open06').slideToggle(300);
       })
-      $('.main_menu_list_bar>ul>ul>li').eq(5).click(function () {
-        $('.main_menu_list_bar>ul>ul>ul').eq(5).slideToggle(300);
+      $('.game_list_click07').click(function () {
+        $(this).toggleClass('icon_active');
+        $('.game_list_open07').slideToggle(300);
       })
     })
   </script>
@@ -67,15 +74,15 @@
           <input type="checkbox" id="menu_chk">
           <label for="menu_chk" class="menu_btn_off"></label>
           <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
-          <ul>
-            <li>
+          <ul class="main_menu_list">
+            <li class="game_list_click01">
               GAME LIST
             </li>
-            <ul>
-              <li>
+            <ul class="game_list_open01 close_menu">
+              <li class="game_list_click02">
                 <a href="#!">RPG</a>
               </li>
-              <ul>
+              <ul class="game_list_open02 close_menu">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
                 <li><a href="#!">BTS World</a></li>
                 <li><a href="#!">나이츠크로니클</a></li>
@@ -92,42 +99,42 @@
                 <li><a href="#!">킹 오브 파이터 올스타</a></li>
                 <li><a href="#!">페이트/그랜드 오더</a></li>
               </ul>
-              <li>
+              <li class="game_list_click03">
                 <a href="#!">전략</a>
               </li>
-              <ul>
+              <ul class="game_list_open03 close_menu">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
                 <li><a href="#!">넷마불 바둑</a></li>
               </ul>
-              <li>
+              <li class="game_list_click04">
                 <a href="#!">액션</a>
               </li>
-              <ul>
+              <ul class="game_list_open04 close_menu">
                 <li><a href="#!">마블 퓨처 파이트</a></li>
                 <li><a href="#!">몬스터 길들이기</a></li>
                 <li><a href="#!">세븐나이츠 레볼루션</a></li>
                 <li><a href="#!">킹 오브 파이터 올스타</a></li>
               </ul>
-              <li>
+              <li class="game_list_click05">
                 <a href="#!">퍼즐</a>
               </li>
-              <ul>
+              <ul class="game_list_open05 close_menu">
                 <li><a href="#!">샬롯의 테이블</a></li>
                 <li><a href="#!">쿵야 캐치 마인드</a></li>
               </ul>
-              <li>
+              <li class="game_list_click06">
                 <a href="#!">캐주얼/스포츠</a>
               </li>
-              <ul>
+              <ul class="game_list_open06 close_menu">
                 <li><a href="#!">BTS Universe</a></li>
                 <li><a href="#!">BTS World</a></li>
                 <li><a href="#!">넷마블 프로야구 2023</a></li>
                 <li><a href="#!">머지 쿵야 아일랜드</a></li>
               </ul>
-              <li>
+              <li class="game_list_click07">
                 <a href="#!">카드</a>
               </li>
-              <ul>
+              <ul class="game_list_open07 close_menu">
                 <li><a href="#!">모바일 윈조이 포커</a></li>
                 <li><a href="#!">윈조이 대박맞고</a></li>
                 <li><a href="#!">페이트/그랜드 오더</a></li>
