@@ -209,7 +209,11 @@ html {
   text-align: left;
 }
 
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li {
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list ul {
+  transition: all 0.2s;
+}
+
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list li {
   position: relative;
   line-height: 30px;
   font-family: var(--font-Noto-Sans);
@@ -217,6 +221,11 @@ html {
   color: var(--point-color-white);
   letter-spacing: -0.8px;
   cursor: pointer;
+}
+
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list li a,
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list li label {
+  display: block;
 }
 
 .header .main_menu_list_ex .main_menu_list_bar .main_menu_list>li::after,
@@ -231,18 +240,6 @@ html {
   color: var(--color-light-gray);
   transition: all 0.2s;
   transform: rotate(0deg);
-}
-
-.icon_active::after {
-  transform: rotate(90deg) !important;
-}
-
-.header .main_menu_list_ex .main_menu_list_bar ul li a {
-  display: block;
-  font-family: var(--font-Noto-Sans);
-  color: var(--point-color-white);
-  line-height: 30px;
-  letter-spacing: -0.8px;
 }
 
 .header .main_menu_list_ex .main_menu_list_bar .main_menu_list>.service_center_tab a::after {
@@ -289,10 +286,6 @@ html {
   background-position: -164px -135px;
 }
 
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list .close_menu {
-  display: none;
-}
-
 .header .main_menu_list_ex .main_menu_list_bar .main_menu_list>ul>li {
   position: relative;
   font-size: 1.3rem;
@@ -302,6 +295,38 @@ html {
 .header .main_menu_list_ex .main_menu_list_bar .main_menu_list>ul>ul>li {
   font-size: 1.1rem;
   margin-left: var(--gap-large-20);
+}
+
+/********************** header main_menu_list_ex main_menu_list_bar main_menu_list open/close btn*******************/
+
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list input {
+  display: none;
+}
+
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list .close_menu {
+  display: none;
+}
+
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list .game_list_open01 {}
+
+#game_list_click_btn01:checked~.game_list_open01,
+#game_list_click_btn02:checked~.game_list_open02,
+#game_list_click_btn03:checked~.game_list_open03,
+#game_list_click_btn04:checked~.game_list_open04,
+#game_list_click_btn05:checked~.game_list_open05,
+#game_list_click_btn06:checked~.game_list_open06,
+#game_list_click_btn07:checked~.game_list_open07 {
+  display: block;
+}
+
+#game_list_click_btn01:checked~.game_list_click01::after,
+#game_list_click_btn02:checked~.game_list_click02::after,
+#game_list_click_btn03:checked~.game_list_click03::after,
+#game_list_click_btn04:checked~.game_list_click04::after,
+#game_list_click_btn05:checked~.game_list_click05::after,
+#game_list_click_btn06:checked~.game_list_click06::after,
+#game_list_click_btn07:checked~.game_list_click07::after {
+  transform: rotate(90deg);
 }
 
 /********************** visual_main *******************/

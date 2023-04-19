@@ -50,7 +50,7 @@
           $('.top_btn').fadeOut(500)
         }
       })
-      $('.game_list_click01').click(function () {
+/*       $('.game_list_click01').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open01').slideToggle(300);
       })
@@ -77,7 +77,7 @@
       $('.game_list_click07').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open07').slideToggle(300);
-      })
+      }) */
     });
   </script>
 </head>
@@ -98,12 +98,19 @@
           <label for="menu_chk" class="menu_btn_off"></label>
           <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
           <ul class="main_menu_list">
+            <input type="checkbox" id="game_list_click_btn01">
             <li class="game_list_click01">
-              GAME LIST
+              <label for="game_list_click_btn01">GAME LIST</label>
             </li>
             <ul class="game_list_open01 close_menu">
+              <input type="checkbox" id="game_list_click_btn02">
+              <input type="checkbox" id="game_list_click_btn03">
+              <input type="checkbox" id="game_list_click_btn04">
+              <input type="checkbox" id="game_list_click_btn05">
+              <input type="checkbox" id="game_list_click_btn06">
+              <input type="checkbox" id="game_list_click_btn07">
               <li class="game_list_click02">
-                <a href="#!">RPG</a>
+                <label for="game_list_click_btn02">RPG</label>
               </li>
               <ul class="game_list_open02 close_menu">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
@@ -123,14 +130,14 @@
                 <li><a href="#!">페이트/그랜드 오더</a></li>
               </ul>
               <li class="game_list_click03">
-                <a href="#!">전략</a>
+                <label for="game_list_click_btn03">전략</label>
               </li>
               <ul class="game_list_open03 close_menu">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
                 <li><a href="#!">넷마불 바둑</a></li>
               </ul>
               <li class="game_list_click04">
-                <a href="#!">액션</a>
+                <label for="game_list_click_btn04">액션</label>
               </li>
               <ul class="game_list_open04 close_menu">
                 <li><a href="#!">마블 퓨처 파이트</a></li>
@@ -139,14 +146,14 @@
                 <li><a href="#!">킹 오브 파이터 올스타</a></li>
               </ul>
               <li class="game_list_click05">
-                <a href="#!">퍼즐</a>
+                <label for="game_list_click_btn05">퍼즐</label>
               </li>
               <ul class="game_list_open05 close_menu">
                 <li><a href="#!">샬롯의 테이블</a></li>
                 <li><a href="#!">쿵야 캐치 마인드</a></li>
               </ul>
               <li class="game_list_click06">
-                <a href="#!">캐주얼/스포츠</a>
+                <label for="game_list_click_btn06">캐주얼/스포츠</label>
               </li>
               <ul class="game_list_open06 close_menu">
                 <li><a href="#!">BTS Universe</a></li>
@@ -155,7 +162,7 @@
                 <li><a href="#!">머지 쿵야 아일랜드</a></li>
               </ul>
               <li class="game_list_click07">
-                <a href="#!">카드</a>
+                <label for="game_list_click_btn07">카드</label>
               </li>
               <ul class="game_list_open07 close_menu">
                 <li><a href="#!">모바일 윈조이 포커</a></li>
