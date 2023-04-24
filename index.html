@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="shortcut icon" href="./images/pavicon.jpg" type="image/x-icon">
   <link rel="stylesheet" href="./css/main.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
     $(function () {
@@ -49,35 +49,60 @@
         } else {
           $('.top_btn').fadeOut(500)
         }
-      })
-/*       $('.game_list_click01').click(function () {
+      });
+      $('.top_btn a').on('click', function(e){
+        e.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: 0,
+        }, 500);
+      });
+      $('.header .menu_btn_on').click(function () {
+        $('.header .main_menu_list_ex').animate({
+          left: 0,
+        },1);
+        $('.header .main_menu_list_ex .main_menu_list_bar').animate({
+          left: 0,
+        }, 200);
+      });
+      $('.header .menu_btn_off').click(function () {
+        $('.header .main_menu_list_ex').animate({
+          left: '-100%',
+        },10);
+        $('.header .main_menu_list_ex .main_menu_list_bar').animate({
+          left: '-100%',
+        }, 200);
+      });
+      $('.game_list_click01').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open01').slideToggle(300);
-      })
+      });
       $('.game_list_click02').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open02').slideToggle(300);
-      })
+      });
       $('.game_list_click03').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open03').slideToggle(300);
-      })
+      });
       $('.game_list_click04').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open04').slideToggle(300);
-      })
+      });
       $('.game_list_click05').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open05').slideToggle(300);
-      })
+      });
       $('.game_list_click06').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open06').slideToggle(300);
-      })
+      });
       $('.game_list_click07').click(function () {
         $(this).toggleClass('icon_active');
         $('.game_list_open07').slideToggle(300);
-      }) */
+      });
+      $('.main_pop_up_ex .main_pop_up .pop_up_close_list .close').on('click', function(){
+        $('.main_pop_up_ex').fadeOut(300);
+      })
     });
   </script>
 </head>
@@ -86,6 +111,15 @@
 <!--   서브페이지 들어가는법
   mobile,tablet-> 모바일 게임 전체 보기
   pc -> 전체보기(붉은색표기) -->
+  <div class="main_pop_up_ex">
+    <div class="main_pop_up">
+      <div class="pop_up_img"><img src="./images/main_pop_up_img01.jpg" alt="pop_up_01"></div>
+      <div class="pop_up_close_list">
+        <div class="close today_close">오늘 하루 보지 않기</div>
+        <div class="close">닫기</div>
+      </div>
+    </div>
+  </div><!-- main_pop_up_ex -->
   <div class="header_ex">
     <header class="header">
       <input type="checkbox" id="menu_chk">
@@ -96,21 +130,14 @@
         <div class="main_menu_list_bar">
           <input type="checkbox" id="menu_chk">
           <label for="menu_chk" class="menu_btn_off"></label>
-          <a href="#" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
+          <a href="./index.html" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
           <ul class="main_menu_list">
-            <input type="checkbox" id="game_list_click_btn01">
             <li class="game_list_click01">
-              <label for="game_list_click_btn01">GAME LIST</label>
+              GAME LIST
             </li>
             <ul class="game_list_open01 close_menu">
-              <input type="checkbox" id="game_list_click_btn02">
-              <input type="checkbox" id="game_list_click_btn03">
-              <input type="checkbox" id="game_list_click_btn04">
-              <input type="checkbox" id="game_list_click_btn05">
-              <input type="checkbox" id="game_list_click_btn06">
-              <input type="checkbox" id="game_list_click_btn07">
               <li class="game_list_click02">
-                <label for="game_list_click_btn02">RPG</label>
+                RPG
               </li>
               <ul class="game_list_open02 close_menu">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
@@ -130,14 +157,14 @@
                 <li><a href="#!">페이트/그랜드 오더</a></li>
               </ul>
               <li class="game_list_click03">
-                <label for="game_list_click_btn03">전략</label>
+                전략
               </li>
               <ul class="game_list_open03 close_menu">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
                 <li><a href="#!">넷마불 바둑</a></li>
               </ul>
               <li class="game_list_click04">
-                <label for="game_list_click_btn04">액션</label>
+                액션
               </li>
               <ul class="game_list_open04 close_menu">
                 <li><a href="#!">마블 퓨처 파이트</a></li>
@@ -146,14 +173,14 @@
                 <li><a href="#!">킹 오브 파이터 올스타</a></li>
               </ul>
               <li class="game_list_click05">
-                <label for="game_list_click_btn05">퍼즐</label>
+                퍼즐
               </li>
               <ul class="game_list_open05 close_menu">
                 <li><a href="#!">샬롯의 테이블</a></li>
                 <li><a href="#!">쿵야 캐치 마인드</a></li>
               </ul>
               <li class="game_list_click06">
-                <label for="game_list_click_btn06">캐주얼/스포츠</label>
+                캐주얼/스포츠
               </li>
               <ul class="game_list_open06 close_menu">
                 <li><a href="#!">BTS Universe</a></li>
@@ -162,7 +189,7 @@
                 <li><a href="#!">머지 쿵야 아일랜드</a></li>
               </ul>
               <li class="game_list_click07">
-                <label for="game_list_click_btn07">카드</label>
+                카드
               </li>
               <ul class="game_list_open07 close_menu">
                 <li><a href="#!">모바일 윈조이 포커</a></li>
@@ -186,7 +213,7 @@
         </div><!-- main_menu_list_bar -->
       </div><!-- main_menu_list_ex -->
       <div class="title_logo">
-        <a href="./sub_mobile_game_list.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
+        <a href="./index.html"><img src="./images/netmarble-ci.svg" alt="title_logo"></a>
       </div><!-- logo -->
       <div class="gnb">
         <div class="sign_in" href="#!">

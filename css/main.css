@@ -88,6 +88,56 @@ html {
   color: var(--point-color-white);
 }
 
+/********************** main_pop_up_ex *******************/
+.main_pop_up_ex {
+  position: fixed;
+  width: 100vw; height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/********************** main_pop_up *******************/
+.main_pop_up_ex .main_pop_up {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/********************** pop_up_close_list *******************/
+.main_pop_up_ex .main_pop_up .pop_up_close_list {
+  display: flex;
+  padding: 20px 0;
+  background-color: var(--color-light-gray);
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.main_pop_up_ex .main_pop_up .pop_up_close_list .close {
+  white-space: nowrap;
+  text-overflow: hidden;
+  margin-right: var(--gap-large-20);
+  font-size: var(--font-size-medium-14);
+  font-family: var(--font-Noto-Sans);
+  color: var(--color-dark-gray);
+  transition: all 0.1s;
+  letter-spacing: -0.8px;
+  cursor: pointer;
+}
+.main_pop_up_ex .main_pop_up .pop_up_close_list .close:hover {
+  color: var(--point-color-light-black);
+}
+.main_pop_up_ex .main_pop_up .pop_up_close_list .today_close {
+  position: relative;
+}
+.main_pop_up_ex .main_pop_up .pop_up_close_list .today_close::after {
+  content: "";
+  position: absolute;
+  top: 2px; right: -11px;
+  width: 2px; height: 12px;
+  background-color: var(--color-gray);
+}
+
+
 /********************** header_ex *******************/
 /* .header_ex {
   position: fixed;
@@ -143,13 +193,6 @@ html {
   display: none;
 }
 
-#menu_chk:checked~.main_menu_list_ex {
-  left: 0;
-}
-
-#menu_chk:checked~.main_menu_list_ex .main_menu_list_bar {
-  left: 0;
-}
 
 /********************** header main_menu_list_ex *******************/
 .header .main_menu_list_ex {
@@ -223,8 +266,8 @@ html {
   cursor: pointer;
 }
 
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list li a,
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list li label {
+.header label,
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list li a {
   display: block;
 }
 
@@ -240,6 +283,10 @@ html {
   color: var(--color-light-gray);
   transition: all 0.2s;
   transform: rotate(0deg);
+}
+
+.icon_active::after {
+  transform: rotate(90deg) !important;
 }
 
 .header .main_menu_list_ex .main_menu_list_bar .main_menu_list>.service_center_tab a::after {
@@ -297,36 +344,8 @@ html {
   margin-left: var(--gap-large-20);
 }
 
-/********************** header main_menu_list_ex main_menu_list_bar main_menu_list open/close btn*******************/
-
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list input {
-  display: none;
-}
-
 .header .main_menu_list_ex .main_menu_list_bar .main_menu_list .close_menu {
   display: none;
-}
-
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list .game_list_open01 {}
-
-#game_list_click_btn01:checked~.game_list_open01,
-#game_list_click_btn02:checked~.game_list_open02,
-#game_list_click_btn03:checked~.game_list_open03,
-#game_list_click_btn04:checked~.game_list_open04,
-#game_list_click_btn05:checked~.game_list_open05,
-#game_list_click_btn06:checked~.game_list_open06,
-#game_list_click_btn07:checked~.game_list_open07 {
-  display: block;
-}
-
-#game_list_click_btn01:checked~.game_list_click01::after,
-#game_list_click_btn02:checked~.game_list_click02::after,
-#game_list_click_btn03:checked~.game_list_click03::after,
-#game_list_click_btn04:checked~.game_list_click04::after,
-#game_list_click_btn05:checked~.game_list_click05::after,
-#game_list_click_btn06:checked~.game_list_click06::after,
-#game_list_click_btn07:checked~.game_list_click07::after {
-  transform: rotate(90deg);
 }
 
 /********************** visual_main *******************/
