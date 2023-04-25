@@ -17,8 +17,11 @@ img {
   width: 100%;
   vertical-align: bottom;
 }
-
-
+.clear_fix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 /********************** rem size standard *******************/
 html {
   font-size: 10px;
@@ -91,7 +94,8 @@ html {
 /********************** main_pop_up_ex *******************/
 .main_pop_up_ex {
   position: fixed;
-  width: 100vw; height: 100vh;
+  width: 100vw;
+  height: 100vh;
   z-index: 20;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -99,8 +103,10 @@ html {
 /********************** main_pop_up *******************/
 .main_pop_up_ex .main_pop_up {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 11px 0px;
 }
 
 /********************** pop_up_close_list *******************/
@@ -123,17 +129,22 @@ html {
   letter-spacing: -0.8px;
   cursor: pointer;
 }
+
 .main_pop_up_ex .main_pop_up .pop_up_close_list .close:hover {
   color: var(--point-color-light-black);
 }
+
 .main_pop_up_ex .main_pop_up .pop_up_close_list .today_close {
   position: relative;
 }
+
 .main_pop_up_ex .main_pop_up .pop_up_close_list .today_close::after {
   content: "";
   position: absolute;
-  top: 2px; right: -11px;
-  width: 2px; height: 12px;
+  top: 2px;
+  right: -11px;
+  width: 2px;
+  height: 12px;
   background-color: var(--color-gray);
 }
 
@@ -608,7 +619,7 @@ html {
   flex-flow: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  z-index: -1;
+  z-index: 0;
 }
 
 .contents .hot_game_list .mobile_hot::-webkit-scrollbar {
@@ -778,6 +789,112 @@ input {
 
 #pc_tab_on:checked~.game_bar_container .pc_game_bar {
   display: block;
+}
+
+/********************** net_tube_sub_title *******************/
+.net_tube_sub_title {
+  margin: var(--gap-x-large-up-45) 0 var(--gap-large-20);
+  color: var(--point-color-light-black);
+  font-family: var(--font-Noto-Sans);
+  font-size: var(--font-size-x-large-24);
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+
+/********************** net_tube_container *******************/
+.net_tube_container {
+  position: relative;
+  padding: 60px 10px 0;
+  background-color: var(--color-light-gray);
+}
+.net_tube_container .sort_btn_design {
+  position: absolute;
+  top: 20px; right: 10px;
+  outline: none;
+  font-size: var(--font-size-medium-14);
+  font-family: var(--font-Noto-Sans);
+  letter-spacing: -0.8px;
+  border: 1px solid var(--color-dark-gray);
+}
+.net_tube_container .net_tube_bgbox {
+  display: flex;
+  overflow-x: scroll;
+  border-radius: 15px;
+  padding-bottom: 20px;
+}
+
+.net_tube_container .net_tube_bgbox .youtube_video {
+  display: block;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 180px;
+  margin-right: var(--gap-small-up-10);
+  border-radius: 10px;
+}
+
+.net_tube_container .net_tube_bgbox .youtube_video:last-child {
+  margin-right: 0;
+}
+
+.net_tube_container .net_tube_bgbox .y_video1 {
+  background: url(../images/yotube_img01.jpg) no-repeat;
+  background-size: cover;
+}
+
+.net_tube_container .net_tube_bgbox .y_video2 {
+  background: url(../images/yotube_img02.jpg) no-repeat;
+  background-size: cover;
+}
+
+.net_tube_container .net_tube_bgbox .y_video3 {
+  background: url(../images/yotube_img03.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.net_tube_container .net_tube_bgbox .y_video4 {
+  background: url(../images/yotube_img04.jpg) no-repeat;
+  background-size: cover;
+}
+
+.net_tube_container .net_tube_bgbox .y_video5 {
+  background: url(../images/yotube_img05.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.net_tube_container .net_tube_bgbox .y_video6 {
+  background: url(../images/yotube_img06.jpg) no-repeat;
+  background-size: cover;
+}
+
+.net_tube_container .net_tube_bgbox .y_video7 {
+  background: url(../images/yotube_img07.jpg) no-repeat;
+  background-size: cover;
+}
+
+.net_tube_container .net_tube_bgbox .y_video8 {
+  background: url(../images/yotube_img08.jpg) no-repeat;
+  background-size: cover;
+}
+
+/********************** scroll_bar *******************/
+
+.net_tube_container .net_tube_bgbox::-webkit-scrollbar {
+  height: 10px;
+}
+
+.net_tube_container .net_tube_bgbox::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray);
+  border-radius: 15px;
+}
+
+.net_tube_container .net_tube_bgbox::-webkit-scrollbar-thumb:hover {
+}
+
+.net_tube_container .net_tube_bgbox::-webkit-scrollbar-track {
+  background-color: var(--color-dark-gray);
+  border-radius: 15px;
 }
 
 /********************** mobile_title ＆ pc_title *******************/
@@ -1808,7 +1925,7 @@ input {
   .mobile_all_list {
     display: block;
     position: absolute;
-    top: 15px;
+    top: 370px;
     right: 0;
     font-size: var(--font-size-medium-14);
     transition: all 0.2s;

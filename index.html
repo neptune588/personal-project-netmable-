@@ -50,7 +50,7 @@
           $('.top_btn').fadeOut(500)
         }
       });
-      $('.top_btn a').on('click', function(e){
+      $('.top_btn a').on('click', function (e) {
         e.preventDefault();
         $('html, body').stop().animate({
           scrollTop: 0,
@@ -59,7 +59,7 @@
       $('.header .menu_btn_on').click(function () {
         $('.header .main_menu_list_ex').animate({
           left: 0,
-        },1);
+        }, 1);
         $('.header .main_menu_list_ex .main_menu_list_bar').animate({
           left: 0,
         }, 200);
@@ -67,7 +67,7 @@
       $('.header .menu_btn_off').click(function () {
         $('.header .main_menu_list_ex').animate({
           left: '-100%',
-        },10);
+        }, 10);
         $('.header .main_menu_list_ex .main_menu_list_bar').animate({
           left: '-100%',
         }, 200);
@@ -100,15 +100,40 @@
         $(this).toggleClass('icon_active');
         $('.game_list_open07').slideToggle(300);
       });
-      $('.main_pop_up_ex .main_pop_up .pop_up_close_list .close').on('click', function(){
+      $('.main_pop_up_ex .main_pop_up .pop_up_close_list .close').on('click', function () {
         $('.main_pop_up_ex').fadeOut(300);
       })
+      $('.sort_btn_design').on('change', function(){
+        let sortReturn = $(this).val();
+        console.log(sortReturn);
+        if(sortReturn === 'views') {
+          $('.net_tube_bgbox').append(function(){
+            return $(this).children().sort(function(a, b){
+              return $(b).attr('data-views') - $(a).attr('data-views');
+            });
+          });
+        }
+        if(sortReturn === 'defalut') {
+          $('.net_tube_bgbox').append(function(){
+            return $(this).children().sort(function(a, b){
+              return $(a).attr('data-defalut') - $(b).attr('data-defalut');
+            });
+          });
+        }
+        if(sortReturn === 'latest') {
+          $('.net_tube_bgbox').append(function(){
+            return $(this).children().sort(function(a, b){
+              return $(b).attr('data-lastest_date') - $(a).attr('data-lastest_date');
+            });
+          });
+        }
+      });
     });
   </script>
 </head>
 
 <body>
-<!--   서브페이지 들어가는법
+  <!--   서브페이지 들어가는법
   mobile,tablet-> 모바일 게임 전체 보기
   pc -> 전체보기(붉은색표기) -->
   <div class="main_pop_up_ex">
@@ -403,6 +428,27 @@
         <p>Mobile Games</p>
         <p>PC Games</p>
       </section><!-- tab -->
+      <h2 class="net_tube_sub_title">
+        넷마블 TV
+      </h2>
+      <section class="net_tube_container">
+        <select name="sort_btn" class="sort_btn_design">
+          <option value="defalut">기본</option>
+          <option value="views">조회순으로</option>
+          <option value="latest">최근 날짜순으로</option>
+        </select>
+        </ul>
+        <div class="net_tube_bgbox">
+          <a href="https://www.youtube.com/watch?v=sZqbQL4cPJs" data-defalut="1" data-views="4300" data-lastest_date="20230420" class="youtube_video y_video1"></a>
+          <a href="https://www.youtube.com/watch?v=c6PBC-Fvwvc" data-defalut="2" data-views="2900" data-lastest_date="20230323" class="youtube_video y_video2"></a>
+          <a href="https://www.youtube.com/watch?v=GR8ZBmf_Mws" data-defalut="3" data-views="6300" data-lastest_date="20230127" class="youtube_video y_video3"></a>
+          <a href="https://www.youtube.com/watch?v=o1s9drKl8sw" data-defalut="4" data-views="683" data-lastest_date="20221202" class="youtube_video y_video4"></a>
+          <a href="https://www.youtube.com/watch?v=UWLgYw8aCtw" data-defalut="5" data-views="1800" data-lastest_date="20221124" class="youtube_video y_video5"></a>
+          <a href="https://www.youtube.com/watch?v=DiRLfS_jAsA" data-defalut="6" data-views="3700" data-lastest_date="20230329" class="youtube_video y_video6"></a>
+          <a href="https://www.youtube.com/watch?v=sXtwdzp43nU" data-defalut="7" data-views="2800" data-lastest_date="20230417" class="youtube_video y_video7"></a>
+          <a href="https://www.youtube.com/watch?v=LNXbRbha83Y" data-defalut="8" data-views="12000" data-lastest_date="20230421" class="youtube_video y_video8"></a>
+        </div>
+      </section>
       <h2 class="mobile_title">Mobile Games</h2>
       <a class="mobile_all_list" href="./sub_mobile_game_list.html">전체보기<i class="fas fa-ellipsis-h"></i></a>
       <div class="game_bar_container">
