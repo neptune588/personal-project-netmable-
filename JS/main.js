@@ -133,4 +133,10 @@ $(function () {
 	}
 	//hotWeeklyGameAni 무한호출
 	setInterval(hotWeeklyGameAni);
+
+	//hot_weekly_game acodian_list script//
+	$('.hot_weekly_acodian li').mouseover(function(){
+		$('.hot_weekly_acodian li').removeClass('list_on');
+		$(this).addClass('list_on');
+	})
 });
