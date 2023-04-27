@@ -12,129 +12,7 @@
   <link rel="stylesheet" href="./css/main.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script>
-    $(function () {
-      $('.hot_game').slick({
-        responsive: [{
-            breakpoint: 769,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4,
-              autoplay: true,
-              draggable: true,
-            },
-          },
-          {
-            breakpoint: 9999,
-            settings: {
-              autoplay: true,
-              variableWidth: true,
-              settings: "unslick",
-            },
-          },
-        ],
-      });
-      $('.visual_main').slick({
-        dots: true,
-        infinite: true,
-        speed: 1000,
-        fade: true,
-        cssEase: 'linear',
-        autoplay: true,
-      });
-      $(window).scroll(function () {
-        let windowScroll = $(window).scrollTop();
-        if (windowScroll >= 300) {
-          $('.top_btn').fadeIn(500)
-        } else {
-          $('.top_btn').fadeOut(500)
-        }
-      });
-      $('.top_btn a').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').stop().animate({
-          scrollTop: 0,
-        }, 500);
-      });
-      $('.header .menu_btn_on').click(function () {
-        $('.header .main_menu_list_ex').animate({
-          left: 0,
-        }, 1);
-        $('.header .main_menu_list_ex .main_menu_list_bar').animate({
-          left: 0,
-        }, 200);
-      });
-      $('.header .menu_btn_off').click(function () {
-        $('.header .main_menu_list_ex').animate({
-          left: '-100%',
-        }, 10);
-        $('.header .main_menu_list_ex .main_menu_list_bar').animate({
-          left: '-100%',
-        }, 200);
-      });
-      $('.game_list_click01').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open01').slideToggle(300);
-      });
-      $('.game_list_click02').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open02').slideToggle(300);
-      });
-      $('.game_list_click03').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open03').slideToggle(300);
-      });
-      $('.game_list_click04').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open04').slideToggle(300);
-      });
-      $('.game_list_click05').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open05').slideToggle(300);
-      });
-      $('.game_list_click06').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open06').slideToggle(300);
-      });
-      $('.game_list_click07').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open07').slideToggle(300);
-      });
-      $('.main_pop_up_ex .main_pop_up .pop_up_close_list .close').on('click', function () {
-        $('.main_pop_up_ex').fadeOut(300);
-      })
-      $('.sort_btn_design').on('change', function () {
-        let valReturn = $(this).val();
-        if (valReturn === 'defalut') {
-          $('.view_weight').css('fontWeight', "");
-          $('.latest_weight').css('fontWeight', "");
-          $('.net_tube_bgbox .bgbox_list').append(function () {
-            return $(this).children().sort(function (a, b) {
-              return $(a).attr('data-defalut') - $(b).attr('data-defalut');
-            });
-          });
-        }
-        if (valReturn === 'views') {
-          $('.latest_weight').css('fontWeight', "");
-          $('.view_weight').css('fontWeight', 700);
-          $('.net_tube_bgbox .bgbox_list').append(function () {
-            return $(this).children().sort(function (a, b) {
-              return $(b).attr('data-views') - $(a).attr('data-views');
-            });
-          });
-        }
-        if (valReturn === 'latest') {
-          $('.view_weight').css('fontWeight', "");
-          $('.latest_weight').css('fontWeight', 700);
-          $('.net_tube_bgbox .bgbox_list').append(function () {
-            return $(this).children().sort(function (a, b) {
-              return $(b).attr('data-lastest_date') - $(a).attr('data-lastest_date');
-            });
-          });
-        }
-      });
-    });
-  </script>
+  <script src="./JS/main.js"></script>
 </head>
 
 <body>
@@ -435,8 +313,8 @@
       </section><!-- tab -->
       <h2 class="net_tube_sub_title">
         넷마블 TV
-      </h2>
-      <section class="net_tube_container">
+      </h2><!-- net_tube_sub_title -->
+      <div class="net_tube_container">
         <select name="sort_btn" class="sort_btn_design">
           <option value="defalut">기본</option>
           <option value="views">조회순으로</option>
@@ -447,55 +325,134 @@
           <ul class="bgbox_list">
             <li data-defalut="1" data-views="4300"
             data-lastest_date="20230420">
-              <a href="https://www.youtube.com/watch?v=sZqbQL4cPJs" target="_blank" class="youtube_video y_video1"></a>
+              <a href="https://www.youtube.com/watch?v=sZqbQL4cPJs" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img01.jpg" alt="youtube_video_img01">
+              </a>
               <p class="view_weight">조회수: 4300</p>
               <p class="latest_weight">업로드 날짜: 2023-04-20</p>
             </li>
             <li data-defalut="2" data-views="2900"
             data-lastest_date="20230323">
-              <a href="https://www.youtube.com/watch?v=c6PBC-Fvwvc" target="_blank" class="youtube_video y_video2"></a>
+              <a href="https://www.youtube.com/watch?v=c6PBC-Fvwvc" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img02.jpg" alt="youtube_video_img02">
+              </a>
               <p class="view_weight">조회수: 2900</p>
               <p class="latest_weight">업로드 날짜: 2023-03-23</p>
             </li>
             <li data-defalut="3" data-views="6300"
             data-lastest_date="20230127">
-              <a href="https://www.youtube.com/watch?v=GR8ZBmf_Mws" target="_blank" class="youtube_video y_video3"></a>
+              <a href="https://www.youtube.com/watch?v=GR8ZBmf_Mws" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img03.jpg" alt="youtube_video_img03">
+              </a>
               <p class="view_weight">조회수: 6300</p>
               <p class="latest_weight">업로드 날짜: 2023-01-27</p>
             </li>
             <li data-defalut="4" data-views="683"
             data-lastest_date="20221202">
-              <a href="https://www.youtube.com/watch?v=o1s9drKl8sw" target="_blank" class="youtube_video y_video4"></a>
+              <a href="https://www.youtube.com/watch?v=o1s9drKl8sw" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img04.jpg" alt="youtube_video_img04">
+              </a>
               <p class="view_weight">조회수: 683</p>
               <p class="latest_weight">업로드 날짜: 2022-12-02</p>
             </li>
             <li data-defalut="5" data-views="1800"
             data-lastest_date="20221124">
-              <a href="https://www.youtube.com/watch?v=UWLgYw8aCtw" target="_blank" class="youtube_video y_video5"></a>
+              <a href="https://www.youtube.com/watch?v=UWLgYw8aCtw" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img05.jpg" alt="youtube_video_img05">
+              </a>
               <p class="view_weight">조회수: 1800</p>
               <p class="latest_weight">업로드 날짜: 2022-11-24</p>
             </li>
             <li data-defalut="6" data-views="3700"
             data-lastest_date="20230329">
-              <a href="https://www.youtube.com/watch?v=DiRLfS_jAsA" target="_blank" class="youtube_video y_video6"></a>
+              <a href="https://www.youtube.com/watch?v=DiRLfS_jAsA" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img06.jpg" alt="youtube_video_img06">
+              </a>
               <p class="view_weight">조회수: 3700</p>
               <p class="latest_weight">업로드 날짜: 2023-03-29</p>
             </li>
             <li data-defalut="7" data-views="2800"
             data-lastest_date="20230417">
-              <a href="https://www.youtube.com/watch?v=sXtwdzp43nU" target="_blank" class="youtube_video y_video7"></a>
+              <a href="https://www.youtube.com/watch?v=sXtwdzp43nU" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img07.jpg" alt="youtube_video_img07">
+              </a>
               <p class="view_weight">조회수: 2800</p>
               <p class="latest_weight">업로드 날짜: 2023-04-17</p>
             </li>
             <li data-defalut="8" data-views="12000"
             data-lastest_date="20230421">
-              <a href="https://www.youtube.com/watch?v=LNXbRbha83Y" target="_blank" class="youtube_video y_video8"></a>
+              <a href="https://www.youtube.com/watch?v=LNXbRbha83Y" target="_blank" class="youtube_video">
+                <img src="./images/yotube_img08.jpg" alt="youtube_video_img08">
+              </a>
               <p class="view_weight">조회수: 12000</p>
               <p class="latest_weight">업로드 날짜: 2023-04-21</p>
             </li>
           </ul>
         </div>
-      </section>
+      </div><!-- net_tube_container --> 
+      <h2 class="hot_weekly_game_sub_title">
+        금주의 인기게임
+      </h2>
+      <div class="hot_weekly_game_ex">
+        <div class="real_time_bar">
+          <p class="real_time_notice">가장 많이 다운로드 했어요!</p>
+          <div class="frame">
+            <ul>
+              <li class="change_list1"><a href="#!">나혼자만 레벨업</a></li>
+              <li class="change_list2"><a href="#!">제2의나라:Cross Worlds</a></li>
+              <li class="change_list3"><a href="#!">세븐나이츠 레볼루션</a></li>
+              <li class="change_list4"><a href="#!">일곱 개의 대죄</a></li>
+              <li class="change_list5"><a href="#!">샬롯의 테이블</a></li>
+            </ul>
+          </div><!-- frame -->
+        </div><!-- real_time_bar -->
+        <section class="hot_weekly_game">
+          <ul class="hot_weekly_acodian clear_fix">
+            <li class="acodian_list01">
+              <div class="left_img left_img01">
+
+              </div>
+              <div class="right_text">
+                <div class="title_logo"></div>
+                <p>한국의 현대 판타지·헌터물 웹소설. 작가는 추공</p>
+                <p>현실에서 레벨업 시스템을 이용하여 성장하는 주인공이 특징인 작품이다.</p>
+              </div>
+            </li>
+            <li class="acodian_list02">
+              <div class="left_img left_img02">
+
+              </div>
+              <div class="right_text">
+                <p>제2의나라:Cross Worlds</p>
+                <p>화려한 스태프의 손에 의해 탄생한 게임 [니노쿠니] 그 시리즈를 잇는 마음속 깊이 간직했던 세계</p>
+                <p>『제2의 나라: Cross Worlds』로 당신을 초대합니다.</p>
+              </div>
+            </li>
+            <li class="acodian_list03">
+              <div class="left_img left_img03">
+
+              </div>
+              <div class="right_text">
+                <p>세븐나이츠 레볼루션</p>
+                <p>직접 세븐나이츠가 되어 펼치는 "화려한 전투 액션!" 쉴새없이 몰아치는 호쾌한 전투와 스킬 액션!</p>
+                <p>지금까지 없었던 스타일리쉬 배틀을 경험하라.</p>
+              </div>
+            </li>
+            <li class="acodian_list04">
+              <div class="left_img left_img04">
+
+              </div>
+              </a>
+              <div class="right_text">
+                <p>일곱 개의 대죄</p>
+                <p>일곱 개의 대죄 캐릭터들의 새로운 모습을 확인하자! 원작 세계관의 철저한 구현 브리타니아 대륙 완벽 구현!</p>
+                <p>3000년 전 종료된 성전이 다시 시작된다!
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
       <h2 class="mobile_title">Mobile Games</h2>
       <a class="mobile_all_list" href="./sub_mobile_game_list.html">전체보기<i class="fas fa-ellipsis-h"></i></a>
       <div class="game_bar_container">
