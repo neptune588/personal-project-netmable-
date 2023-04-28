@@ -1,4 +1,5 @@
 /********************** settings *******************/
+@import url(./reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
 * {
@@ -10,6 +11,7 @@
 html,
 body {
   height: 100%;
+  line-height: 1;
 }
 
 img {
@@ -158,15 +160,16 @@ html {
   background-color: var(--color-gray);
 }
 
-
-/********************** header_ex *******************/
-/* .header_ex {
+/********************** fixed *******************/
+.fixed {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
   background-color: #fff;
-} */
+  box-shadow: -1px 0px 5px 0px;
+  transition: all 0.3s;
+}
 
 /********************** header *******************/
 .header {
@@ -886,12 +889,12 @@ input {
 
 /********************** hot_weekly_game_sub_title *******************/
 .hot_weekly_game_sub_title {
-  font-size: var(--font-size-x-large-24);
-  font-family: var(--font-Noto-Sans);
-  font-weight: 700;
-  color: var(--point-color-light-black);
-  letter-spacing: -1.8px;
   margin: var(--gap-x-large-up-45) 0 var(--gap-large-20);
+  color: var(--point-color-light-black);
+  font-family: var(--font-Noto-Sans);
+  font-size: var(--font-size-large-up-20);
+  font-weight: 700;
+  letter-spacing: -1.8px;
 }
 
 /********************** hot_weekly_game_ex *******************/
@@ -901,26 +904,25 @@ input {
 
 /********************** real_time_bar *******************/
 .hot_weekly_game_ex .real_time_bar {
-  display: flex;
   padding: 10px 0;
-  margin: 0 var(--gap-large-up-25);
   border-bottom: 1px solid var(--color-gray);
-  justify-content: flex-end;
-  align-items: center;
 }
 
 .hot_weekly_game_ex .real_time_bar .real_time_notice {
+  text-align: center;
   font-size: var(--font-size-medium-14);
   font-weight: 700;
+  margin-bottom: var(--gap-small-5);
 }
 
 /********************** real_time_bar frame *******************/
 .hot_weekly_game_ex .real_time_bar .frame {
   position: relative;
-  width: 200px;
+  width: 100%;
   height: 30px;
   overflow: hidden;
-
+  background-color: var(--point-color-light-black);
+  border-radius: 15px;
 }
 
 .hot_weekly_game_ex .real_time_bar .frame ul {
@@ -944,7 +946,7 @@ input {
   font-size: var(--font-size-medium-14);
   font-family: var(--font-Noto-Sans);
   letter-spacing: -0.8px;
-  margin-left: var(--gap-large-20);
+  color: var(--point-color-white);
 }
 
 .hot_weekly_game_ex .real_time_bar .frame ul li a::after {
@@ -977,84 +979,48 @@ input {
 
 /********************** hot_weekly_game common *******************/
 .hot_weekly_game_ex .hot_weekly_game {
-  padding-top: var(--gap-x-large-35);
+  padding-top: 25px;
 }
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian {}
 
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li {
   position: relative;
   overflow: hidden;
-  float: left;
-  width: 200px; height: 400px;
-  margin-right: var(--gap-small-up-10);
+  width: 100%;
   border-radius: 25px;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li:last-child {
-  margin-right: 0;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .left_img,
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text {
-  float: left;
-  height: 400px;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .left_img {
-  width: 200px;
+  margin-bottom: var(--gap-small-5);
 }
 
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text {
   position: relative;
-  width: 0;
+  height: 0;
   background-color: var(--point-color-light-black);
   transition: all 0.6s;
 }
 
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text>.title_logo,
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text>p {
+  padding: 0 10px;
   transition: all 1s;
   opacity: 0;
 }
 
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text .title_logo {
   position: relative;
-  width: 120px; height: 80px;
-  margin: var(--gap-large-20) auto var(--gap-x-large-35);
+  width: 120px;
+  height: 80px;
+  margin: 0 auto var(--gap-medium-15);
 }
+
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text p {
   color: var(--point-color-white);
   font-size: var(--font-size-medium-14);
   letter-spacing: -0.8px;
-  text-align: left;
+  text-align: center;
 }
-
-/* .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .border {
-  position: absolute;
-  z-index: 20;
-  background-color: #912828;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .b_bottom {
-  left:0; bottom: 0;
-  width: 100%; height: 5px;
-  border-radius: 25px;
-} */
 
 /********************** hot_weekly_game individual*******************/
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on {
-  width: 620px;
-  transform: translateY(-30px);
-  transition: all 0.3s;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .left_img {
-  width: 310px;
-}
-
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .right_text {
-  width: 310px;
+  height: 180px;
 }
 
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .right_text .title_logo,
@@ -1063,33 +1029,12 @@ input {
 }
 
 /********************** hot_weekly_game acodian_list01 *******************/
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list01 .left_img {
-  background: url(../images/weekly_game_img01.jpg) no-repeat;
-  background-size: cover;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list01.list_on .left_img {
-  background: url(../images/weekly_game_img01_gradation.jpg) no-repeat;
-  background-size: cover;
-}
-
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list01 .right_text .title_logo {
   background: url(../images/weekly_game_logo_img01.png) no-repeat;
   background-size: cover;
 }
 
 /********************** hot_weekly_game acodian_list02 *******************/
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list02 .left_img {
-  background: url(../images/weekly_game_img02.jpg) no-repeat;
-  background-position: 50% 0;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list02.list_on .left_img {
-  background: url(../images/weekly_game_img02_gradation.jpg) no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
-}
-
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list02 .right_text .title_logo {
   background: url(../images/mobile_game_banner_logo04.jpg) no-repeat;
   background-size: cover;
@@ -1097,16 +1042,6 @@ input {
 }
 
 /********************** hot_weekly_game acodian_list03 *******************/
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list03 .left_img {
-  background: url(../images/weekly_game_img03.jpg) no-repeat;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list03.list_on .left_img {
-  background: url(../images/weekly_game_img03_gradation.jpg) no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
-}
-
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list03 .right_text .title_logo {
   background: url(../images/mobile_game_banner_logo02.jpg) no-repeat;
   background-size: cover;
@@ -1114,16 +1049,6 @@ input {
 }
 
 /********************** hot_weekly_game acodian_list04 *******************/
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list04 .left_img {
-  background: url(../images/weekly_game_img04.jpg) no-repeat;
-}
-
-.hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list04.list_on .left_img {
-  background: url(../images/weekly_game_img04_gradation.jpg) no-repeat;
-  background-position: 50% 0;
-  background-size: cover;
-}
-
 .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list04 .right_text .title_logo {
   background: url(../images/mobile_game_banner_logo08.jpg) no-repeat;
   background-size: cover;
@@ -1633,6 +1558,21 @@ input {
     width: calc((100% - 50% - 5px) / 2);
     margin-right: var(--gap-small-5);
     margin-bottom: var(--gap-large-20);
+  }
+
+  /********************** hot_weekly_game common *******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 50% - 2.5px);
+    border-radius: 25px;
+    margin-bottom: var(--gap-small-5);
+    margin-right: var(--gap-small-5);
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li:nth-child(2n) {
+    margin-right: 0;
   }
 
   /********************** game_bar_container *******************/
@@ -2198,6 +2138,160 @@ input {
     opacity: 0.3;
   }
 
+  /********************** real_time_bar *******************/
+  .hot_weekly_game_ex .real_time_bar {
+    display: flex;
+    padding: 10px 0;
+    margin: 0 var(--gap-large-up-25);
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hot_weekly_game_ex .real_time_bar .real_time_notice {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  /********************** real_time_bar frame *******************/
+  .hot_weekly_game_ex .real_time_bar .frame {
+    width: 200px;
+    margin-left: var(--gap-small-up-10);
+  }
+
+  .hot_weekly_game_ex .real_time_bar .frame ul li a {
+    margin-left: var(--gap-large-20);
+  }
+
+  /********************** hot_weekly_game common *******************/
+  .hot_weekly_game_ex .hot_weekly_game {
+    padding-top: var(--gap-x-large-35);
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li {
+    float: left;
+    width: 170px;
+    height: 400px;
+    margin-right: var(--gap-small-up-10);
+    margin-bottom: 0;
+    border-radius: 25px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li:nth-child(2n) {
+    margin-right: var(--gap-small-up-10);
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li:last-child {
+    margin-right: 0;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .left_img,
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text {
+    float: left;
+    width: 0;
+    height: 400px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .left_img {
+    width: 170px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .left_img img {
+    display: none;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text .title_logo {
+    margin: var(--gap-large-20) auto var(--gap-x-large-35);
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .right_text p {
+    text-align: center;
+  }
+
+  /********************** hot_weekly_game individual*******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on {
+    width: 530px;
+    transform: translateY(-30px);
+    transition: all 0.3s;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .left_img {
+    width: 265px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .right_text {
+    width: 265px;
+    height: 400px;
+  }
+
+  /********************** hot_weekly_game acodian_list01 *******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list01 .left_img {
+    background: url(../images/weekly_game_img01.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list01.list_on .left_img {
+    background: url(../images/weekly_game_img01_gradation.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list01 .right_text .title_logo {
+    background: url(../images/weekly_game_logo_img01.png) no-repeat;
+    background-size: cover;
+  }
+
+  /********************** hot_weekly_game acodian_list02 *******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list02 .left_img {
+    background: url(../images/weekly_game_img02.jpg) no-repeat;
+    background-position: 50% 0;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list02.list_on .left_img {
+    background: url(../images/weekly_game_img02_gradation.jpg) no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list02 .right_text .title_logo {
+    background: url(../images/mobile_game_banner_logo04.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 0;
+  }
+
+  /********************** hot_weekly_game acodian_list03 *******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list03 .left_img {
+    background: url(../images/weekly_game_img03.jpg) no-repeat;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list03.list_on .left_img {
+    background: url(../images/weekly_game_img03_gradation.jpg) no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list03 .right_text .title_logo {
+    background: url(../images/mobile_game_banner_logo02.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 0;
+  }
+
+  /********************** hot_weekly_game acodian_list04 *******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list04 .left_img {
+    background: url(../images/weekly_game_img04.jpg) no-repeat;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list04.list_on .left_img {
+    background: url(../images/weekly_game_img04_gradation.jpg) no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .acodian_list04 .right_text .title_logo {
+    background: url(../images/mobile_game_banner_logo08.jpg) no-repeat;
+    background-size: cover;
+    width: 150px;
+    background-position: 50% 0;
+  }
+
   /********************** mobile_title ＆ pc_title *******************/
   .mobile_title,
   .pc_title {
@@ -2218,7 +2312,7 @@ input {
   .mobile_all_list {
     display: block;
     position: absolute;
-    top: 340px;
+    top: 915px;
     right: 0;
     font-size: var(--font-size-medium-14);
     transition: all 0.2s;
@@ -2661,6 +2755,28 @@ input {
   /********************** net_tube_container *******************/
   .net_tube_container .net_tube_bgbox .bgbox_list li {
     width: 305px;
+  }
+
+  /********************** hot_weekly_game common *******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li {
+    width: 200px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian li .left_img {
+    width: 200px;
+  }
+
+  /********************** hot_weekly_game individual*******************/
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on {
+    width: 620px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .left_img {
+    width: 310px;
+  }
+
+  .hot_weekly_game_ex .hot_weekly_game .hot_weekly_acodian .list_on .right_text {
+    width: 310px;
   }
 
   /********************** mobile_game_bar *******************/

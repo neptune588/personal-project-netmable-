@@ -1,21 +1,31 @@
 /********************** settings *******************/
-@import url(./reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+/*   user-select: none */
 }
 
 html,
 body {
   height: 100%;
+  line-height: 1;
 }
 
 img {
   width: 100%;
   vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 /********************** rem size standard *******************/
@@ -85,14 +95,16 @@ html {
   color: var(--point-color-white);
 }
 
-/********************** header_ex *******************/
-/* .header_ex {
+/********************** fixed *******************/
+.fixed {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
   background-color: #fff;
-} */
+  box-shadow: -1px 0px 5px 0px;
+  transition: all 0.3s;
+}
 
 /********************** header *******************/
 .header {
@@ -289,9 +301,10 @@ html {
   margin-left: var(--gap-large-20);
 }
 
-.header .main_menu_list_ex .main_menu_list_bar .main_menu_list .close_menu {
+.header .main_menu_list_ex .main_menu_list_bar .main_menu_list .toggle_slide {
   display: none;
 }
+
 /********************** contents *******************/
 .contents {
   position: relative;
@@ -303,7 +316,7 @@ html {
 }
 
 /********************** contents game_list_label *******************/
-.contents .game_list_label {
+.contents .game_list_btn {
   display: none;
 }
 
@@ -358,6 +371,7 @@ html {
 }
 
 .contents .box:hover {
+  transition: all 0.3s;
   transform: translateY(-5px);
   box-shadow: 0px 11px 20px 0px;
   border-radius: 10px;
@@ -585,7 +599,7 @@ html {
 
 
 /********************** more_btn  *******************/
-.contents .more_btn_design {
+.contents .more_btn {
   display: block;
   text-align: center;
   padding: 2px 0;
@@ -728,35 +742,32 @@ html {
   }
 
   /********************** contents game_list_label *******************/
-  .contents .game_list_label {
+  .contents .game_list_btn {
     display: block;
     text-align: center;
     margin: var(--gap-large-20) 0;
     font-size: 0;
   }
 
-  .contents .game_list_label label {
+  .contents .game_list_btn a {
     display: inline-block;
-    /*     color: var(--color-light-gray); */
     font-size: 1.3rem;
     font-family: var(--font-Noto-Sans);
     padding: 5px 20px;
     margin-right: var(--gap-small-up-10);
     margin-bottom: var(--gap-small-5);
-    /*     background-color: var(--point-color-light-black); */
     border-radius: 20px;
     letter-spacing: -1px;
     transition: all 0.3s;
-    cursor: pointer;
   }
 
-  .contents .game_list_label .list_btn_design01 {
+  .contents .game_list_btn .tab_on {
     color: var(--color-light-gray);
     background-color: var(--point-color-light-black);
     font-weight: 700;
   }
 
-  .contents .game_list_label .list_btn_design07 {
+  .contents .game_list_btn a:last-child {
     margin-right: 0;
   }
 
@@ -791,7 +802,7 @@ html {
     margin-right: 0;
   }
 
-  #list_btn02:checked~.game_container .box01,
+/*   #list_btn02:checked~.game_container .box01,
   #list_btn02:checked~.game_container .box03,
   #list_btn02:checked~.game_container .box11,
   #list_btn02:checked~.game_container .box15,
@@ -891,11 +902,11 @@ html {
 
   #list_btn07:checked~.game_container .box26 {
     margin-right: 0;
-  }
+  } */
 
 
   /********************** more_btn  *******************/
-  .contents .mor_chk_list {
+  .contents .more_btn {
     display: none;
   }
 
@@ -1052,7 +1063,6 @@ html {
     margin: 0 auto;
   }
 
-
   /********************** contetns gamecontainer box *******************/
   .contents .box {
     width: 350px;
@@ -1065,23 +1075,6 @@ html {
 
   .contents .box:nth-child(3n) {
     margin-right: 0;
-  }
-
-  #list_btn02:checked~.game_container .box05,
-  #list_btn02:checked~.game_container .box08,
-  #list_btn02:checked~.game_container .box12,
-  #list_btn02:checked~.game_container .box16,
-  #list_btn06:checked~.game_container .box15,
-  #list_btn07:checked~.game_container .box26 {
-    margin-right: 0;
-  }
-
-  #list_btn02:checked~.game_container .box06,
-  #list_btn02:checked~.game_container .box09,
-  #list_btn02:checked~.game_container .box18,
-  #list_btn03:checked~.game_container .box18,
-  #list_btn06:checked~.game_container .box03 {
-    margin-right: var(--gap-small-up-10);
   }
 
   /********************** contents box box_bottom left_logo*******************/

@@ -11,96 +11,7 @@
   <link rel="stylesheet" href="./css/sub_mobile_game_list.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script>
-    $(function () {
-      $('.hot_game').slick({
-        responsive: [{
-            breakpoint: 769,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4,
-              autoplay: true,
-              draggable: true,
-            },
-          },
-          {
-            breakpoint: 9999,
-            settings: {
-              autoplay: true,
-              variableWidth: true,
-              settings: "unslick",
-            },
-          },
-        ],
-      });
-      $('.visual_main').slick({
-        dots: true,
-        infinite: true,
-        speed: 1000,
-        fade: true,
-        cssEase: 'linear',
-        autoplay: true,
-      });
-      $(window).scroll(function () {
-        let windowScroll = $(window).scrollTop();
-        if (windowScroll >= 300) {
-          $('.top_btn').fadeIn(500)
-        } else {
-          $('.top_btn').fadeOut(500)
-        }
-      });
-      $('.top_btn a').on('click', function(e){
-        e.preventDefault();
-        $('html, body').stop().animate({
-          scrollTop: 0,
-        }, 500);
-      });
-      $('.header .menu_btn_on').click(function () {
-        $('.header .main_menu_list_ex').animate({
-          left: 0,
-        },1);
-        $('.header .main_menu_list_ex .main_menu_list_bar').animate({
-          left: 0,
-        }, 200);
-      });
-      $('.header .menu_btn_off').click(function () {
-        $('.header .main_menu_list_ex').animate({
-          left: '-100%',
-        },10);
-        $('.header .main_menu_list_ex .main_menu_list_bar').animate({
-          left: '-100%',
-        }, 200);
-      });
-      $('.game_list_click01').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open01').slideToggle(300);
-      });
-      $('.game_list_click02').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open02').slideToggle(300);
-      });
-      $('.game_list_click03').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open03').slideToggle(300);
-      });
-      $('.game_list_click04').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open04').slideToggle(300);
-      });
-      $('.game_list_click05').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open05').slideToggle(300);
-      });
-      $('.game_list_click06').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open06').slideToggle(300);
-      });
-      $('.game_list_click07').click(function () {
-        $(this).toggleClass('icon_active');
-        $('.game_list_open07').slideToggle(300);
-      });
-    });
-  </script>
+  <script src="./JS/sub_mobile_game_list.js"></script>
 </head>
 
 <body>
@@ -116,14 +27,14 @@
           <label for="menu_chk" class="menu_btn_off"></label>
           <a href="./index.html" class="menu_list_logo">netmarble</a><!-- menu_list_logo -->
           <ul class="main_menu_list">
-            <li class="game_list_click01">
+            <li class="game_list_click">
               GAME LIST
             </li>
-            <ul class="game_list_open01 close_menu">
-              <li class="game_list_click02">
+            <ul class="game_list_open01 toggle_slide">
+              <li class="game_list_click">
                 RPG
               </li>
-              <ul class="game_list_open02 close_menu">
+              <ul class="game_list_open02 toggle_slide">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
                 <li><a href="#!">BTS World</a></li>
                 <li><a href="#!">나이츠크로니클</a></li>
@@ -140,42 +51,42 @@
                 <li><a href="#!">킹 오브 파이터 올스타</a></li>
                 <li><a href="#!">페이트/그랜드 오더</a></li>
               </ul>
-              <li class="game_list_click03">
+              <li class="game_list_click">
                 전략
               </li>
-              <ul class="game_list_open03 close_menu">
+              <ul class="game_list_open03 toggle_slide">
                 <li><a href="#!">A3:스틸얼라이브</a></li>
                 <li><a href="#!">넷마불 바둑</a></li>
               </ul>
-              <li class="game_list_click04">
+              <li class="game_list_click">
                 액션
               </li>
-              <ul class="game_list_open04 close_menu">
+              <ul class="game_list_open04 toggle_slide">
                 <li><a href="#!">마블 퓨처 파이트</a></li>
                 <li><a href="#!">몬스터 길들이기</a></li>
                 <li><a href="#!">세븐나이츠 레볼루션</a></li>
                 <li><a href="#!">킹 오브 파이터 올스타</a></li>
               </ul>
-              <li class="game_list_click05">
+              <li class="game_list_click">
                 퍼즐
               </li>
-              <ul class="game_list_open05 close_menu">
+              <ul class="game_list_open05 toggle_slide">
                 <li><a href="#!">샬롯의 테이블</a></li>
                 <li><a href="#!">쿵야 캐치 마인드</a></li>
               </ul>
-              <li class="game_list_click06">
+              <li class="game_list_click">
                 캐주얼/스포츠
               </li>
-              <ul class="game_list_open06 close_menu">
+              <ul class="game_list_open06 toggle_slide">
                 <li><a href="#!">BTS Universe</a></li>
                 <li><a href="#!">BTS World</a></li>
                 <li><a href="#!">넷마블 프로야구 2023</a></li>
                 <li><a href="#!">머지 쿵야 아일랜드</a></li>
               </ul>
-              <li class="game_list_click07">
+              <li class="game_list_click">
                 카드
               </li>
-              <ul class="game_list_open07 close_menu">
+              <ul class="game_list_open07 toggle_slide">
                 <li><a href="#!">모바일 윈조이 포커</a></li>
                 <li><a href="#!">윈조이 대박맞고</a></li>
                 <li><a href="#!">페이트/그랜드 오더</a></li>
@@ -212,28 +123,21 @@
     </header><!-- header -->
   </div><!-- header_ex -->
   <div class="contents">
-    <input type="radio" name="game_list" id="list_btn01" checked>
-    <input type="radio" name="game_list" id="list_btn02">
-    <input type="radio" name="game_list" id="list_btn03">
-    <input type="radio" name="game_list" id="list_btn04">
-    <input type="radio" name="game_list" id="list_btn05">
-    <input type="radio" name="game_list" id="list_btn06">
-    <input type="radio" name="game_list" id="list_btn07">
-    <div class="game_list_label">
-      <label for="list_btn01" class="list_btn_design01">#전체</label>
-      <label for="list_btn02" class="list_btn_design02">#RPG</label>
-      <label for="list_btn03" class="list_btn_design03">#전략</label>
-      <label for="list_btn04" class="list_btn_design04">#액션</label>
-      <label for="list_btn05" class="list_btn_design05">#퍼즐</label>
-      <label for="list_btn06" class="list_btn_design06">#캐주얼/스포츠</label>
-      <label for="list_btn07" class="list_btn_design07">#카드</label>
-    </div>
+    <section class="game_list_btn">
+      <a class="all tab_on" href="#!">#전체</a>
+      <a class="rpg" href="#!">#RPG</a>
+      <a class="strategy" href="#!">#전략</a>
+      <a class="action" href="#!">#액션</a>
+      <a class="puzzle" href="#!">#퍼즐</a>
+      <a class="sports" href="#!">#캐주얼/스포츠</a>
+      <a class="card" href="#!">#카드</a>
+    </section>
     <div class="search_wrapper">
       <input type="search" placeholder="게임명을 입력하세요." id="search">
       <span class="search_icon"></span>
     </div><!-- search_wrapper -->
     <div class="game_container">
-      <div class="box box01">
+      <div class="box box01" data-game="puzzle">
         <div class="box_top1">
           <img src="./images/sub_img/game_img_mobile_ver01.jpg" alt="game_img_mobile_01">
         </div>
@@ -253,7 +157,7 @@
         <span></span>
         <span></span>   -->
       </div><!-- box01 -->
-      <div class="box box02">
+      <div class="box box02" data-game="rpg action">
         <div class="box_top2">
           <img src="./images/sub_img/game_img_mobile_ver02.jpg" alt="game_img_mobile_02">
         </div>
@@ -269,7 +173,7 @@
           </div>
         </div>
       </div><!-- box02 -->
-      <div class="box box03">
+      <div class="box box03" data-game="sports">
         <div class="box_top3">
           <img src="./images/sub_img/game_img_mobile_ver03.jpg" alt="game_img_mobile_03">
         </div>
@@ -285,7 +189,7 @@
           </div>
         </div>
       </div><!-- box03 -->
-      <div class="box box04">
+      <div class="box box04" data-game="rpg">
         <div class="box_top4">
           <img src="./images/sub_img/game_img_mobile_ver04.jpg" alt="game_img_mobile_04">
         </div>
@@ -301,7 +205,7 @@
           </div>
         </div>
       </div><!-- box04 -->
-      <div class="box box05">
+      <div class="box box05" data-game="rpg">
         <div class="box_top5">
           <img src="./images/sub_img/game_img_mobile_ver05.jpg" alt="game_img_mobile_05">
         </div>
@@ -317,7 +221,7 @@
           </div>
         </div>
       </div><!-- box05 -->
-      <div class="box box06">
+      <div class="box box06" data-game="rpg">
         <div class="box_top6">
           <img src="./images/sub_img/game_img_mobile_ver06.jpg" alt="game_img_mobile_06">
         </div>
@@ -333,7 +237,7 @@
           </div>
         </div>
       </div><!-- box06 -->
-      <div class="box box07">
+      <div class="box box07" data-game="rpg">
         <div class="box_top7">
           <img src="./images/sub_img/game_img_mobile_ver07.jpg" alt="game_img_mobile_07">
         </div>
@@ -349,7 +253,7 @@
           </div>
         </div>
       </div><!-- box07 -->
-      <div class="box box08">
+      <div class="box box08" data-game="rpg action">
         <div class="box_top8">
           <img src="./images/sub_img/game_img_mobile_ver08.jpg" alt="game_img_mobile_08">
         </div>
@@ -363,7 +267,7 @@
           </div>
         </div>
       </div><!-- box08 -->
-      <div class="box box09">
+      <div class="box box09" data-game="rpg">
         <div class="box_top9">
           <img src="./images/sub_img/game_img_mobile_ver09.jpg" alt="game_img_mobile_09">
         </div>
@@ -377,7 +281,7 @@
           </div>
         </div>
       </div><!-- box09 -->
-      <div class="box box10">
+      <div class="box box10" data-game="rpg">
         <div class="box_top10">
           <img src="./images/sub_img/game_img_mobile_ver10.jpg" alt="game_img_mobile_10">
         </div>
@@ -391,7 +295,7 @@
           </div>
         </div>
       </div><!-- box10 -->
-      <div class="box box11">
+      <div class="box box11" data-game="sports">
         <div class="box_top11">
           <img src="./images/sub_img/game_img_mobile_ver11.jpg" alt="game_img_mobile_11">
         </div>
@@ -407,7 +311,7 @@
           </div>
         </div>
       </div><!-- box11 -->
-      <div class="box box12">
+      <div class="box box12" data-game="rpg">
         <div class="box_top12">
           <img src="./images/sub_img/game_img_mobile_ver12.jpg" alt="game_img_mobile_12">
         </div>
@@ -421,7 +325,7 @@
           </div>
         </div>
       </div><!-- box12 -->
-      <div class="box box13">
+      <div class="box box13" data-game="rpg">
         <div class="box_top13">
           <img src="./images/sub_img/game_img_mobile_ver13.jpg" alt="game_img_mobile_13">
         </div>
@@ -435,7 +339,7 @@
           </div>
         </div>
       </div><!-- box13 -->
-      <div class="box box14">
+      <div class="box box14" data-game="rpg">
         <div class="box_top14">
           <img src="./images/sub_img/game_img_mobile_ver14.jpg" alt="game_img_mobile_14">
         </div>
@@ -451,7 +355,7 @@
           </div>
         </div>
       </div><!-- box14 -->
-      <div class="box box15">
+      <div class="box box15" data-game="sports">
         <div class="box_top15">
           <img src="./images/sub_img/game_img_mobile_ver15.jpg" alt="game_img_mobile_15">
         </div>
@@ -465,7 +369,7 @@
           </div>
         </div>
       </div><!-- box15 -->
-      <div class="box box16">
+      <div class="box box16" data-game="rpg sports">
         <div class="box_top16">
           <img src="./images/sub_img/game_img_mobile_ver16.jpg" alt="game_img_mobile_16">
         </div>
@@ -479,7 +383,7 @@
           </div>
         </div>
       </div><!-- box16 -->
-      <div class="box box17">
+      <div class="box box17" data-game="rpg">
         <div class="box_top17">
           <img src="./images/sub_img/game_img_mobile_ver17.jpg" alt="game_img_mobile_17">
         </div>
@@ -493,7 +397,7 @@
           </div>
         </div>
       </div><!-- box17 -->
-      <div class="box box18">
+      <div class="box box18" data-game="rpg strategy">
         <div class="box_top18">
           <img src="./images/sub_img/game_img_mobile_ver18.jpg" alt="game_img_mobile_18">
         </div>
@@ -509,7 +413,7 @@
           </div>
         </div>
       </div><!-- box18 -->
-      <div class="box box19">
+      <div class="box box19" data-game="puzzle">
         <div class="box_top19">
           <img src="./images/sub_img/game_img_mobile_ver19.jpg" alt="game_img_mobile_19">
         </div>
@@ -523,7 +427,7 @@
           </div>
         </div>
       </div><!-- box19 -->
-      <div class="box box20">
+      <div class="box box20" data-game="sports">
         <div class="box_top20">
           <img src="./images/sub_img/game_img_mobile_ver20.jpg" alt="game_img_mobile_20">
         </div>
@@ -537,7 +441,7 @@
           </div>
         </div>
       </div><!-- box20 -->
-      <div class="box box21">
+      <div class="box box21" data-game="rpg action">
         <div class="box_top21">
           <img src="./images/sub_img/game_img_mobile_ver21.jpg" alt="game_img_mobile_21">
         </div>
@@ -551,7 +455,7 @@
           </div>
         </div>
       </div><!-- box21 -->
-      <div class="box box22">
+      <div class="box box22" data-game="rpg card">
         <div class="box_top22">
           <img src="./images/sub_img/game_img_mobile_ver22.jpg" alt="game_img_mobile_22">
         </div>
@@ -565,7 +469,7 @@
           </div>
         </div>
       </div><!-- box22 -->
-      <div class="box box23">
+      <div class="box box23" data-game="rpg action">
         <div class="box_top23">
           <img src="./images/sub_img/game_img_mobile_ver23.jpg" alt="game_img_mobile_23">
         </div>
@@ -579,7 +483,7 @@
           </div>
         </div>
       </div><!-- box23 -->
-      <div class="box box24">
+      <div class="box box24" data-game="strategy">
         <div class="box_top24">
           <img src="./images/sub_img/game_img_mobile_ver24.jpg" alt="game_img_mobile_24">
         </div>
@@ -593,7 +497,7 @@
           </div>
         </div>
       </div><!-- box24 -->
-      <div class="box box25">
+      <div class="box box25" data-game="card">
         <div class="box_top25">
           <img src="./images/sub_img/game_img_mobile_ver25.jpg" alt="game_img_mobile_25">
         </div>
@@ -607,7 +511,7 @@
           </div>
         </div>
       </div><!-- box25 -->
-      <div class="box box26">
+      <div class="box box26" data-game="card">
         <div class="box_top26">
           <img src="./images/sub_img/game_img_mobile_ver26.jpg" alt="game_img_mobile_26">
         </div>
@@ -622,10 +526,9 @@
         </div>
       </div><!-- box26 -->
     </div><!-- game_container -->
-    <input type="checkbox" name="more_btn" id="more_btn01">
-    <div class="mor_chk_list">
-      <label for="more_btn01" class="more_btn_design m_btn01">더보기</label>
-    </div>
+    <a class="more_btn" href="#!">
+      더보기
+    </a>
   </div><!-- contents -->
   <div class="top_btn">
     <a href="#">TOP</a>

@@ -28,7 +28,14 @@ $(function () {
 		autoplay: true,
 	});
 	$(window).scroll(function () {
+		const headerHeight = $('.header_ex').innerHeight();
 		let windowScroll = $(window).scrollTop();
+		if (windowScroll >= headerHeight) {
+			$('.header_ex').addClass('fixed');
+		} else {
+			$('.header_ex').removeClass('fixed');
+		}
+
 		if (windowScroll >= 300) {
 			$('.top_btn').fadeIn(500)
 		} else {
@@ -57,33 +64,9 @@ $(function () {
 			left: '-100%',
 		}, 200);
 	});
-	$('.game_list_click01').click(function () {
+	$('.game_list_click').on('click', function () {
 		$(this).toggleClass('icon_active');
-		$('.game_list_open01').slideToggle(300);
-	});
-	$('.game_list_click02').click(function () {
-		$(this).toggleClass('icon_active');
-		$('.game_list_open02').slideToggle(300);
-	});
-	$('.game_list_click03').click(function () {
-		$(this).toggleClass('icon_active');
-		$('.game_list_open03').slideToggle(300);
-	});
-	$('.game_list_click04').click(function () {
-		$(this).toggleClass('icon_active');
-		$('.game_list_open04').slideToggle(300);
-	});
-	$('.game_list_click05').click(function () {
-		$(this).toggleClass('icon_active');
-		$('.game_list_open05').slideToggle(300);
-	});
-	$('.game_list_click06').click(function () {
-		$(this).toggleClass('icon_active');
-		$('.game_list_open06').slideToggle(300);
-	});
-	$('.game_list_click07').click(function () {
-		$(this).toggleClass('icon_active');
-		$('.game_list_open07').slideToggle(300);
+		$(this).next('.toggle_slide').slideToggle(300);
 	});
 	$('.main_pop_up_ex .main_pop_up .pop_up_close_list .close').on('click', function () {
 		$('.main_pop_up_ex').fadeOut(300);
@@ -135,7 +118,7 @@ $(function () {
 	setInterval(hotWeeklyGameAni);
 
 	//hot_weekly_game acodian_list script//
-	$('.hot_weekly_acodian li').mouseover(function(){
+	$('.hot_weekly_acodian li').mouseover(function () {
 		$('.hot_weekly_acodian li').removeClass('list_on');
 		$(this).addClass('list_on');
 	})
