@@ -35,7 +35,7 @@ MAIN: SLICK을 이용한 박스 슬라이더 기능, JQUERY를 이용한 데이�
 SUB: 탭 메뉴를 통한 컨텐츠 표기 기능, 반응형 <br />
 
 ### 사이트 주소
-https://neptune588.github.io/team_project_calhart/
+https://neptune588.github.io/personal-project-netmable-/
 
 비전공자인 제가 처음으로 만들게 된 프로젝트이며, 그러다 보니 우여곡절이 상당히 많았던 프로젝트 입니다. <br />
 
